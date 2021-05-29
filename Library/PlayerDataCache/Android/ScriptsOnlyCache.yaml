@@ -58,23 +58,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1604}
+      Script: {instanceID: 1656}
     - Class: 114
-      Script: {instanceID: 2452}
+      Script: {instanceID: 2504}
     - Class: 114
-      Script: {instanceID: 3230}
+      Script: {instanceID: 3282}
     - Class: 114
-      Script: {instanceID: 3236}
+      Script: {instanceID: 3288}
     - Class: 114
-      Script: {instanceID: 3256}
+      Script: {instanceID: 3308}
     - Class: 114
-      Script: {instanceID: 3682}
+      Script: {instanceID: 3734}
     - Class: 114
-      Script: {instanceID: 3958}
+      Script: {instanceID: 4010}
     - Class: 114
-      Script: {instanceID: 4318}
+      Script: {instanceID: 4370}
     - Class: 114
-      Script: {instanceID: 4674}
+      Script: {instanceID: 4726}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -781,4 +781,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Daten/Uni/PPS/PPS-SS-2021/Build/laptopbuildDEV.apk
+  playerPath: F:/Daten/Uni/PPS/PPS-SS-2020/Build/pcbuildDEV.apk
