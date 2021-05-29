@@ -4,9 +4,10 @@ ScriptsOnlyBuild:
     - ImageTracker1
     Unity.CollabProxy.Editor.dll:
     - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
-    - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.Timeline.Editor.dll:
+    - TimelineProjectSettings
     Unity.XR.ARCore.Editor.dll:
     - UnityEditor.XR.ARCore.ARCoreSettings
     Unity.XR.ARCore.dll:
@@ -59,23 +60,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1572}
+      Script: {instanceID: 1602}
     - Class: 114
-      Script: {instanceID: 2282}
+      Script: {instanceID: 2450}
     - Class: 114
-      Script: {instanceID: 2936}
+      Script: {instanceID: 3228}
     - Class: 114
-      Script: {instanceID: 2938}
+      Script: {instanceID: 3234}
     - Class: 114
-      Script: {instanceID: 2958}
+      Script: {instanceID: 3254}
     - Class: 114
-      Script: {instanceID: 3332}
+      Script: {instanceID: 3680}
     - Class: 114
-      Script: {instanceID: 3550}
+      Script: {instanceID: 3956}
     - Class: 114
-      Script: {instanceID: 3838}
+      Script: {instanceID: 4316}
     - Class: 114
-      Script: {instanceID: 4150}
+      Script: {instanceID: 4672}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -782,4 +783,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: F:/Daten/Unity/Projects/PPS-AR-Plant/Build/test.apk
+  playerPath: C:/Daten/Uni/PPS/PPS-SS-2021/Build/laptopbuild.apk
