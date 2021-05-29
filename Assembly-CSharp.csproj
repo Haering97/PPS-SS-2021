@@ -59,6 +59,9 @@
     <Compile Include="Assets\Scripts\ImageTracker1.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\StreamingAssets\HiddenARCore\1c62983d-c534-4806-953e-6c42bdcf75b4.imgdb-imglist.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -1,0 +1,201 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.10f1 (297d780c91bc) revision 2719096'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.985; Version 2009; 64bit' Language: 'de' Physical Memory: 8043 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Daten/Uni/PPS/PPS-SS-2021
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+58987
+Successfully changed project path to: C:/Daten/Uni/PPS/PPS-SS-2021
+C:/Daten/Uni/PPS/PPS-SS-2021
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 86.05 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.10f1 (297d780c91bc)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Daten/Uni/PPS/PPS-SS-2021/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 540M (ID=0xdf4)
+    Vendor:   
+    VRAM:     1974 MB
+    Driver:   23.21.13.9135
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56748
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004195 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 68.75 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.918 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.008189 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.686 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
+Refreshing native plugins compatible for Editor in 0.93 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1734 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 76.1 MB.
+System memory in use after: 76.1 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2166.
+Total: 3.569200 ms (FindLiveObjects: 0.221200 ms CreateObjectMapping: 0.092500 ms MarkObjects: 3.100300 ms  DeleteObjects: 0.153000 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Marker/Picsum/107-536x354.jpg
+  artifactKey: Guid(fbbacf46855e70c499da7c73b48b6d32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Marker/Picsum/107-536x354.jpg using Guid(fbbacf46855e70c499da7c73b48b6d32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dcce9c8c47d6b716a78dde77103b4b4') in 0.188361 seconds
+  Import took 0.197313 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000478 seconds.
+  path: Assets/Marker/Picsum/1014-536x354.jpg
+  artifactKey: Guid(ec46657ca3dc59a43929c223dae7c942) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Marker/Picsum/1014-536x354.jpg using Guid(ec46657ca3dc59a43929c223dae7c942) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c49322b6c427146c95d7361ace9259b') in 0.040083 seconds
+  Import took 0.047003 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000931 seconds.
+  path: Assets/Marker/Picsum
+  artifactKey: Guid(e82cce344e0dbce45aaa80caaac3dc29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Marker/Picsum using Guid(e82cce344e0dbce45aaa80caaac3dc29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e003b3074745e60566ec9fef089e5935') in 0.028392 seconds
+  Import took 0.035181 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000846 seconds.
+  path: Assets/Marker/Picsum/500/1-500x500.jpg
+  artifactKey: Guid(43bead06b49c2134eab8d77268be2e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Marker/Picsum/500/1-500x500.jpg using Guid(43bead06b49c2134eab8d77268be2e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd416e41d951ca7aa88b6a1690711f178') in 0.065132 seconds
+  Import took 0.073737 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000406 seconds.
+  path: Assets/Marker/Picsum/500
+  artifactKey: Guid(7e8cb1af493a9a64d8151a07ffb70be2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Marker/Picsum/500 using Guid(7e8cb1af493a9a64d8151a07ffb70be2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '108c624970dc609bc8917331fca762e7') in 0.016990 seconds
+  Import took 0.022131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000322 seconds.
+  path: Assets/Marker/Picsum/500/611-500x500.jpg
+  artifactKey: Guid(d4de49f2faa6da84ebcfaf6842b11104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Marker/Picsum/500/611-500x500.jpg using Guid(d4de49f2faa6da84ebcfaf6842b11104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f50c400d1c97ee053f2f069390256ef4') in 0.060277 seconds
+  Import took 0.068421 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000352 seconds.
+  path: Assets/Marker/Picsum/500/91-500x500.jpg
+  artifactKey: Guid(28ee0b7c9cdddc04d8c573e9fac5f91c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Marker/Picsum/500/91-500x500.jpg using Guid(28ee0b7c9cdddc04d8c573e9fac5f91c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ad6fed3476a0db2437d3ed66e87302c') in 0.039035 seconds
+  Import took 0.046830 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000367 seconds.
+  path: Assets/Marker/Picsum/132-536x354.jpg
+  artifactKey: Guid(3eaa38f340cae84409cd3594559ed099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Marker/Picsum/132-536x354.jpg using Guid(3eaa38f340cae84409cd3594559ed099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64f497bc2e1f5b3cc7ab1d16d2ee88d2') in 0.059419 seconds
+  Import took 0.066060 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 61.920200 seconds.
+  path: Assets/ReferenceImageLibrary.asset
+  artifactKey: Guid(6ee691a96b1f23c459d5a8d58a629e0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ReferenceImageLibrary.asset using Guid(6ee691a96b1f23c459d5a8d58a629e0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93e1f8293a263d2710dc35d9d39cf90b') in 0.045639 seconds
+  Import took 0.054666 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 8.10 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 41.8 MB.
+System memory in use after: 41.8 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2170.
+Total: 7.736800 ms (FindLiveObjects: 2.182300 ms CreateObjectMapping: 0.347400 ms MarkObjects: 5.085700 ms  DeleteObjects: 0.118500 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 5.89 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 41.7 MB.
+System memory in use after: 41.7 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2170.
+Total: 7.823400 ms (FindLiveObjects: 0.261400 ms CreateObjectMapping: 0.094300 ms MarkObjects: 7.343600 ms  DeleteObjects: 0.121000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1242.513170 seconds.
+  path: Assets/ReferenceImageLibrary.asset
+  artifactKey: Guid(6ee691a96b1f23c459d5a8d58a629e0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ReferenceImageLibrary.asset using Guid(6ee691a96b1f23c459d5a8d58a629e0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ae5683527752ca6a51d4cd1c90bfc19') in 0.041591 seconds
+  Import took 0.050564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.583664 seconds.
+  path: Assets/ReferenceImageLibrary.asset
+  artifactKey: Guid(6ee691a96b1f23c459d5a8d58a629e0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ReferenceImageLibrary.asset using Guid(6ee691a96b1f23c459d5a8d58a629e0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ae5683527752ca6a51d4cd1c90bfc19') in 0.009291 seconds
+  Import took 0.015032 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 11.99 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 41.7 MB.
+System memory in use after: 41.8 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2170.
+Total: 6.448700 ms (FindLiveObjects: 0.391600 ms CreateObjectMapping: 0.175800 ms MarkObjects: 5.759200 ms  DeleteObjects: 0.119000 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 8.36 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 41.7 MB.
+System memory in use after: 41.8 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2170.
+Total: 6.754800 ms (FindLiveObjects: 0.458900 ms CreateObjectMapping: 0.137500 ms MarkObjects: 6.064500 ms  DeleteObjects: 0.091600 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
