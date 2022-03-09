@@ -27,7 +27,8 @@ public class ImageTracker1 : MonoBehaviour
 
             if(newImage.referenceImage.guid == m_ImageLibrary[0].guid)
             {
-                Debug.Log("sameID");
+                print("--------------sameID--------------");
+                System.Console.WriteLine("--------------sameID--------------");
             }
 
             /*
