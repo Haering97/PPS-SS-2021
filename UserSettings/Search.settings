@@ -7,9 +7,9 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.785D90A9" = "package man"
+	"last_search.785D90A9" = "packa"
 	"OpenInspectorPreview.785D90A9" = "0"
-	"currentGroup.785D90A9" = "menu"
+	"currentGroup.785D90A9" = "settings"
 }
 providers = {
 	packages = {
@@ -57,8 +57,35 @@ providers = {
 		priority = 2500
 		defaultAction = null
 	}
+	menu = {
+		active = true
+		priority = 80
+		defaultAction = null
+	}
+	settings = {
+		active = true
+		priority = 100
+		defaultAction = null
+	}
+	help = {
+		active = true
+		priority = -1
+		defaultAction = null
+	}
+	calculator = {
+		active = true
+		priority = 10
+		defaultAction = null
+	}
+	static_methods = {
+		active = true
+		priority = 85
+		defaultAction = null
+	}
 }
 recentSearches = [
+	"pac"
+	"lo"
 ]
 searchItemFavorites = [
 ]

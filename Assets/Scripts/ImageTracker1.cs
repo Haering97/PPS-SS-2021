@@ -23,12 +23,13 @@ public class ImageTracker1 : MonoBehaviour
     {
         foreach (var newImage in eventArgs.added)
         {
+            Debug.Log("MyLog");
             Debug.Log(newImage.referenceImage.name);
 
             if(newImage.referenceImage.guid == m_ImageLibrary[0].guid)
             {
-                print("--------------sameID--------------");
-                System.Console.WriteLine("--------------sameID--------------");
+                Debug.Log("Log --------------sameID--------------");
+                
             }
 
             /*
