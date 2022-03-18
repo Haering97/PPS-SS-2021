@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "3d21f5bc",
         "name": "com.Lemmy.NewArSetup",
-        "processId": 14502,
+        "processId": 16225,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,18 +12,42 @@
             "deviceId": "3d21f5bc",
             "name": "com.oppo.launcher",
             "processId": 3493,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 11744,
             "exited": false
         },
         {
             "deviceId": "3d21f5bc",
             "name": "com.Lemmy.NewArSetup",
+            "processId": 11744,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.NewArSetup",
             "processId": 14502,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.NewArSetup",
+            "processId": 6195,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.NewArSetup",
+            "processId": 14835,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.NewArSetup",
+            "processId": 15727,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.NewArSetup",
+            "processId": 16225,
             "exited": false
         }
     ],
@@ -77,7 +101,7 @@
         "MemoryGroup": 2,
         "Behavior": 0
     },
-    "m_Filter": "",
+    "m_Filter": "PP-Log:",
     "m_FilterIsRegularExpression": false,
     "m_SymbolPaths": []
 }

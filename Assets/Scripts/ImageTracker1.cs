@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
@@ -23,21 +24,21 @@ public class ImageTracker1 : MonoBehaviour
     {
         foreach (var newImage in eventArgs.added)
         {
-            Debug.Log("MyLog");
+            Debug.Log("PP-Log: Test");
             Debug.Log(newImage.referenceImage.name);
 
             if(newImage.referenceImage.guid == m_ImageLibrary[0].guid)
             {
-                Debug.Log("Log --------------sameID--------------");
+                Debug.Log("PP-Log: --------------sameID--------------");
                 
             }
 
-            /*
-            for(int i = 0; i < m_ImageLibrary ; i++)
+            
+            for(int i = 0; i < m_ImageLibrary.count ; i++)
             {
-
+                Debug.Log("PP-Log:" +m_ImageLibrary[i].name);
             }
-            */
+            
 
             Debug.Log(m_ImageLibrary);
 
