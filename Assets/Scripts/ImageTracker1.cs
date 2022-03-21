@@ -33,12 +33,12 @@ public class ImageTracker1 : MonoBehaviour
                 
             }
 
-            
+            /*
             for(int i = 0; i < m_ImageLibrary.count ; i++)
             {
                 Debug.Log("PP-Log:" +m_ImageLibrary[i].name);
             }
-            
+            */
 
             Debug.Log(m_ImageLibrary);
 
