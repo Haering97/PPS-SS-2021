@@ -32,7 +32,8 @@ public class ImageTracker : MonoBehaviour
             var offsetPos = new Vector3(0f,0.1f,0);
             var scaleFactor = 0.5f;
             //TODO Rotation auslagern und im UI bereitstellen
-            
+            //TODO Multiple Prefabs and referenceImages
+            //TODO Dynamic Prefabs
             var newPrefab = Instantiate(display,trackedImage.transform.position + offsetPos,trackedImage.transform.rotation * Quaternion.Euler(20,0,0) ,trackedImage.transform);
 
             /*
