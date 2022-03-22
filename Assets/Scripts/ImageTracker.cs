@@ -26,11 +26,10 @@ public class ImageTracker : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             var imageName = trackedImage.referenceImage.name;
-            Debug.Log("PP-Log: Test");
-            Debug.Log(trackedImage.referenceImage.name);
+            Debug.Log("PP-Log: Image Tracked");
+            Debug.Log("PP-Log:"+trackedImage.referenceImage.name);
 
             var newPrefab = Instantiate(display, trackedImage.transform);
-            
             
             /*
             for(int i = 0; i < m_ImageLibrary.count ; i++)
@@ -39,9 +38,7 @@ public class ImageTracker : MonoBehaviour
             }
             */
 
-            Debug.Log(m_ImageLibrary);
 
-            
         }
 
         foreach (var updatedImage in eventArgs.updated)
