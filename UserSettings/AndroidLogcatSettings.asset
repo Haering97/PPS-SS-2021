@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "3d21f5bc",
         "name": "com.Lemmy.NewArSetup",
-        "processId": 28469,
+        "processId": 29091,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -156,6 +156,12 @@
             "deviceId": "3d21f5bc",
             "name": "com.Lemmy.NewArSetup",
             "processId": 28469,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.NewArSetup",
+            "processId": 29091,
             "exited": false
         }
     ],
