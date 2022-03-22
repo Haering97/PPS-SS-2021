@@ -6,7 +6,7 @@ using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-public class ImageTracker1 : MonoBehaviour
+public class ImageTracker : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("Image manager on the AR Session Origin")]
@@ -15,6 +15,7 @@ public class ImageTracker1 : MonoBehaviour
     [Tooltip("Reference Image Library")]
     XRReferenceImageLibrary m_ImageLibrary;
 
+    [SerializeField] private GameObject display; 
 
     void OnEnable() => m_TrackedImageManager.trackedImagesChanged += OnChanged;
 
@@ -22,17 +23,15 @@ public class ImageTracker1 : MonoBehaviour
 
     void OnChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
-        foreach (var newImage in eventArgs.added)
+        foreach (var trackedImage in eventArgs.added)
         {
+            var imageName = trackedImage.referenceImage.name;
             Debug.Log("PP-Log: Test");
-            Debug.Log(newImage.referenceImage.name);
+            Debug.Log(trackedImage.referenceImage.name);
 
-            if(newImage.referenceImage.guid == m_ImageLibrary[0].guid)
-            {
-                Debug.Log("PP-Log: --------------sameID--------------");
-                
-            }
-
+            var newPrefab = Instantiate(display, trackedImage.transform);
+            
+            
             /*
             for(int i = 0; i < m_ImageLibrary.count ; i++)
             {
