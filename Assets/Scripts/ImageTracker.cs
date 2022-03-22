@@ -29,11 +29,12 @@ public class ImageTracker : MonoBehaviour
             Debug.Log("PP-Log: Image Tracked");
             Debug.Log("PP-Log:"+trackedImage.referenceImage.name);
             
-            var offset = new Vector3(10f,0,0);
+            var offsetPos = new Vector3(0f,0.1f,0);
+            var scaleFactor = 0.5f;
+            //TODO Rotation auslagern und im UI bereitstellen
             
-            var newPrefab = Instantiate(display,trackedImage.transform.position,trackedImage.transform.rotation,trackedImage.transform);
-            
-            
+            var newPrefab = Instantiate(display,trackedImage.transform.position + offsetPos,trackedImage.transform.rotation * Quaternion.Euler(20,0,0) ,trackedImage.transform);
+
             /*
             for(int i = 0; i < m_ImageLibrary.count ; i++)
             {
