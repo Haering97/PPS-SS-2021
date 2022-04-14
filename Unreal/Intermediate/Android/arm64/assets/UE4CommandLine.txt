@@ -1,0 +1,1 @@
+../../../FreshAR/FreshAR.uproject  /Game/HandheldAR/Maps/HandheldARBlankMap -Messaging -SessionId=9AF5D90C4E179B672F54DAABBB0282AF -SessionOwner="Lennard Häring" -SessionName="Launch On Device" -iterative

@@ -1,0 +1,77 @@
+{
+    "logs": [
+        {
+            "outputFile": "Z:\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bs\\values-bs.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Lennard Häring\\.gradle\\caches\\transforms-2\\files-2.1\\abb4eb9baec9c04160c359f301fd5bf2\\jetified-play-services-base-11.8.0\\res\\values-bs\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "281,385,577,701,809,1018,1142,1280,1407,1620,1725,1917,2042,2251,2423,2517,2608",
+                        "endColumns": "103,191,123,107,208,123,137,126,212,104,191,124,208,171,93,90,109",
+                        "endOffsets": "384,576,700,808,1017,1141,1279,1406,1619,1724,1916,2041,2250,2422,2516,2607,2717"
+                    },
+                    "to": {
+                        "startLines": "7,8,9,10,11,12,13,14,16,17,18,19,20,21,22,23,24",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "545,653,845,973,1085,1294,1422,1564,1895,2108,2217,2409,2538,2747,2923,3021,3116",
+                        "endColumns": "107,191,127,111,208,127,141,130,212,108,191,128,208,175,97,94,113",
+                        "endOffsets": "648,840,968,1080,1289,1417,1559,1690,2103,2212,2404,2533,2742,2918,3016,3111,3225"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Lennard Häring\\.gradle\\caches\\transforms-2\\files-2.1\\53cbb8309a357fe5d48c5bc2bfcd1126\\jetified-core-1.22.0\\res\\values-bs\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,237,287,406,527",
+                        "endColumns": "46,49,118,120,82",
+                        "endOffsets": "236,286,405,526,609"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,156,210,333,458",
+                        "endColumns": "50,53,122,124,86",
+                        "endOffsets": "151,205,328,453,540"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Lennard Häring\\.gradle\\caches\\transforms-2\\files-2.1\\f88df7c86cbc989e82020e686162bad6\\core-1.0.0\\res\\values-bs\\values-bs.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "25",
+                        "startColumns": "4",
+                        "startOffsets": "3230",
+                        "endColumns": "100",
+                        "endOffsets": "3326"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Lennard Häring\\.gradle\\caches\\transforms-2\\files-2.1\\a3d765cecd89bcd62b42bae16bd4f2a5\\jetified-play-services-basement-11.8.0\\res\\values-bs\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "283",
+                        "endColumns": "199",
+                        "endOffsets": "482"
+                    },
+                    "to": {
+                        "startLines": "15",
+                        "startColumns": "4",
+                        "startOffsets": "1695",
+                        "endColumns": "199",
+                        "endOffsets": "1890"
+                    }
+                }
+            ]
+        }
+    ]
+}

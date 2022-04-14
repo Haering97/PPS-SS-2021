@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splashscreen_l.xml.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable\\splashscreen_l.xml"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splashscreen_landscape.png.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable\\splashscreen_landscape.png"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_notify_panel_notification_icon_bg.png.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable-mdpi\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon.png.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable-mdpi\\icon.png"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable_downloadimageh.png.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable\\downloadimageh.png"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\layout-land_downloader_progress.xml.flat",
+        "source": "Z:\\app\\src\\main\\res\\layout-land\\downloader_progress.xml"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon.png.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable-hdpi\\icon.png"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon.png.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable\\icon.png"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon.png.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable-xhdpi\\icon.png"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable_downloadimagev.png.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable\\downloadimagev.png"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\layout_status_bar_ongoing_event_progress_bar.xml.flat",
+        "source": "Z:\\app\\src\\main\\res\\layout\\status_bar_ongoing_event_progress_bar.xml"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\anim_noaction.xml.flat",
+        "source": "Z:\\app\\src\\main\\res\\anim\\noaction.xml"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splashscreen_p.xml.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable\\splashscreen_p.xml"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splashscreen_portrait.png.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable\\splashscreen_portrait.png"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\layout-port_downloader_progress.xml.flat",
+        "source": "Z:\\app\\src\\main\\res\\layout-port\\downloader_progress.xml"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\layout_downloader_progress.xml.flat",
+        "source": "Z:\\app\\src\\main\\res\\layout\\downloader_progress.xml"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_notify_panel_notification_icon_bg.png.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable-hdpi\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "Z:\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon.png.flat",
+        "source": "Z:\\app\\src\\main\\res\\drawable-ldpi\\icon.png"
+    }
+]
