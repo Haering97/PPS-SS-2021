@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/Library/PramData/AndroidApplicationController/Cache/com.Lemmy.NewArSetup/gradle-project/launcher/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/Library/PramData/AndroidApplicationController/Cache/com.Lemmy.NewArSetup/gradle-project/launcher/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/Library/PramData/AndroidApplicationController/Cache/com.Lemmy.NewArSetup/gradle-project/launcher/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/Library/PramData/AndroidApplicationController/Cache/com.Lemmy.NewArSetup/gradle-project/launcher/src/main/res/mipmap-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/Library/PramData/AndroidApplicationController/Cache/com.Lemmy.NewArSetup/gradle-project/launcher/build/intermediates/res/merged/debug/mipmap-anydpi-v26_app_icon_round.xml.flat",
+        "source": "/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/Library/PramData/AndroidApplicationController/Cache/com.Lemmy.NewArSetup/gradle-project/launcher/src/main/res/mipmap-anydpi-v26/app_icon_round.xml"
+    },
+    {
+        "merged": "/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/Library/PramData/AndroidApplicationController/Cache/com.Lemmy.NewArSetup/gradle-project/launcher/build/intermediates/res/merged/debug/mipmap-anydpi-v26_app_icon.xml.flat",
+        "source": "/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/Library/PramData/AndroidApplicationController/Cache/com.Lemmy.NewArSetup/gradle-project/launcher/src/main/res/mipmap-anydpi-v26/app_icon.xml"
+    },
+    {
+        "merged": "/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/Library/PramData/AndroidApplicationController/Cache/com.Lemmy.NewArSetup/gradle-project/launcher/build/intermediates/res/merged/debug/mipmap-mdpi_app_icon.png.flat",
+        "source": "/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/Library/PramData/AndroidApplicationController/Cache/com.Lemmy.NewArSetup/gradle-project/launcher/src/main/res/mipmap-mdpi/app_icon.png"
+    }
+]

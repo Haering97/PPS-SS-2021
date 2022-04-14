@@ -1,0 +1,2 @@
+/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
+/home/lemmy/Unity/Projects/GitHub/PPS-SS-2021/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
