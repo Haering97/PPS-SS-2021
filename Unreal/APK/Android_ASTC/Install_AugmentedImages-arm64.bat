@@ -9,17 +9,17 @@ if not "%1"=="" set DEVICE=-s %1
 for /f "delims=" %%A in ('%ADB% %DEVICE% shell "echo $EXTERNAL_STORAGE"') do @set STORAGE=%%A
 @echo.
 @echo Uninstalling existing application. Failures here can almost always be ignored.
-%ADB% %DEVICE% uninstall com.HRing.pss2021
+%ADB% %DEVICE% uninstall com.HRing.pps2021unreal
 @echo.
 @echo Installing existing application. Failures here indicate a problem with the device (connection or storage permissions) and are fatal.
 %ADB% %DEVICE% install AugmentedImages-arm64.apk
 @if "%ERRORLEVEL%" NEQ "0" goto Error
-%ADB% %DEVICE% shell pm list packages com.HRing.pss2021
+%ADB% %DEVICE% shell pm list packages com.HRing.pps2021unreal
 %ADB% %DEVICE% shell rm -r %STORAGE%/UnrealGame/AugmentedImages
 %ADB% %DEVICE% shell rm -r %STORAGE%/UnrealGame/UECommandLine.txt
-%ADB% %DEVICE% shell rm -r %STORAGE%/obb/com.HRing.pss2021
-%ADB% %DEVICE% shell rm -r %STORAGE%/Android/obb/com.HRing.pss2021
-%ADB% %DEVICE% shell rm -r %STORAGE%/Download/obb/com.HRing.pss2021
+%ADB% %DEVICE% shell rm -r %STORAGE%/obb/com.HRing.pps2021unreal
+%ADB% %DEVICE% shell rm -r %STORAGE%/Android/obb/com.HRing.pps2021unreal
+%ADB% %DEVICE% shell rm -r %STORAGE%/Download/obb/com.HRing.pps2021unreal
 
 
 
@@ -38,8 +38,8 @@ for /f "delims=" %%A in ('%ADB% %DEVICE% shell "echo $EXTERNAL_STORAGE"') do @se
 
 @echo.
 @echo Grant READ_EXTERNAL_STORAGE and WRITE_EXTERNAL_STORAGE to the apk for reading OBB file or game file in external storage.
-%ADB% %DEVICE% shell pm grant com.HRing.pss2021 android.permission.READ_EXTERNAL_STORAGE
-%ADB% %DEVICE% shell pm grant com.HRing.pss2021 android.permission.WRITE_EXTERNAL_STORAGE
+%ADB% %DEVICE% shell pm grant com.HRing.pps2021unreal android.permission.READ_EXTERNAL_STORAGE
+%ADB% %DEVICE% shell pm grant com.HRing.pps2021unreal android.permission.WRITE_EXTERNAL_STORAGE
 
 @echo.
 @echo Installation successful
