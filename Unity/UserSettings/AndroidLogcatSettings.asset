@@ -1,167 +1,47 @@
 {
     "m_SelectedDeviceId": "3d21f5bc",
     "m_SelectedPackage": {
-        "deviceId": "3d21f5bc",
-        "name": "com.Lemmy.NewArSetup",
-        "processId": 29091,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "3d21f5bc",
-            "name": "com.oppo.launcher",
-            "processId": 3493,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 11744,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 14502,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 6195,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 14835,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 15727,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 16225,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 2854,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 15529,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 26331,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 28733,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 11507,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 12142,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 12992,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 15502,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 17404,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 19191,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 21910,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 22855,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 23857,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 25122,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 25917,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
             "name": "com.Lemmy.NewArSetup",
             "processId": 27152,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "3d21f5bc",
             "name": "com.Lemmy.NewArSetup",
             "processId": 27711,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "3d21f5bc",
             "name": "com.Lemmy.NewArSetup",
             "processId": 28469,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "3d21f5bc",
             "name": "com.Lemmy.NewArSetup",
             "processId": 29091,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.GitTest",
+            "processId": 18709,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.oppo.launcher",
+            "processId": 3450,
             "exited": false
         }
     ],
@@ -215,7 +95,7 @@
         "MemoryGroup": 2,
         "Behavior": 0
     },
-    "m_Filter": "PP-Log:",
+    "m_Filter": "",
     "m_FilterIsRegularExpression": false,
     "m_SymbolPaths": []
 }
