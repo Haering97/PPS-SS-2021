@@ -3,41 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "3d21f5bc",
         "name": "com.Lemmy.GitTest",
-        "processId": 16526,
+        "processId": 20579,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 27152,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 27711,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 28469,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.NewArSetup",
-            "processId": 29091,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.GitTest",
-            "processId": 18709,
-            "exited": true
-        },
         {
             "deviceId": "3d21f5bc",
             "name": "com.oppo.launcher",
@@ -48,12 +18,36 @@
             "deviceId": "3d21f5bc",
             "name": "com.Lemmy.GitTest",
             "processId": 11404,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "3d21f5bc",
             "name": "com.Lemmy.GitTest",
             "processId": 16526,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.GitTest",
+            "processId": 17634,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.GitTest",
+            "processId": 18898,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.GitTest",
+            "processId": 20077,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.GitTest",
+            "processId": 20579,
             "exited": false
         }
     ],

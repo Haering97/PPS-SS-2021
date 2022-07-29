@@ -6,15 +6,17 @@ using UnityEngine;
 public class VFBuilder : MonoBehaviour
 {
     
-    // Start is called before the first frame update
+    [SerializeField] private GameObject cube;
+    
     void Start()
     {
-        Debug.Log("PP-Log: VFBuilder test");
+        Debug.Log("PP-Log: VFBuilder instantiate cube");
+        Instantiate(cube,this.transform);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
     }
+
 }
