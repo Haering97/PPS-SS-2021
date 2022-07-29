@@ -442,7 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TrackedImageManager: {fileID: 1760993879}
   m_ImageLibrary: {fileID: 11400000, guid: 6ee691a96b1f23c459d5a8d58a629e0c, type: 2}
-  display: {fileID: 1320276881664260631, guid: c746fc78f49c9ea659ce31a098a80115, type: 3}
+  model: {fileID: 1320276881664260631, guid: c746fc78f49c9ea659ce31a098a80115, type: 3}
 --- !u!114 &1760993879
 MonoBehaviour:
   m_ObjectHideFlags: 0
