@@ -2498,7 +2498,13 @@ IL_0012_1:
 				Debug_Log_m86567BCF22BBE7809747817453CACA0E41E68219(L_9, NULL);
 				// var offsetPos = new Vector3(0f,0.1f,0);
 				Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&V_2), (0.0f), (0.100000001f), (0.0f), NULL);
-				// var newPrefab = Instantiate(display,trackedImage.transform.position + offsetPos,trackedImage.transform.rotation * Quaternion.Euler(20,0,0) ,trackedImage.transform);
+				// var newPrefab = Instantiate(display,
+				//     trackedImage.transform.position + offsetPos,
+				//     trackedImage.transform.rotation *
+				//     Quaternion.Euler(20,
+				//         0,
+				//         0),
+				//     trackedImage.transform);
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = __this->___display_6;
 				ARTrackedImage_tC1D6394277D354FB2B952C6D5CAB62140AA455C2* L_11 = V_1;
 				NullCheck(L_11);

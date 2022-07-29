@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "3d21f5bc",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "3d21f5bc",
+        "name": "com.Lemmy.GitTest",
+        "processId": 16526,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,18 @@
             "deviceId": "3d21f5bc",
             "name": "com.oppo.launcher",
             "processId": 3450,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.GitTest",
+            "processId": 11404,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.Lemmy.GitTest",
+            "processId": 16526,
             "exited": false
         }
     ],
@@ -95,7 +107,7 @@
         "MemoryGroup": 2,
         "Behavior": 0
     },
-    "m_Filter": "",
+    "m_Filter": "PP",
     "m_FilterIsRegularExpression": false,
     "m_SymbolPaths": []
 }

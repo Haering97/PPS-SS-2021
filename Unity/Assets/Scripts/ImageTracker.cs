@@ -34,7 +34,13 @@ public class ImageTracker : MonoBehaviour
             //TODO Rotation auslagern und im UI bereitstellen
             //TODO Multiple Prefabs and referenceImages
             //TODO Dynamic Prefabs
-            var newPrefab = Instantiate(display,trackedImage.transform.position + offsetPos,trackedImage.transform.rotation * Quaternion.Euler(20,0,0) ,trackedImage.transform);
+            var newPrefab = Instantiate(display,
+                trackedImage.transform.position + offsetPos,
+                trackedImage.transform.rotation *
+                Quaternion.Euler(20,
+                    0,
+                    0),
+                trackedImage.transform);
 
             /*
             for(int i = 0; i < m_ImageLibrary.count ; i++)
