@@ -15,7 +15,7 @@ public class ImageTracker : MonoBehaviour
     [Tooltip("Reference Image Library")]
     XRReferenceImageLibrary m_ImageLibrary;
 
-    [SerializeField] private GameObject display; 
+    [SerializeField] private GameObject model; 
 
     void OnEnable() => m_TrackedImageManager.trackedImagesChanged += OnChanged;
 
@@ -34,14 +34,15 @@ public class ImageTracker : MonoBehaviour
             //TODO Rotation auslagern und im UI bereitstellen
             //TODO Multiple Prefabs and referenceImages
             //TODO Dynamic Prefabs
-            var newPrefab = Instantiate(display,
+            
+            var newPrefab = Instantiate(model,
                 trackedImage.transform.position + offsetPos,
                 trackedImage.transform.rotation *
                 Quaternion.Euler(20,
                     0,
                     0),
                 trackedImage.transform);
-
+            
             /*
             for(int i = 0; i < m_ImageLibrary.count ; i++)
             {
