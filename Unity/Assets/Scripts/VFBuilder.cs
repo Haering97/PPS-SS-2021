@@ -29,7 +29,7 @@ public class VFBuilder : MonoBehaviour
     {
         private int _sizeX;
         private int _sizeY;
-        private SinglePlantUnit[][] _plantUnits;
+        private SinglePlantUnit[,] _plantUnits;
         
         public Tray(int sizeX,int sizeY)
         {
