@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 1228462972}
   - component: {fileID: 1228462971}
   - component: {fileID: 1228462973}
+  - component: {fileID: 1228462974}
   m_Layer: 0
   m_Name: TestingObject
   m_TagString: Untagged
@@ -270,14 +271,35 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228462970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b865ab331a809ed6490b713b21c73aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 2370293560829473282, guid: 4bef13aeab861594e84b2a812f2a6c9d, type: 3}
-  traySizeX: 4
-  traySizeY: 8
+  shelves: 3
+  shelfHeight: 0
+  shelfLength: 0
+  trayLength: 0
+  trayWidth: 0
+--- !u!114 &1228462974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228462970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9651ed9892f14d65870b6cc04044ca4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: {fileID: 2370293560829473282, guid: 4bef13aeab861594e84b2a812f2a6c9d, type: 3}
+  shelves: 2
+  shelfHeight: 2
+  shelfLength: 2
+  trayLength: 2
+  trayWidth: 2
 --- !u!1 &1337942985
 GameObject:
   m_ObjectHideFlags: 0
