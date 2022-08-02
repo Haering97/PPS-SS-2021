@@ -33,16 +33,17 @@ public class VFBuilder : MonoBehaviour
 
     public class Shelf
     {
-        public Tray[] Trays { get; set; }
+        public Tray[,] Trays { get; set; }
 
-        public Shelf(int shelfheight, int shelflength, int trayLength, int trayWidth)
+        public Shelf(int shelfHeight, int shelfLength, int trayLength, int trayWidth)
         {
-            var shelf = new Tray[shelfheight, shelflength];
-            for (int i = 0; i < shelfheight; i++)
+            Trays = new Tray[shelfHeight, shelfLength];
+            
+            for (int i = 0; i < shelfHeight; i++)
             {
-                for (int j = 0; j < shelflength; j++)
+                for (int j = 0; j < shelfLength; j++)
                 {
-                    shelf[i, j] = new Tray(trayLength, trayWidth);
+                    Trays[i, j] = new Tray(trayLength, trayWidth);
                 }
             }
         }
@@ -79,6 +80,7 @@ public class VFBuilder : MonoBehaviour
 
         VerticalFarm myFirstFarm = new VerticalFarm(shelves, shelfHeight, shelfLength, trayLength, trayWidth);
         
+        Debug.Log("Finished");
     }
 
     void Update()
