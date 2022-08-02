@@ -7,7 +7,6 @@ using Color = System.Drawing.Color;
 
 public class VFBuilder : MonoBehaviour
 {
-    
     [SerializeField] private GameObject cube;
 
 
@@ -84,7 +83,7 @@ public class VFBuilder : MonoBehaviour
         Debug.Log("Start");
 
         var cubeRenderer = cube.GetComponent<Renderer>();
-        cubeRenderer.sharedMaterial.SetColor("_Color",UnityEngine.Color.green);
+        cubeRenderer.sharedMaterial.SetColor("_Color", UnityEngine.Color.green);
 
         VerticalFarm myFirstFarm = new VerticalFarm(shelves, shelfHeight, shelfLength, trayWidth, trayLength);
 
