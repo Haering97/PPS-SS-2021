@@ -12,8 +12,8 @@ public class VFBuilder : MonoBehaviour
     [SerializeField] public int shelves;
     [SerializeField] public int shelfHeight;
     [SerializeField] public int shelfLength;
-    [SerializeField] public int trayLength;
     [SerializeField] public int trayWidth;
+    [SerializeField] public int trayLength;
 
     //Classes
 
@@ -21,12 +21,12 @@ public class VFBuilder : MonoBehaviour
     {
         public Shelf[] Shelves { get; set; }
 
-        public VerticalFarm(int amount, int shelfHeight, int shelfLength, int trayLength,int trayWidth)
+        public VerticalFarm(int amount, int shelfHeight, int shelfLength, int trayWidth, int trayLength)
         {
             Shelves = new Shelf[amount];
             for (int i = 0; i < amount; i++)
             {
-                Shelves[i] = new Shelf(shelfHeight,shelfLength, trayLength, trayWidth);
+                Shelves[i] = new Shelf(shelfHeight, shelfLength, trayWidth, trayLength);
             }
         }
     }
@@ -35,15 +35,15 @@ public class VFBuilder : MonoBehaviour
     {
         public Tray[,] Trays { get; set; }
 
-        public Shelf(int shelfHeight, int shelfLength, int trayLength, int trayWidth)
+        public Shelf(int shelfHeight, int shelfLength, int trayWidth, int trayLength)
         {
             Trays = new Tray[shelfHeight, shelfLength];
-            
+
             for (int i = 0; i < shelfHeight; i++)
             {
                 for (int j = 0; j < shelfLength; j++)
                 {
-                    Trays[i, j] = new Tray(trayLength, trayWidth);
+                    Trays[i, j] = new Tray( trayWidth, trayLength);
                 }
             }
         }
@@ -53,12 +53,12 @@ public class VFBuilder : MonoBehaviour
     {
         public PlantUnit[,] PlantUnits { get; set; }
 
-        public Tray(int width, int length)
+        public Tray(int trayWidth, int trayLength)
         {
-           PlantUnits  = new PlantUnit[width, length];
-            for (int i = 0; i < width; i++)
+            PlantUnits = new PlantUnit[trayWidth, trayLength];
+            for (int i = 0; i < trayWidth; i++)
             {
-                for (int j = 0; j < length; j++)
+                for (int j = 0; j < trayLength; j++)
                 {
                     PlantUnits[i, j] = new PlantUnit();
                 }
@@ -87,9 +87,6 @@ public class VFBuilder : MonoBehaviour
     {
     }
 
-    void constructVF()
-    {
-    }
 
     void instantiateVF()
     {
