@@ -12,23 +12,19 @@ public class VFBuilder : MonoBehaviour
     
     [SerializeField] public int shelves;
     [SerializeField] public int shelfHeight;
-    [SerializeField] public int shelfLenth;
-
+    [SerializeField] public int shelfLength;
     [SerializeField] public int trayLength;
     [SerializeField] public int trayWidth;
     
-    
     //Classes
-    /*
     
     public class VerticalFarm
     {
-        private Shelf[] _shelves;
+        public List<Shelf> Shelves { get; set; }
 
         public VerticalFarm(int amount)
         {
-            _shelves = InitializeArray<Shelf>(100);
-
+            Shelves = new List<Shelf>();
         }
         
     }
@@ -39,9 +35,18 @@ public class VFBuilder : MonoBehaviour
         private int _length;
         private Tray[,] _shelf;
 
-        public Shelf(int height, int length)
+        public Shelf(int heigth,int length)
         {
-            _shelf = new Tray[height, length];
+            _shelf = new Tray[heigth, length];
+            for (int i = 0; i < heigth; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    _shelf[i,j] = new Tray(10,10);
+                    
+                }
+                //OuterLoop
+            }
         }
         
     }
@@ -50,9 +55,18 @@ public class VFBuilder : MonoBehaviour
     {
         private SinglePlantUnit[,] _tray;
         
-        public Tray(int sizeX,int sizeY)
+        public Tray(int width,int length)
         {
-            _tray  = new SinglePlantUnit[sizeX,sizeY];
+            _tray = new SinglePlantUnit[width, length];
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    _tray[i,j] = new SinglePlantUnit(12,80);
+                    
+                }
+                //OuterLoop
+            }
         }
     }
 
@@ -68,13 +82,14 @@ public class VFBuilder : MonoBehaviour
         public float GrowthFactor { get; set; } = 0;
     }
     
-    */
+    
     
     
     
     
     void Start()
-    {
+    {   
+        
         Debug.Log("PP-Log: VFBuilder instantiate cube Patch");
         Instantiate(cube,this.transform);
 
@@ -102,16 +117,5 @@ public class VFBuilder : MonoBehaviour
     {
         
     }
-
     
-    T[] InitializeArray<T>(int length) where T : new()
-    {
-        T[] array = new T[length];
-        for (int i = 0; i < length; ++i)
-        {
-            array[i] = new T();
-        }
-
-        return array;
-    }
 }
