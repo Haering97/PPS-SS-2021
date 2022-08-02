@@ -20,11 +20,15 @@ public class VFBuilder : MonoBehaviour
     
     public class VerticalFarm
     {
-        public List<Shelf> Shelves { get; set; }
+        public Shelf[] Shelves { get; set; }
 
         public VerticalFarm(int amount)
         {
-            Shelves = new List<Shelf>();
+            Shelves = new Shelf[amount];
+            for (int i = 0; i < amount; i++)
+            {
+                Shelves[i] = new Shelf(4, 6);
+            }
         }
         
     }
@@ -93,6 +97,8 @@ public class VFBuilder : MonoBehaviour
         Debug.Log("PP-Log: VFBuilder instantiate cube Patch");
         Instantiate(cube,this.transform);
 
+        VerticalFarm myFirstFarm = new VerticalFarm(12);
+        
         Debug.Log("afterCreation");
         
         
