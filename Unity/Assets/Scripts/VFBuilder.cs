@@ -6,70 +6,63 @@ using UnityEngine;
 
 public class VFBuilder : MonoBehaviour
 {
-    
     [SerializeField] private GameObject cube;
 
-    
+
     [SerializeField] public int shelves;
     [SerializeField] public int shelfHeight;
     [SerializeField] public int shelfLength;
     [SerializeField] public int trayLength;
     [SerializeField] public int trayWidth;
-    
+
     //Classes
-    
+
     public class VerticalFarm
     {
         public Shelf[] Shelves { get; set; }
-        /*
-        public VerticalFarm(int amount)
+
+        public VerticalFarm(int amount, int shelfHeight, int shelfLength, int trayLength,int trayWidth)
         {
             Shelves = new Shelf[amount];
             for (int i = 0; i < amount; i++)
             {
-                Shelves[i] = new Shelf(4, 6);
+                Shelves[i] = new Shelf(shelfHeight,shelfLength, trayLength, trayWidth);
             }
         }
-        */
     }
 
     public class Shelf
     {
         public Tray[] Trays { get; set; }
-        /*
-        public Shelf(int height,int length)
+
+        public Shelf(int shelfheight, int shelflength, int trayLength, int trayWidth)
         {
-            var shelf = new Tray[height, length];
-            for (int i = 0; i < height; i++)
+            var shelf = new Tray[shelfheight, shelflength];
+            for (int i = 0; i < shelfheight; i++)
             {
-                for (int j = 0; j < length; j++)
+                for (int j = 0; j < shelflength; j++)
                 {
-                    shelf[i,j] = new Tray(10,10);
-                    
+                    shelf[i, j] = new Tray(trayLength, trayWidth);
                 }
-                //OuterLoop
             }
         }
-        */
     }
-    
+
     public class Tray
     {
         public PlantUnit[,] PlantUnits { get; set; }
-        /*
-        public Tray(int width,int length)
+
+        public Tray(int width, int length)
         {
-            _tray = new SinglePlantUnit[width, length];
+           PlantUnits  = new PlantUnit[width, length];
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < length; j++)
                 {
-                    _tray[i,j] = new SinglePlantUnit(12,80);
-                    
+                    PlantUnits[i, j] = new PlantUnit();
                 }
-                //OuterLoop
             }
-        }*/
+        }
     }
 
     public class PlantUnit
@@ -79,44 +72,24 @@ public class VFBuilder : MonoBehaviour
     }
 
 
-
-
-
-
     void Start()
     {
-
         Debug.Log("PP-Log: VFBuilder instantiate cube Patch");
         Instantiate(cube, this.transform);
 
-        VerticalFarm myFirstFarm = new VerticalFarm();
-        myFirstFarm.Shelves = new Shelf[shelves];
-
-        for (int i = 0; i < shelves; i++)
-        {
-            myFirstFarm.Shelves[i] = new Shelf();
-        }
-            
-        Debug.Log("afterCreation");
-        
-        
-        
+        VerticalFarm myFirstFarm = new VerticalFarm(shelves, shelfHeight, shelfLength, trayLength, trayWidth);
         
     }
-    
+
     void Update()
     {
-        
     }
 
     void constructVF()
     {
-        
     }
 
     void instantiateVF()
     {
-        
     }
-    
 }
