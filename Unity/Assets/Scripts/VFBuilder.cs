@@ -21,7 +21,7 @@ public class VFBuilder : MonoBehaviour
     public class VerticalFarm
     {
         public Shelf[] Shelves { get; set; }
-
+        /*
         public VerticalFarm(int amount)
         {
             Shelves = new Shelf[amount];
@@ -30,35 +30,33 @@ public class VFBuilder : MonoBehaviour
                 Shelves[i] = new Shelf(4, 6);
             }
         }
-        
+        */
     }
 
     public class Shelf
     {
-        private int _height;
-        private int _length;
-        private Tray[,] _shelf;
-
-        public Shelf(int heigth,int length)
+        public Tray[] Trays { get; set; }
+        /*
+        public Shelf(int height,int length)
         {
-            _shelf = new Tray[heigth, length];
-            for (int i = 0; i < heigth; i++)
+            var shelf = new Tray[height, length];
+            for (int i = 0; i < height; i++)
             {
                 for (int j = 0; j < length; j++)
                 {
-                    _shelf[i,j] = new Tray(10,10);
+                    shelf[i,j] = new Tray(10,10);
                     
                 }
                 //OuterLoop
             }
         }
-        
+        */
     }
     
     public class Tray
     {
-        private SinglePlantUnit[,] _tray;
-        
+        public PlantUnit[,] PlantUnits { get; set; }
+        /*
         public Tray(int width,int length)
         {
             _tray = new SinglePlantUnit[width, length];
@@ -71,38 +69,35 @@ public class VFBuilder : MonoBehaviour
                 }
                 //OuterLoop
             }
-        }
+        }*/
     }
 
-    public class SinglePlantUnit
+    public class PlantUnit
     {
-        public SinglePlantUnit(float humidity, float growthFactor)
-        {
-            Humidity = humidity;
-            GrowthFactor = growthFactor;
-        }
-
         public float Humidity { get; set; }
         public float GrowthFactor { get; set; } = 0;
     }
-    
-    
-    
-    
-    
-    
-    void Start()
-    {   
-        
-        Debug.Log("PP-Log: VFBuilder instantiate cube Patch");
-        Instantiate(cube,this.transform);
 
-        VerticalFarm myFirstFarm = new VerticalFarm(12);
-        
+
+
+
+
+
+    void Start()
+    {
+
+        Debug.Log("PP-Log: VFBuilder instantiate cube Patch");
+        Instantiate(cube, this.transform);
+
+        VerticalFarm myFirstFarm = new VerticalFarm();
+        myFirstFarm.Shelves = new Shelf[shelves];
+
+        for (int i = 0; i < shelves; i++)
+        {
+            myFirstFarm.Shelves[i] = new Shelf();
+        }
+            
         Debug.Log("afterCreation");
-        
-        
-        
         
         
         
