@@ -78,7 +78,9 @@ public class VFBuilder : MonoBehaviour
         Debug.Log("PP-Log: VFBuilder instantiate cube Patch");
         Instantiate(cube, this.transform);
 
-        VerticalFarm myFirstFarm = new VerticalFarm(shelves, shelfHeight, shelfLength, trayLength, trayWidth);
+        VerticalFarm myFirstFarm = new VerticalFarm(shelves, shelfHeight, shelfLength, trayWidth, trayLength);
+
+        Debug.Log(myFirstFarm.Shelves[0].Trays[0,0].PlantUnits[0,0].Humidity);
         
         Debug.Log("Finished");
     }
