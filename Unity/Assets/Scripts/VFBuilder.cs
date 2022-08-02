@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using Color = System.Drawing.Color;
 
 public class VFBuilder : MonoBehaviour
 {
+    
     [SerializeField] private GameObject cube;
 
 
@@ -43,7 +45,7 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int j = 0; j < shelfLength; j++)
                 {
-                    Trays[i, j] = new Tray( trayWidth, trayLength);
+                    Trays[i, j] = new Tray(trayWidth, trayLength);
                 }
             }
         }
@@ -68,20 +70,28 @@ public class VFBuilder : MonoBehaviour
 
     public class PlantUnit
     {
+        public GameObject Instance { get; set; }
+        public string Id { get; set; }
         public float Humidity { get; set; }
         public float GrowthFactor { get; set; } = 0;
+
+        public Color Color { get; set; } = Color.Chartreuse;
     }
 
 
     void Start()
     {
-        Debug.Log("PP-Log: VFBuilder instantiate cube Patch");
-        Instantiate(cube, this.transform);
+        Debug.Log("Start");
+
+        var cubeRenderer = cube.GetComponent<Renderer>();
+        cubeRenderer.sharedMaterial.SetColor("_Color",UnityEngine.Color.green);
 
         VerticalFarm myFirstFarm = new VerticalFarm(shelves, shelfHeight, shelfLength, trayWidth, trayLength);
 
-        Debug.Log(myFirstFarm.Shelves[0].Trays[0,0].PlantUnits[0,0].Humidity);
-        
+        Debug.Log(myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Humidity);
+
+        instantiateVF();
+
         Debug.Log("Finished");
     }
 
@@ -92,5 +102,7 @@ public class VFBuilder : MonoBehaviour
 
     void instantiateVF()
     {
+        //TODO make grid to instaniate cubes on.
+        Instantiate(cube, this.transform);
     }
 }
