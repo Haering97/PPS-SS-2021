@@ -16,25 +16,35 @@ public class VFBuilder : MonoBehaviour
     
     public class VerticalFarm
     {
-        private Shelf[] Shelves { get; set; }
+        private Shelf[] _shelves;
+
+        public VerticalFarm(int amount)
+        {
+            _shelves = new Shelf[amount];
+        }
+        
     }
 
     public class Shelf
     {
         private int _height;
         private int _length;
+        private Tray[,] _shelf;
+
+        public Shelf(int height, int length)
+        {
+            _shelf = new Tray[height, length];
+        }
+        
     }
     
     public class Tray
     {
-        private int _sizeX;
-        private int _sizeY;
-        private SinglePlantUnit[,] _plantUnits;
+        private SinglePlantUnit[,] _tray;
         
         public Tray(int sizeX,int sizeY)
         {
-            _sizeX = sizeX;
-            _sizeY = sizeY;
+            _tray  = new SinglePlantUnit[sizeX,sizeY];
         }
     }
 
@@ -54,7 +64,7 @@ public class VFBuilder : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("PP-Log: VFBuilder instantiate cube");
+        Debug.Log("PP-Log: VFBuilder instantiate cube Patch");
         Instantiate(cube,this.transform);
         
     }
