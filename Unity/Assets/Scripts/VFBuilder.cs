@@ -9,10 +9,17 @@ public class VFBuilder : MonoBehaviour
     
     [SerializeField] private GameObject cube;
 
-    [SerializeField] public int traySizeX;
-    [SerializeField] public int traySizeY;
+    
+    [SerializeField] public int shelves;
+    [SerializeField] public int shelfHeight;
+    [SerializeField] public int shelfLenth;
+
+    [SerializeField] public int trayLength;
+    [SerializeField] public int trayWidth;
     
     
+    //Classes
+    /*
     
     public class VerticalFarm
     {
@@ -20,7 +27,8 @@ public class VFBuilder : MonoBehaviour
 
         public VerticalFarm(int amount)
         {
-            _shelves = new Shelf[amount];
+            _shelves = InitializeArray<Shelf>(100);
+
         }
         
     }
@@ -60,12 +68,23 @@ public class VFBuilder : MonoBehaviour
         public float GrowthFactor { get; set; } = 0;
     }
     
+    */
+    
+    
     
     
     void Start()
     {
         Debug.Log("PP-Log: VFBuilder instantiate cube Patch");
         Instantiate(cube,this.transform);
+
+        Debug.Log("afterCreation");
+        
+        
+        
+        
+        
+        
         
     }
     
@@ -84,4 +103,15 @@ public class VFBuilder : MonoBehaviour
         
     }
 
+    
+    T[] InitializeArray<T>(int length) where T : new()
+    {
+        T[] array = new T[length];
+        for (int i = 0; i < length; ++i)
+        {
+            array[i] = new T();
+        }
+
+        return array;
+    }
 }
