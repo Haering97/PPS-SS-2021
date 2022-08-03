@@ -25,7 +25,7 @@ public class VFBuilder : MonoBehaviour
     static float spacing = 0.1f;
     static float size = 0.5f;
 
-    private Vector3 offset;
+    static Vector3 offset;
 
     void Start()
     {
@@ -36,12 +36,10 @@ public class VFBuilder : MonoBehaviour
         var cubeRenderer = cube.GetComponent<Renderer>();
         cubeRenderer.sharedMaterial.SetColor("_Color", UnityEngine.Color.green);
         
-        
-        
         //offset hier berechnen weil ich außerhalb kein Zugriff auf Serialized Values habe.
         offset = (new Vector3((float)trayWidth / 2, 0, (float)trayLength / 2) * 0.5f);
 
-        VerticalFarm myFirstFarm = new VerticalFarm(shelves, shelfHeight, shelfLength, trayWidth, trayLength);
+        VerticalFarm myFirstFarm = new VerticalFarm(cube,shelves, shelfHeight, shelfLength, trayWidth, trayLength);
 
         Debug.Log(myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Humidity);
 
@@ -65,12 +63,12 @@ public class VFBuilder : MonoBehaviour
     {
         public Shelf[] Shelves { get; set; }
 
-        public VerticalFarm(int amount, int shelfHeight, int shelfLength, int trayWidth, int trayLength)
+        public VerticalFarm(GameObject prefab,int amountShelves, int shelfHeight, int shelfLength, int trayWidth, int trayLength)
         {
-            Shelves = new Shelf[amount];
-            for (int i = 0; i < amount; i++)
+            Shelves = new Shelf[amountShelves];
+            for (int i = 0; i < amountShelves; i++)
             {
-                Shelves[i] = new Shelf(shelfHeight, shelfLength, trayWidth, trayLength);
+                Shelves[i] = new Shelf(prefab,shelfHeight, shelfLength, trayWidth, trayLength);
             }
         }
     }
@@ -79,7 +77,7 @@ public class VFBuilder : MonoBehaviour
     {
         public Tray[,] Trays { get; set; }
 
-        public Shelf(int shelfHeight, int shelfLength, int trayWidth, int trayLength)
+        public Shelf(GameObject prefab,int shelfHeight, int shelfLength, int trayWidth, int trayLength)
         {
             Trays = new Tray[shelfHeight, shelfLength];
 
@@ -87,7 +85,7 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int j = 0; j < shelfLength; j++)
                 {
-                    Trays[i, j] = new Tray(trayWidth, trayLength);
+                    Trays[i, j] = new Tray(prefab,trayWidth, trayLength);
                 }
             }
         }
@@ -97,12 +95,14 @@ public class VFBuilder : MonoBehaviour
     {
         private int _sizex;
         private int _sizez;
+        private GameObject _prefab;
         public PlantUnit[,] PlantUnits { get; set; }
 
-        public Tray(int trayWidth, int trayLength)
+        public Tray(GameObject prefab,int trayWidth, int trayLength)
         {
             _sizex = trayWidth;
             _sizez = trayLength;
+            _prefab = prefab;
             PlantUnits = new PlantUnit[trayWidth, trayLength];
             for (int i = 0; i < trayWidth; i++)
             {
@@ -113,13 +113,13 @@ public class VFBuilder : MonoBehaviour
             }
         }
 
-        private void InstantiatePlant()
+        private void InstantiatePlants(Vector3 position)
         {
             for (int i = 0; i < _sizex; i++)
             {
                 for (int j = 0; j < _sizez; j++)
                 {
-                    PlantUnits[i, j].Instance = Instantiate(cube, new Vector3(i, 0, j) * (spacing + 0.5f) - offset,
+                    PlantUnits[i, j].Instance = Instantiate(_prefab, (new Vector3(i, 0, j) * (spacing + 0.5f) - offset)+ position,
                         Quaternion.identity);
                 }
             }
