@@ -23,12 +23,45 @@ public class VFBuilder : MonoBehaviour
     static public Transform vfOrigin;
 
     static float spacing = 0.1f;
-    static float size = 0.45f;
-    static Vector3 cubeSize = new Vector3(size, size, size);
+    static float size = 0.5f;
 
+    private Vector3 offset;
+
+    void Start()
+    {
+        Debug.Log("PP-Log: Start");
+        vfOrigin = transform;
+
+        //ist nur für global, muss am besten auch in der klasse passieren, irgednwie.
+        var cubeRenderer = cube.GetComponent<Renderer>();
+        cubeRenderer.sharedMaterial.SetColor("_Color", UnityEngine.Color.green);
+        
+        
+        
+        //offset hier berechnen weil ich außerhalb kein Zugriff auf Serialized Values habe.
+        offset = (new Vector3((float)trayWidth / 2, 0, (float)trayLength / 2) * 0.5f);
+
+        VerticalFarm myFirstFarm = new VerticalFarm(shelves, shelfHeight, shelfLength, trayWidth, trayLength);
+
+        Debug.Log(myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Humidity);
+
+        var activeShelf = myFirstFarm.Shelves[0];
+
+        InstantiateTray(myFirstFarm, 0, 0, 0, vfOrigin.position);
+
+        //myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Instance.SetActive(false);
+        //myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[2, 3].Instance.SetActive(false);
+
+        Debug.Log("PP-Log: Finished");
+    }
+
+    void Update()
+    {
+    }
+    
     //Classes
-
-    public class VerticalFarm
+    
+        public class VerticalFarm
     {
         public Shelf[] Shelves { get; set; }
 
@@ -62,16 +95,32 @@ public class VFBuilder : MonoBehaviour
 
     public class Tray
     {
+        private int _sizex;
+        private int _sizez;
         public PlantUnit[,] PlantUnits { get; set; }
 
         public Tray(int trayWidth, int trayLength)
         {
+            _sizex = trayWidth;
+            _sizez = trayLength;
             PlantUnits = new PlantUnit[trayWidth, trayLength];
             for (int i = 0; i < trayWidth; i++)
             {
                 for (int j = 0; j < trayLength; j++)
                 {
                     PlantUnits[i, j] = new PlantUnit();
+                }
+            }
+        }
+
+        private void InstantiatePlant()
+        {
+            for (int i = 0; i < _sizex; i++)
+            {
+                for (int j = 0; j < _sizez; j++)
+                {
+                    PlantUnits[i, j].Instance = Instantiate(cube, new Vector3(i, 0, j) * (spacing + 0.5f) - offset,
+                        Quaternion.identity);
                 }
             }
         }
@@ -83,60 +132,36 @@ public class VFBuilder : MonoBehaviour
         public string Id { get; set; }
         public float Humidity { get; set; }
         public float GrowthFactor { get; set; } = 0;
-
-        public Vector3 cubeSize;
-        public Color Color = Color.Chartreuse;
         
+        public Color Color = Color.Chartreuse;
     }
 
-
-    void Start()
-    {
-        Debug.Log("PP-Log: Start");
-        vfOrigin = transform;
-
-        var cubeRenderer = cube.GetComponent<Renderer>();
-        cubeRenderer.sharedMaterial.SetColor("_Color", UnityEngine.Color.green);
-
-        VerticalFarm myFirstFarm = new VerticalFarm(shelves, shelfHeight, shelfLength, trayWidth, trayLength);
-
-        Debug.Log(myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Humidity);
-
-        var activeShelf = myFirstFarm.Shelves[0];
-
-        InstantiateTray(myFirstFarm, 0, 0, 0,vfOrigin.position);
-
-        //myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Instance.SetActive(false);
-        //myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[2, 3].Instance.SetActive(false);
-
-        Debug.Log("PP-Log: Finished");
-    }
-
-    void Update()
-    {
-    }
-
+    
 
     void InstantiateTray(VerticalFarm farm, int shelfNumber, int trayPositionX, int trayPositionY, Vector3 position)
     {
         //TODO make grid to instaniate cubes on.
         //TODO als Methode von Tray definieren.
-        
+
         var plants = farm.Shelves[shelfNumber].Trays[trayPositionX, trayPositionY].PlantUnits;
         float localXPosition;
         float localYPosition;
         float localXStart;
         float localYStart;
-        Vector3 offset = (new Vector3((float)trayWidth/ 2, 0, (float)trayLength / 2) * 0.5f);
-        
-        Debug.Log(offset);
-        
+
         for (int i = 0; i < trayWidth; i++)
         {
             for (int j = 0; j < trayLength; j++)
             {
-                plants[i, j].Instance = Instantiate(cube, new Vector3(i, 0, j)*(spacing+0.5f)-offset, Quaternion.identity);
+                plants[i, j].Instance = Instantiate(cube, new Vector3(i, 0, j) * (spacing + 0.5f) - offset,
+                    Quaternion.identity);
             }
         }
+    }
+
+    
+    
+    void InstantiateVF()
+    {
     }
 }
