@@ -69,6 +69,7 @@ public class VFBuilder : MonoBehaviour
                 for (int j = 0; j < trayLength; j++)
                 {
                     PlantUnits[i, j] = new PlantUnit();
+                    PlantUnits[i, j].OriginalSize = cubeSize;
                 }
             }
         }
@@ -76,6 +77,7 @@ public class VFBuilder : MonoBehaviour
 
     public class PlantUnit
     {
+        
         public GameObject Instance { get; set; }
         public string Id { get; set; }
         public float Humidity { get; set; }
@@ -91,8 +93,6 @@ public class VFBuilder : MonoBehaviour
         Debug.Log("PP-Log: Start");
         origin = transform;
 
-        
-        
         var cubeRenderer = cube.GetComponent<Renderer>();
         cubeRenderer.sharedMaterial.SetColor("_Color", UnityEngine.Color.green);
 
@@ -102,7 +102,8 @@ public class VFBuilder : MonoBehaviour
 
         var activeShelf = myFirstFarm.Shelves[0];
 
-        instantiateVF();
+        InstantiateTray(myFirstFarm,0,0,0);
+        
         Debug.Log("PP-Log: Finished");
     }
 
@@ -110,11 +111,22 @@ public class VFBuilder : MonoBehaviour
     {
         
     }
+    
 
-
-    void instantiateVF()
+    void InstantiateTray(VerticalFarm farm,int shelfNumber, int trayPositionX, int trayPositionY)
     {
         //TODO make grid to instaniate cubes on.
-        Instantiate(cube, origin);
+
+        var plants = farm.Shelves[shelfNumber].Trays[trayPositionX, trayPositionY].PlantUnits;
+        
+        for (int i = 0; i < trayWidth; i++)
+        {
+            for (int j = 0; j < trayLength; j++)
+            {
+                plants[i, j].Instance = Instantiate(cube,origin);
+            }
+        }
+        
+        
     }
 }
