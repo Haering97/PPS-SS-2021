@@ -228,7 +228,6 @@ GameObject:
   - component: {fileID: 1228462975}
   - component: {fileID: 1228462971}
   - component: {fileID: 1228462973}
-  - component: {fileID: 1228462974}
   m_Layer: 0
   m_Name: TestingObject
   m_TagString: Untagged
@@ -248,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d2fd3155e2f3f4eab09e4b723c8f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 2
+  size: 0.8
 --- !u!114 &1228462973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,23 +261,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 2370293560829473282, guid: 4bef13aeab861594e84b2a812f2a6c9d, type: 3}
-  shelves: 4
-  shelfHeight: 4
-  shelfLength: 5
-  trayWidth: 8
-  trayLength: 16
---- !u!156049354 &1228462974
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228462970}
-  m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 1}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
+  shelves: 2
+  shelfHeight: 2
+  shelfLength: 2
+  trayWidth: 5
+  trayLength: 8
 --- !u!224 &1228462975
 RectTransform:
   m_ObjectHideFlags: 0
