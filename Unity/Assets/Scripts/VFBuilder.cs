@@ -23,7 +23,7 @@ public class VFBuilder : MonoBehaviour
     static public Transform vfOrigin;
 
     static float spacing = 0.1f;
-    static float globalsize = 2f;
+    static float globalsize = 1f;
 
     static Vector3 offset;
 
@@ -37,7 +37,7 @@ public class VFBuilder : MonoBehaviour
         cubeRenderer.sharedMaterial.SetColor("_Color", UnityEngine.Color.green);
         
         //offset hier berechnen weil ich außerhalb kein Zugriff auf Serialized Values habe.
-        offset = (new Vector3((float)trayWidth / 2, 0, (float)trayLength / 2) * 0.5f);
+        offset = (new Vector3((float)(trayWidth-1+(trayWidth-1)*spacing) , 0, (float)(trayLength-1+(trayLength-1)*spacing) ) * globalsize);
 
         VerticalFarm myFirstFarm = new VerticalFarm(cube,shelves, shelfHeight, shelfLength, trayWidth, trayLength);
 
@@ -122,7 +122,7 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int j = 0; j < _sizez; j++)
                 {
-                    PlantUnits[i, j].Instance = Instantiate(_prefab, (new Vector3(i, 0, j) * (spacing*globalsize + globalsize) - offset)+ position,
+                    PlantUnits[i, j].Instance = Instantiate(_prefab, (new Vector3(i, 0, j) * (spacing*globalsize + globalsize) - offset/2)+ position,
                         Quaternion.identity);
                     PlantUnits[i, j].Instance.transform.localScale *= globalsize;
                 }
