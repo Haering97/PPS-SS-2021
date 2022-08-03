@@ -23,7 +23,7 @@ public class VFBuilder : MonoBehaviour
     static public Transform vfOrigin;
 
     static float spacing = 0.1f;
-    static float size = 0.5f;
+    static float globalsize = 2f;
 
     static Vector3 offset;
 
@@ -45,11 +45,14 @@ public class VFBuilder : MonoBehaviour
 
         var activeShelf = myFirstFarm.Shelves[0];
 
-        InstantiateTray(myFirstFarm, 0, 0, 0, vfOrigin.position);
+        //InstantiateTray(myFirstFarm, 0, 0, 0, vfOrigin.position);
+        
+        myFirstFarm.Shelves[0].Trays[0,0].InstantiatePlants(new Vector3(0,0,0));
+        
 
-        //myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Instance.SetActive(false);
-        //myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[2, 3].Instance.SetActive(false);
-
+        //ConstructVF(myFirstFarm);
+        
+        
         Debug.Log("PP-Log: Finished");
     }
 
@@ -119,8 +122,9 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int j = 0; j < _sizez; j++)
                 {
-                    PlantUnits[i, j].Instance = Instantiate(_prefab, (new Vector3(i, 0, j) * (spacing + 0.5f) - offset)+ position,
+                    PlantUnits[i, j].Instance = Instantiate(_prefab, (new Vector3(i, 0, j) * (spacing*globalsize + globalsize) - offset)+ position,
                         Quaternion.identity);
+                    PlantUnits[i, j].Instance.transform.localScale *= globalsize;
                 }
             }
         }
