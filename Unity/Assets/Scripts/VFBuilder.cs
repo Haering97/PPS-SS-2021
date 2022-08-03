@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 using Color = System.Drawing.Color;
 
 public class VFBuilder : MonoBehaviour
@@ -18,6 +20,8 @@ public class VFBuilder : MonoBehaviour
     [SerializeField] public int trayLength;
 
     public Transform origin;
+
+    static public Vector3 cubeSize = new Vector3(0.5f, 0.5f, 0.5f);
 
     //Classes
 
@@ -77,7 +81,8 @@ public class VFBuilder : MonoBehaviour
         public float Humidity { get; set; }
         public float GrowthFactor { get; set; } = 0;
 
-        public Color Color { get; set; } = Color.Chartreuse;
+        public Vector3 OriginalSize;
+        public Color Color = Color.Chartreuse;
     }
 
 
