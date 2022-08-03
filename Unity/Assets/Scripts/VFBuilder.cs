@@ -161,7 +161,17 @@ public class VFBuilder : MonoBehaviour
 
     
     
-    void InstantiateVF()
+    void ConstructVF(VerticalFarm farm)
     {
+        for (int shelfx = 0; shelfx < shelves; shelfx++)
+        {
+            for (int shelfy = 0; shelfy < shelfHeight; shelfy++)
+            {
+                for (int shelfz = 0; shelfz < shelfLength; shelfz++)
+                {
+                    farm.Shelves[shelfx].Trays[shelfz, shelfy].InstantiatePlants(new Vector3(shelfx * (((float)trayWidth)+1),shelfy,shelfz)*2);
+                }
+            }
+        }
     }
 }
