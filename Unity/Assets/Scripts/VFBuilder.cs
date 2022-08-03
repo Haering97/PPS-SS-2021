@@ -116,7 +116,7 @@ public class VFBuilder : MonoBehaviour
             }
         }
 
-        private void InstantiatePlants(Vector3 position)
+        public void InstantiatePlants(Vector3 position)
         {
             for (int i = 0; i < _sizex; i++)
             {
@@ -139,19 +139,14 @@ public class VFBuilder : MonoBehaviour
         
         public Color Color = Color.Chartreuse;
     }
-
     
-
+    
     void InstantiateTray(VerticalFarm farm, int shelfNumber, int trayPositionX, int trayPositionY, Vector3 position)
     {
         //TODO make grid to instaniate cubes on.
         //TODO als Methode von Tray definieren.
 
         var plants = farm.Shelves[shelfNumber].Trays[trayPositionX, trayPositionY].PlantUnits;
-        float localXPosition;
-        float localYPosition;
-        float localXStart;
-        float localYStart;
 
         for (int i = 0; i < trayWidth; i++)
         {
