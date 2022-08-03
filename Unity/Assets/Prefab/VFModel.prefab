@@ -45,5 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 2370293560829473282, guid: 4bef13aeab861594e84b2a812f2a6c9d, type: 3}
-  traySizeX: 2
-  traySizeY: 2
+  shelves: 10
+  shelfHeight: 2
+  shelfLength: 10
+  trayWidth: 2
+  trayLength: 10
