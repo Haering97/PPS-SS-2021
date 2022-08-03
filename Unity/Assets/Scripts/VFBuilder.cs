@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 using Color = System.Drawing.Color;
 
@@ -15,6 +16,8 @@ public class VFBuilder : MonoBehaviour
     [SerializeField] public int shelfLength;
     [SerializeField] public int trayWidth;
     [SerializeField] public int trayLength;
+
+    public Transform origin;
 
     //Classes
 
@@ -80,8 +83,11 @@ public class VFBuilder : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Start");
+        Debug.Log("PP-Log: Start");
+        origin = transform;
 
+        
+        
         var cubeRenderer = cube.GetComponent<Renderer>();
         cubeRenderer.sharedMaterial.SetColor("_Color", UnityEngine.Color.green);
 
@@ -89,19 +95,21 @@ public class VFBuilder : MonoBehaviour
 
         Debug.Log(myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Humidity);
 
-        instantiateVF();
+        var activeShelf = myFirstFarm.Shelves[0];
 
-        Debug.Log("Finished");
+        instantiateVF();
+        Debug.Log("PP-Log: Finished");
     }
 
     void Update()
     {
+        
     }
 
 
     void instantiateVF()
     {
         //TODO make grid to instaniate cubes on.
-        Instantiate(cube, this.transform);
+        Instantiate(cube, origin);
     }
 }
