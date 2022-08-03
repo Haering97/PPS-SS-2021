@@ -21,7 +21,8 @@ public class VFBuilder : MonoBehaviour
 
     public Transform origin;
 
-    static public Vector3 cubeSize = new Vector3(0.5f, 0.5f, 0.5f);
+    static public float size = 0.45f;
+    static public Vector3 cubeSize = new Vector3(size, size, size);
 
     //Classes
 
@@ -69,7 +70,6 @@ public class VFBuilder : MonoBehaviour
                 for (int j = 0; j < trayLength; j++)
                 {
                     PlantUnits[i, j] = new PlantUnit();
-                    PlantUnits[i, j].OriginalSize = cubeSize;
                 }
             }
         }
@@ -83,7 +83,7 @@ public class VFBuilder : MonoBehaviour
         public float Humidity { get; set; }
         public float GrowthFactor { get; set; } = 0;
 
-        public Vector3 OriginalSize;
+        public Vector3 cubeSize;
         public Color Color = Color.Chartreuse;
     }
 
@@ -102,8 +102,11 @@ public class VFBuilder : MonoBehaviour
 
         var activeShelf = myFirstFarm.Shelves[0];
 
-        InstantiateTray(myFirstFarm,0,0,0);
-        
+        InstantiateTray(myFirstFarm, 0, 0, 0);
+
+        myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Instance.SetActive(false);
+        myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[2, 3].Instance.SetActive(false);
+
         Debug.Log("PP-Log: Finished");
     }
 
@@ -123,7 +126,7 @@ public class VFBuilder : MonoBehaviour
         {
             for (int j = 0; j < trayLength; j++)
             {
-                plants[i, j].Instance = Instantiate(cube,origin);
+                plants[i, j].Instance = Instantiate(cube,new Vector3(i*0.53f,0,j*0.53f),origin.rotation);
             }
         }
         
