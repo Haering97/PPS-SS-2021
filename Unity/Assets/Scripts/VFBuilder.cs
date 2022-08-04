@@ -28,7 +28,7 @@ public class VFBuilder : MonoBehaviour
     static float spacingShelvesY = 0.3f;
     static float spacingShelvesZ = 0.15f;
 
-    static float globalsize = 1f;
+    static float globalsize = 0.2f;
 
     static Vector3 offset;
 
