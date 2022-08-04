@@ -172,7 +172,7 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int shelfz = 0; shelfz < shelfLength; shelfz++)
                 {
-                    farm.Shelves[shelfx].Trays[shelfz, shelfy].InstantiatePlants(
+                    farm.Shelves[shelfx].Trays[shelfy, shelfz].InstantiatePlants(
                         new Vector3(shelfx * trayWidth, shelfy, shelfz * trayLength) * (spacingTrays * globalsize + globalsize));
                     //Debug.Log(new Vector3(shelfx*trayWidth,shelfy,shelfz));
                 }
