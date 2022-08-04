@@ -23,7 +23,11 @@ public class VFBuilder : MonoBehaviour
     static public Transform vfOrigin;
 
     static float spacingPlants = 0.1f;
-    static float spacingTrays = 0.5f;
+    
+    static float spacingShelvesX = 0.8f;
+    static float spacingShelvesY = 0.3f;
+    static float spacingShelvesZ = 0.15f;
+
     static float globalsize = 1f;
 
     static Vector3 offset;
@@ -173,7 +177,12 @@ public class VFBuilder : MonoBehaviour
                 for (int shelfz = 0; shelfz < shelfLength; shelfz++)
                 {
                     farm.Shelves[shelfx].Trays[shelfy, shelfz].InstantiatePlants(
-                        new Vector3(shelfx * trayWidth, shelfy, shelfz * trayLength) * (spacingTrays * globalsize + globalsize));
+                        new Vector3(
+                            shelfx * trayWidth * (spacingShelvesX * globalsize + globalsize),
+                            shelfy * (spacingShelvesY * globalsize + globalsize),
+                            shelfz * trayLength * (spacingShelvesZ * globalsize + globalsize)
+                        )
+                    );
                     //Debug.Log(new Vector3(shelfx*trayWidth,shelfy,shelfz));
                 }
             }

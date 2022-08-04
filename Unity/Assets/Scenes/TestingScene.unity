@@ -261,11 +261,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 2370293560829473282, guid: 4bef13aeab861594e84b2a812f2a6c9d, type: 3}
-  shelves: 3
-  shelfHeight: 4
-  shelfLength: 5
-  trayWidth: 7
-  trayLength: 3
+  shelves: 5
+  shelfHeight: 5
+  shelfLength: 4
+  trayWidth: 6
+  trayLength: 8
 --- !u!224 &1228462975
 RectTransform:
   m_ObjectHideFlags: 0
