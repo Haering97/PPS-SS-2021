@@ -22,6 +22,8 @@ public class VFBuilder : MonoBehaviour
 
     [SerializeField] public bool renderSinglePlants = false;
 
+    static public VerticalFarm myFarm;
+    
     static public Transform vfOrigin;
 
     static float spacingPlants = 0.1f;
@@ -51,11 +53,9 @@ public class VFBuilder : MonoBehaviour
 
         traySize = new Vector3(trayWidth + (trayWidth * spacingPlants), 1f, trayLength + (trayWidth * spacingPlants));
 
-        VerticalFarm myFirstFarm = new VerticalFarm(cube, shelves, shelfHeight, shelfLength, trayWidth, trayLength);
-
-        Debug.Log(myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Humidity);
-
-
+        myFarm = new VerticalFarm(cube, shelves, shelfHeight, shelfLength, trayWidth, trayLength);
+            
+        //Debug.Log(myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Humidity);
         //myFirstFarm.Shelves[0].Trays[0,0].InstantiateTray(new Vector3(0,0,0));
         //myFirstFarm.Shelves[0].Trays[0, 0].InstantiatePlants(vfOrigin.position);
         //Debug.Log(offset);
