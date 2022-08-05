@@ -48,11 +48,10 @@ public class VFBuilder : MonoBehaviour
         VerticalFarm myFirstFarm = new VerticalFarm(cube, shelves, shelfHeight, shelfLength, trayWidth, trayLength);
 
         Debug.Log(myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Humidity);
+        
 
-        var activeShelf = myFirstFarm.Shelves[0];
-
-        //InstantiateTray(myFirstFarm, 0, 0, 0, vfOrigin.position);
-
+        myFirstFarm.Shelves[0].Trays[0,0].InstantiateTray(new Vector3(0,0,0));
+            
         //myFirstFarm.Shelves[0].Trays[0,0].InstantiatePlants(new Vector3(0,0,0));
 
 
@@ -129,6 +128,8 @@ public class VFBuilder : MonoBehaviour
         private int _sizex;
         private int _sizez;
         private GameObject _prefab;
+
+        public GameObject Instance;
         public PlantUnit[,] PlantUnits { get; set; }
 
         public Tray(GameObject prefab, int trayWidth, int trayLength)
@@ -159,6 +160,13 @@ public class VFBuilder : MonoBehaviour
                     PlantUnits[i, j].Instance.name = "Plant" + position.ToString();
                 }
             }
+        }
+
+        public void InstantiateTray(Vector3 position)
+        {
+            Instance = Instantiate(_prefab,position,Quaternion.identity);
+            Instance.transform.localScale *= globalsize;
+            Instance.name = "Tray" + position.ToString();
         }
     }
 
