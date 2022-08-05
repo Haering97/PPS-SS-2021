@@ -35,6 +35,7 @@ public class VFBuilder : MonoBehaviour
     static Vector3 offset;
     static Vector3 traySize;
 
+    
     void Start()
     {
         Debug.Log("PP-Log: Start");
@@ -56,22 +57,27 @@ public class VFBuilder : MonoBehaviour
 
 
         //myFirstFarm.Shelves[0].Trays[0,0].InstantiateTray(new Vector3(0,0,0));
-
-        myFirstFarm.Shelves[0].Trays[0, 0].InstantiatePlants(vfOrigin.position);
-
-
+        //myFirstFarm.Shelves[0].Trays[0, 0].InstantiatePlants(vfOrigin.position);
+        //Debug.Log(offset);
+        
         ConstructVF(myFirstFarm);
-        Debug.Log(offset);
 
+        VFSetTraysVisibility(myFirstFarm,true);
+        
         Debug.Log("PP-Log: Finished");
     }
 
     void Update()
     {
+        if (renderSinglePlants)
+        {
+            VFSetTraysVisibility();
+        }
     }
-    //Methods
     
-    void ConstructVF(VerticalFarm farm)
+    //Methods
+
+    void ConstructVF()
     {
         for (int shelfx = 0; shelfx < shelves; shelfx++)
         {
@@ -79,25 +85,22 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int shelfz = 0; shelfz < shelfLength; shelfz++)
                 {
+                    Tray tray = myFarm.Shelves[shelfx].Trays[shelfy, shelfz];
                     Vector3 newPosition = new Vector3(
                         shelfx * trayWidth * (spacingShelvesX * globalsize + globalsize),
                         shelfy * (spacingShelvesY * globalsize + globalsize),
                         shelfz * trayLength * (spacingShelvesZ * globalsize + globalsize)
                     );
-                    if (renderSinglePlants)
-                    {
-                        farm.Shelves[shelfx].Trays[shelfy, shelfz].InstantiatePlants(newPosition);
-                    }
-                    else
-                    {
-                        farm.Shelves[shelfx].Trays[shelfy, shelfz].InstantiateTray(newPosition);
-                    }
+                    tray.InstantiatePlants(newPosition);
+                    tray.SetPlantsVisibility(false);
+                    tray.InstantiateTray(newPosition);
+                    tray.SetTrayVisibility(false);
                 }
             }
         }
     }
 
-    void VFSetTraysVisibility(VerticalFarm farm, bool visibility)
+    void VFSetTraysVisibility(bool visibility)
     {
         for (int shelfx = 0; shelfx < shelves; shelfx++)
         {
@@ -105,13 +108,13 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int shelfz = 0; shelfz < shelfLength; shelfz++)
                 {
-                    farm.Shelves[shelfx].Trays[shelfy, shelfz].SetTrayVisibility(visibility);
+                    myFarm.Shelves[shelfx].Trays[shelfy, shelfz].SetTrayVisibility(visibility);
                 }
             }
         }
     }
 
-    void VFSetPlantsVisibility(VerticalFarm farm, bool visibility)
+    void VFSetPlantsVisibility(bool visibility)
     {
         for (int shelfx = 0; shelfx < shelves; shelfx++)
         {
@@ -119,7 +122,7 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int shelfz = 0; shelfz < shelfLength; shelfz++)
                 {
-                    farm.Shelves[shelfx].Trays[shelfy, shelfz].SetTrayVisibility(visibility);
+                    myFarm.Shelves[shelfx].Trays[shelfy, shelfz].SetTrayVisibility(visibility);
                 }
             }
         }
