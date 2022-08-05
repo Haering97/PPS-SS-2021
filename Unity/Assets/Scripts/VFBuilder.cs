@@ -129,7 +129,7 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int shelfz = 0; shelfz < shelfLength; shelfz++)
                 {
-                    myFarm.Shelves[shelfx].Trays[shelfy, shelfz].SetTrayVisibility(visibility);
+                    myFarm.Shelves[shelfx].Trays[shelfy, shelfz].SetPlantsVisibility(visibility);
                 }
             }
         }
