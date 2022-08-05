@@ -8,7 +8,6 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Color = System.Drawing.Color;
-
 public class VFBuilder : MonoBehaviour
 {
     [SerializeField] private GameObject cube;
@@ -37,6 +36,8 @@ public class VFBuilder : MonoBehaviour
     static Vector3 offset;
     static Vector3 traySize;
 
+    private Touch _touch;
+    
     
     void Start()
     {
@@ -70,8 +71,26 @@ public class VFBuilder : MonoBehaviour
 
     void Update()
     {
+        if (Input.touchCount > 0)
+        {
+            _touch = Input.GetTouch(0);
+            if (_touch.phase == TouchPhase.Ended)
+            {
+                renderSinglePlants = !renderSinglePlants;
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            renderSinglePlants = !renderSinglePlants;
+        }
+        
+        
         VFSetPlantsVisibility(renderSinglePlants);
         VFSetTraysVisibility(!renderSinglePlants);
+        
+        
+        
     }
     
     //Methods
