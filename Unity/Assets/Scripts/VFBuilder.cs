@@ -60,18 +60,25 @@ public class VFBuilder : MonoBehaviour
         //myFirstFarm.Shelves[0].Trays[0, 0].InstantiatePlants(vfOrigin.position);
         //Debug.Log(offset);
         
-        ConstructVF(myFirstFarm);
+        ConstructVF();
 
-        VFSetTraysVisibility(myFirstFarm,true);
+        VFSetTraysVisibility(true);
         
         Debug.Log("PP-Log: Finished");
     }
 
     void Update()
     {
+        
         if (renderSinglePlants)
         {
-            VFSetTraysVisibility();
+            VFSetTraysVisibility(false);
+            VFSetPlantsVisibility(true);
+        }
+        else
+        {
+            VFSetTraysVisibility(true);
+            VFSetPlantsVisibility(false);
         }
     }
     
