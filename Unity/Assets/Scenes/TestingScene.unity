@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d2fd3155e2f3f4eab09e4b723c8f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 0.5
+  size: 0
 --- !u!114 &1228462973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,11 +261,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 2370293560829473282, guid: 4bef13aeab861594e84b2a812f2a6c9d, type: 3}
-  shelves: 5
-  shelfHeight: 5
-  shelfLength: 4
-  trayWidth: 6
-  trayLength: 8
+  shelves: 15
+  shelfHeight: 10
+  shelfLength: 10
+  trayWidth: 10
+  trayLength: 20
+  renderSinglePlants: 0
 --- !u!224 &1228462975
 RectTransform:
   m_ObjectHideFlags: 0

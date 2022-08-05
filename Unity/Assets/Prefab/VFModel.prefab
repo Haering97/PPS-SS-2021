@@ -50,3 +50,4 @@ MonoBehaviour:
   shelfLength: 4
   trayWidth: 6
   trayLength: 8
+  renderSinglePlants: 0
