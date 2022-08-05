@@ -20,15 +20,17 @@ public class VFBuilder : MonoBehaviour
     [SerializeField] public int trayWidth;
     [SerializeField] public int trayLength;
 
+    [SerializeField] public bool renderSinglePlants = false;
+    
     static public Transform vfOrigin;
 
     static float spacingPlants = 0.1f;
     
     static float spacingShelvesX = 0.8f;
-    static float spacingShelvesY = 0.3f;
+    static float spacingShelvesY = 3f;
     static float spacingShelvesZ = 0.15f;
 
-    static float globalsize = 1f;
+    static float globalsize = 0.2f;
 
     static Vector3 offset;
     static Vector3 traySize;
@@ -52,9 +54,9 @@ public class VFBuilder : MonoBehaviour
         Debug.Log(myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Humidity);
         
 
-        myFirstFarm.Shelves[0].Trays[0,0].InstantiateTray(new Vector3(0,0,0));
+        //myFirstFarm.Shelves[0].Trays[0,0].InstantiateTray(new Vector3(0,0,0));
             
-        //myFirstFarm.Shelves[0].Trays[0,0].InstantiatePlants(new Vector3(0,0,0));
+        myFirstFarm.Shelves[0].Trays[0,0].InstantiatePlants(vfOrigin.position);
 
 
         ConstructVF(myFirstFarm);
@@ -76,14 +78,33 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int shelfz = 0; shelfz < shelfLength; shelfz++)
                 {
-                    farm.Shelves[shelfx].Trays[shelfy, shelfz].InstantiatePlants(
-                        new Vector3(
-                            shelfx * trayWidth * (spacingShelvesX * globalsize + globalsize),
-                            shelfy * (spacingShelvesY * globalsize + globalsize),
-                            shelfz * trayLength * (spacingShelvesZ * globalsize + globalsize)
-                        )
+                    Vector3 newPosition = new Vector3(
+                        shelfx * trayWidth * (spacingShelvesX * globalsize + globalsize),
+                        shelfy * (spacingShelvesY * globalsize + globalsize),
+                        shelfz * trayLength * (spacingShelvesZ * globalsize + globalsize)
                     );
-                    //Debug.Log(new Vector3(shelfx*trayWidth,shelfy,shelfz));
+                    if (renderSinglePlants)
+                    {
+                        farm.Shelves[shelfx].Trays[shelfy, shelfz].InstantiatePlants(newPosition);
+                    }
+                    else
+                    {
+                        farm.Shelves[shelfx].Trays[shelfy, shelfz].InstantiateTray(newPosition);
+                    }
+                }
+            }
+        }
+    }
+
+    void VFsetActive(VerticalFarm farm,bool toggle)
+    {
+        for (int shelfx = 0; shelfx < shelves; shelfx++)
+        {
+            for (int shelfy = 0; shelfy < shelfHeight; shelfy++)
+            {
+                for (int shelfz = 0; shelfz < shelfLength; shelfz++)
+                {
+                   farm.Shelves[shelfx].Trays[shelfy,shelfz].Instance.SetActive(toggle);
                 }
             }
         }
