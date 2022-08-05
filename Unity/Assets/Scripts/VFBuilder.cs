@@ -28,7 +28,7 @@ public class VFBuilder : MonoBehaviour
     static float spacingShelvesY = 0.3f;
     static float spacingShelvesZ = 0.15f;
 
-    static float globalsize = 0.05f;
+    static float globalsize = 1f;
 
     static Vector3 offset;
     static Vector3 traySize;
@@ -44,7 +44,8 @@ public class VFBuilder : MonoBehaviour
         //offset hier berechnen weil ich außerhalb kein Zugriff auf Serialized Values habe.
         offset = (new Vector3((trayWidth - 1 + (trayWidth - 1) * spacingPlants), 0,
             (trayLength - 1 + (trayLength - 1) * spacingPlants)) * globalsize);
-        traySize = new Vector3(trayWidth, 1f, trayLength);
+        
+        traySize = new Vector3(trayWidth + (trayWidth*spacingPlants), 1f, trayLength+ (trayWidth*spacingPlants));
 
         VerticalFarm myFirstFarm = new VerticalFarm(cube, shelves, shelfHeight, shelfLength, trayWidth, trayLength);
 
@@ -56,7 +57,7 @@ public class VFBuilder : MonoBehaviour
         //myFirstFarm.Shelves[0].Trays[0,0].InstantiatePlants(new Vector3(0,0,0));
 
 
-        //ConstructVF(myFirstFarm);
+        ConstructVF(myFirstFarm);
         Debug.Log(offset);
 
         Debug.Log("PP-Log: Finished");
@@ -166,7 +167,7 @@ public class VFBuilder : MonoBehaviour
         public void InstantiateTray(Vector3 position)
         {
             Instance = Instantiate(_prefab,position,Quaternion.identity);
-            Instance.transform.localScale = traySize * globalsize;
+            Instance.transform.localScale = traySize * globalsize * 1.02f;
             Instance.name = "Tray" + position.ToString();
         }
     }
