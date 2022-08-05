@@ -21,11 +21,11 @@ public class VFBuilder : MonoBehaviour
     [SerializeField] public int trayLength;
 
     [SerializeField] public bool renderSinglePlants = false;
-    
+
     static public Transform vfOrigin;
 
     static float spacingPlants = 0.1f;
-    
+
     static float spacingShelvesX = 0.8f;
     static float spacingShelvesY = 3f;
     static float spacingShelvesZ = 0.15f;
@@ -34,6 +34,7 @@ public class VFBuilder : MonoBehaviour
 
     static Vector3 offset;
     static Vector3 traySize;
+
     void Start()
     {
         Debug.Log("PP-Log: Start");
@@ -46,17 +47,17 @@ public class VFBuilder : MonoBehaviour
         //offset hier berechnen weil ich außerhalb kein Zugriff auf Serialized Values habe.
         offset = (new Vector3((trayWidth - 1 + (trayWidth - 1) * spacingPlants), 0,
             (trayLength - 1 + (trayLength - 1) * spacingPlants)) * globalsize);
-        
-        traySize = new Vector3(trayWidth + (trayWidth*spacingPlants), 1f, trayLength+ (trayWidth*spacingPlants));
+
+        traySize = new Vector3(trayWidth + (trayWidth * spacingPlants), 1f, trayLength + (trayWidth * spacingPlants));
 
         VerticalFarm myFirstFarm = new VerticalFarm(cube, shelves, shelfHeight, shelfLength, trayWidth, trayLength);
 
         Debug.Log(myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Humidity);
-        
+
 
         //myFirstFarm.Shelves[0].Trays[0,0].InstantiateTray(new Vector3(0,0,0));
-            
-        myFirstFarm.Shelves[0].Trays[0,0].InstantiatePlants(vfOrigin.position);
+
+        myFirstFarm.Shelves[0].Trays[0, 0].InstantiatePlants(vfOrigin.position);
 
 
         ConstructVF(myFirstFarm);
@@ -96,7 +97,7 @@ public class VFBuilder : MonoBehaviour
         }
     }
 
-    void VFsetActive(VerticalFarm farm,bool toggle)
+    void VFSetTraysVisibility(VerticalFarm farm, bool visibility)
     {
         for (int shelfx = 0; shelfx < shelves; shelfx++)
         {
@@ -104,13 +105,27 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int shelfz = 0; shelfz < shelfLength; shelfz++)
                 {
-                   farm.Shelves[shelfx].Trays[shelfy,shelfz].Instance.SetActive(toggle);
+                    farm.Shelves[shelfx].Trays[shelfy, shelfz].SetTrayVisibility(visibility);
                 }
             }
         }
     }
-    
-    
+
+    void VFSetPlantsVisibility(VerticalFarm farm, bool visibility)
+    {
+        for (int shelfx = 0; shelfx < shelves; shelfx++)
+        {
+            for (int shelfy = 0; shelfy < shelfHeight; shelfy++)
+            {
+                for (int shelfz = 0; shelfz < shelfLength; shelfz++)
+                {
+                    farm.Shelves[shelfx].Trays[shelfy, shelfz].SetTrayVisibility(visibility);
+                }
+            }
+        }
+    }
+
+
     //Classes
 
     public class VerticalFarm
@@ -185,9 +200,25 @@ public class VFBuilder : MonoBehaviour
             }
         }
 
+        public void SetTrayVisibility(bool visibility)
+        {
+            Instance.SetActive(visibility);
+        }
+
+        public void SetPlantsVisibility(bool visibility)
+        {
+            for (int i = 0; i < _sizex; i++)
+            {
+                for (int j = 0; j < _sizez; j++)
+                {
+                    PlantUnits[i, j].Instance.SetActive(visibility);
+                }
+            }
+        }
+
         public void InstantiateTray(Vector3 position)
         {
-            Instance = Instantiate(_prefab,position,Quaternion.identity);
+            Instance = Instantiate(_prefab, position, Quaternion.identity);
             Instance.transform.localScale = traySize * globalsize * 1.02f;
             Instance.name = "Tray" + position.ToString();
         }
@@ -202,6 +233,4 @@ public class VFBuilder : MonoBehaviour
 
         public Color Color = Color.Chartreuse;
     }
-    
-    
 }
