@@ -62,24 +62,16 @@ public class VFBuilder : MonoBehaviour
         
         ConstructVF();
 
-        VFSetTraysVisibility(true);
+        //VFSetTraysVisibility(true);
+        //VFSetPlantsVisibility(true);
         
         Debug.Log("PP-Log: Finished");
     }
 
     void Update()
     {
-        
-        if (renderSinglePlants)
-        {
-            VFSetTraysVisibility(false);
-            VFSetPlantsVisibility(true);
-        }
-        else
-        {
-            VFSetTraysVisibility(true);
-            VFSetPlantsVisibility(false);
-        }
+        VFSetPlantsVisibility(renderSinglePlants);
+        VFSetTraysVisibility(!renderSinglePlants);
     }
     
     //Methods
