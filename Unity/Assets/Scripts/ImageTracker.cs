@@ -30,7 +30,7 @@ public class ImageTracker : MonoBehaviour
             Debug.Log("PP-Log:"+trackedImage.referenceImage.name);
             
             var offsetPos = new Vector3(0f,0.1f,0);
-            var scaleFactor = 0.5f;
+            //var scaleFactor = 0.5f;
             //TODO Rotation auslagern und im UI bereitstellen
             //TODO Multiple Prefabs and referenceImages
             //TODO Dynamic Prefabs

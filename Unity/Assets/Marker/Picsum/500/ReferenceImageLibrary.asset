@@ -35,7 +35,7 @@ MonoBehaviour:
       m_GuidHigh: 7651262172761667818
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 0
-    m_Name: Display2
+    m_Name: Laptop
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5445661848380946952

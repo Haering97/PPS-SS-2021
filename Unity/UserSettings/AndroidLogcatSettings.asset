@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "3d21f5bc",
     "m_SelectedPackage": {
-        "deviceId": "3d21f5bc",
-        "name": "com.HRing.VFAR",
-        "processId": 28901,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -16,45 +16,27 @@
         },
         {
             "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.GitTest",
-            "processId": 18898,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.GitTest",
-            "processId": 20077,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.GitTest",
-            "processId": 20579,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.GitTest",
-            "processId": 20279,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.Lemmy.GitTest",
-            "processId": 26831,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 28040,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
             "name": "com.HRing.VFAR",
             "processId": 28901,
-            "exited": false
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 25313,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 28485,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 22355,
+            "exited": true
         }
     ],
     "m_Tags": {
@@ -108,7 +90,7 @@
         "Behavior": 0
     },
     "m_FilterOptions": {
-        "m_Filter": "PP-Log:",
+        "m_Filter": "",
         "m_UseRegularExpressions": false,
         "m_MatchCase": false
     },
