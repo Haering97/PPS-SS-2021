@@ -37,8 +37,11 @@ public class VFBuilder : MonoBehaviour
     static Vector3 traySize;
 
     private Touch _touch;
-    
-    
+
+    static public float fps;
+    static public Text fpsText;
+
+
     void Start()
     {
         Debug.Log("PP-Log: Start");
@@ -65,6 +68,8 @@ public class VFBuilder : MonoBehaviour
 
         //VFSetTraysVisibility(true);
         //VFSetPlantsVisibility(true);
+        
+        InvokeRepeating(nameof(GetFPS), 1,1);
         
         Debug.Log("PP-Log: Finished");
     }
@@ -146,6 +151,11 @@ public class VFBuilder : MonoBehaviour
         }
     }
 
+    public void GetFPS()
+    {
+        fps = (int) (1f / Time.unscaledDeltaTime);
+        Debug.Log("PP-Log: FPS="+fps);
+    }
 
     //Classes
 
