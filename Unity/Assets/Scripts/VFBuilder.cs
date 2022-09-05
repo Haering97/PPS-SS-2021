@@ -47,7 +47,7 @@ public class VFBuilder : MonoBehaviour
         Debug.Log("PP-Log: Start");
         vfOrigin = transform;
 
-        //ist nur für global, muss am besten auch in der klasse passieren, irgednwie.
+        //ist nur für global, muss am besten auch in der klasse passieren.
         var cubeRenderer = cube.GetComponent<Renderer>();
         cubeRenderer.sharedMaterial.SetColor("_Color", UnityEngine.Color.green);
 
@@ -57,6 +57,8 @@ public class VFBuilder : MonoBehaviour
 
         traySize = new Vector3(trayWidth + (trayWidth * spacingPlants), 1f, trayLength + (trayWidth * spacingPlants));
 
+        
+        
         myFarm = new VerticalFarm(cube, shelves, shelfHeight, shelfLength, trayWidth, trayLength);
             
         //Debug.Log(myFirstFarm.Shelves[0].Trays[0, 0].PlantUnits[0, 0].Humidity);
@@ -64,7 +66,7 @@ public class VFBuilder : MonoBehaviour
         //myFirstFarm.Shelves[0].Trays[0, 0].InstantiatePlants(vfOrigin.position);
         //Debug.Log(offset);
         
-        ConstructVF();
+        ConstructVF(myFarm);
 
         //VFSetTraysVisibility(true);
         //VFSetPlantsVisibility(true);
@@ -91,16 +93,14 @@ public class VFBuilder : MonoBehaviour
         }
         
         
+        
         VFSetPlantsVisibility(renderSinglePlants);
         VFSetTraysVisibility(!renderSinglePlants);
-        
-        
-        
     }
     
     //Methods
 
-    void ConstructVF()
+    void ConstructVF(VerticalFarm farm)
     {
         for (int shelfx = 0; shelfx < shelves; shelfx++)
         {
@@ -108,7 +108,7 @@ public class VFBuilder : MonoBehaviour
             {
                 for (int shelfz = 0; shelfz < shelfLength; shelfz++)
                 {
-                    Tray tray = myFarm.Shelves[shelfx].Trays[shelfy, shelfz];
+                    Tray tray = farm.Shelves[shelfx].Trays[shelfy, shelfz];
                     Vector3 newPosition = new Vector3(
                         shelfx * trayWidth * (spacingShelvesX * globalsize + globalsize),
                         shelfy * (spacingShelvesY * globalsize + globalsize),
