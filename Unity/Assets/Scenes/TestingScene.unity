@@ -264,8 +264,8 @@ MonoBehaviour:
   shelves: 3
   shelfHeight: 3
   shelfLength: 3
-  trayWidth: 20
-  trayLength: 30
+  trayWidth: 5
+  trayLength: 10
   renderSinglePlants: 0
 --- !u!224 &1228462975
 RectTransform:
