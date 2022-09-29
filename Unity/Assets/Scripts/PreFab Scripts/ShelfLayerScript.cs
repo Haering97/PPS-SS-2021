@@ -5,13 +5,19 @@ using UnityEngine;
 public class ShelfLayerScript : MonoBehaviour
 {
     [SerializeField] private GameObject tray;
+    public VFManager VfManager;
 
+    private int shelfLength;
     public int id;
-    public int shelfLength;
-    
+
     // Start is called before the first frame update
     void Start()
     {
+        
+        VfManager = GameObject.Find("Root").GetComponent<VFManager>();
+        shelfLength = VfManager.shelfLength;
+        
+        
         for (int i = 0; i < shelfLength; i++)
         {
             var trayInstance = Instantiate(tray, transform);
