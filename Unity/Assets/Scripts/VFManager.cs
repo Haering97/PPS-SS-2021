@@ -19,10 +19,8 @@ public class VFManager : MonoBehaviour
         for (int i = 0; i < numberOfShelves; i++)
         {
             var shelfInstance = Instantiate(shelf, vfOrigin);
-            var shelfScript = shelf.GetComponent<ShelfScript>();
+            var shelfScript = shelfInstance.GetComponent<ShelfScript>();
             shelfScript.id = i;
-            shelfScript.shelfHeight = shelfHeight;
-            shelfScript.shelfLength = shelfLength;
         }
         
 
