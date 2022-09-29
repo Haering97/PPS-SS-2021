@@ -45,3 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tray: {fileID: 807887048098426499, guid: 759ec5f429deba8428f34282ff6a4fa4, type: 3}
+  rootObject: {fileID: 1863236977891914874, guid: 370d4d8cacf24ed40ba5652aeae7969b,
+    type: 3}
+  id: 0

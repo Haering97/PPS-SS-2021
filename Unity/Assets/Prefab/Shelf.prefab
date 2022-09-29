@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShelfLayer: {fileID: 8575024166592695748, guid: 1bd6f613d92c8464fb20fc6217816ef8,
     type: 3}
+  rootObject: {fileID: 1863236977891914874, guid: 370d4d8cacf24ed40ba5652aeae7969b,
+    type: 3}
   id: 0
-  shelfHeight: 0
-  shelfLength: 0
