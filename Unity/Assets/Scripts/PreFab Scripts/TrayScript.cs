@@ -24,7 +24,7 @@ public class TrayScript : MonoBehaviour
         {
             for (int j = 0; j < _trayLength; j++)
             {
-                var cubeInstance = Instantiate(cube, transform);
+                var cubeInstance = Instantiate(cube, transform); //using absolute positions here, kills the parenting!!!
                 
             }
         }
