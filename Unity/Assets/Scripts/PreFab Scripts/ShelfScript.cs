@@ -6,16 +6,22 @@ public class ShelfScript : MonoBehaviour
 {
     
     [SerializeField] private GameObject ShelfLayer;
+    //[SerializeField] private GameObject VFManager;
+    public VFManager VfManager;
+    
+    private int shelfHeight;
     public int id;
-    public int shelfHeight;
-    public int shelfLength;
     void Start()
     {
+        VfManager = GameObject.Find("Root").GetComponent<VFManager>();
+
+        shelfHeight = VfManager.shelfHeight;
+        
         for (int i = 0; i < shelfHeight; i++)
         {
             var shelfLayerInstance= Instantiate(ShelfLayer, transform);
             var shelfLayerScript = shelfLayerInstance.GetComponent<ShelfLayerScript>();
-            shelfLayerScript.shelfLength = shelfLength;
+            
         }
     }
 
