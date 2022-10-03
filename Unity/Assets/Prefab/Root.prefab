@@ -84,11 +84,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shelf: {fileID: 3825167754875509551, guid: 088e1f0fd1373a74c8ae29c3cee084c2, type: 3}
-  numberOfShelves: 3
+  numberOfShelves: 5
   shelfHeight: 5
-  shelfLength: 3
-  trayWidth: 3
-  trayLength: 3
+  shelfLength: 4
+  trayWidth: 5
+  trayLength: 6
   spacingShelves: 3
   spacingLayer: 2
   spacingTrays: 2
