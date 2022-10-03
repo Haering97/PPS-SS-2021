@@ -87,5 +87,5 @@ MonoBehaviour:
   numberOfShelves: 3
   shelfHeight: 5
   shelfLength: 3
-  trayWidth: 1
-  trayLength: 1
+  trayWidth: 3
+  trayLength: 3
