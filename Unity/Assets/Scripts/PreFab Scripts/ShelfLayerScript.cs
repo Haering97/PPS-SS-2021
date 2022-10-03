@@ -23,7 +23,7 @@ public class ShelfLayerScript : MonoBehaviour
         {
             var trayInstance = Instantiate(tray, transform);
             var trayScript = trayInstance.GetComponent<TrayScript>();
-            //TODO stat durchscleifen daten vom Manager beziehen.
+            trayScript.id = i;
         }
     }
 

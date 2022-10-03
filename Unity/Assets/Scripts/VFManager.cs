@@ -12,6 +12,12 @@ public class VFManager : MonoBehaviour
     [SerializeField] public int trayLength;
     
     static public Transform vfOrigin;
+    
+    public float spacingShelves = 5f;
+    public float spacingLayer = 2f;
+    public float spacingPlants = 0.1f;
+    
+    public float globalsize = 1f;
 
     void Start()
     {
@@ -19,6 +25,7 @@ public class VFManager : MonoBehaviour
         for (int i = 0; i < numberOfShelves; i++)
         {
             var shelfInstance = Instantiate(shelf, vfOrigin);
+            shelfInstance.transform.position += new Vector3(i, 0, 0) * spacingShelves;
             var shelfScript = shelfInstance.GetComponent<ShelfScript>();
             shelfScript.id = i;
         }

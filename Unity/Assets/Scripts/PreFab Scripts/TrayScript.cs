@@ -15,10 +15,6 @@ public class TrayScript : MonoBehaviour
     private int _trayLength;
     
     
-    static float spacingPlants = 0.1f;
-    
-    static float globalsize = 1f;
-    
     void Start()
     {
         _vfManager = rootObject.GetComponent<VFManager>();
@@ -30,8 +26,8 @@ public class TrayScript : MonoBehaviour
             for (int j = 0; j < _trayLength; j++)
             {
                 var cubeInstance = Instantiate(cube, transform); //using absolute positions here, kills the parenting!!!
-                cubeInstance.transform.position += new Vector3(i, 0, j) * (globalsize + spacingPlants);
-                cubeInstance.transform.localScale *= globalsize;
+                cubeInstance.transform.position += new Vector3(i, 0, j) * (_vfManager.globalsize + _vfManager.spacingPlants);
+                cubeInstance.transform.localScale *= _vfManager.globalsize;
             }
         }
 

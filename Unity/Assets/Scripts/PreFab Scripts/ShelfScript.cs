@@ -10,7 +10,10 @@ public class ShelfScript : MonoBehaviour
 
     private VFManager _vfManager;
     private int _shelfHeight;
+    
+    
     public int id;
+    
     void Start()
     {
         _vfManager = rootObject.GetComponent<VFManager>();
@@ -20,7 +23,8 @@ public class ShelfScript : MonoBehaviour
         for (int i = 0; i < _shelfHeight; i++)
         {
             var shelfLayerInstance= Instantiate(ShelfLayer, transform);
-
+            shelfLayerInstance.transform.position += new Vector3(0, i, 0) * _vfManager.spacingLayer;
+            Debug.Log(_vfManager.spacingLayer);
         }
     }
 

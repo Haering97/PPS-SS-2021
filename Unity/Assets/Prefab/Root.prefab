@@ -89,3 +89,7 @@ MonoBehaviour:
   shelfLength: 3
   trayWidth: 3
   trayLength: 3
+  spacingShelves: 5
+  spacingLayer: 2
+  spacingPlants: 0.1
+  globalsize: 1
