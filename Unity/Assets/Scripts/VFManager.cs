@@ -33,7 +33,7 @@ public class VFManager : MonoBehaviour
         for (int i = 0; i < numberOfShelves; i++)
         {
             var shelfInstance = Instantiate(shelf, vfOrigin);
-            shelfInstance.transform.position += new Vector3(i, 0, 0) * spacingShelves;
+            shelfInstance.transform.position += new Vector3(i, 0, 0) * spacingShelvesDynamic;
             var shelfScript = shelfInstance.GetComponent<ShelfScript>();
             shelfScript.id = i;
         }

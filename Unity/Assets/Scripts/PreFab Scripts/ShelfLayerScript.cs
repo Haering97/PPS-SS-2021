@@ -22,6 +22,7 @@ public class ShelfLayerScript : MonoBehaviour
         for (int i = 0; i < _shelfLength; i++)
         {
             var trayInstance = Instantiate(tray, transform);
+            trayInstance.transform.position += new Vector3(0,0,i) * _vfManager.spacingTraysDynamic;
             var trayScript = trayInstance.GetComponent<TrayScript>();
             trayScript.id = i;
         }
