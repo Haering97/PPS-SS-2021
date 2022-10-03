@@ -24,7 +24,6 @@ public class ShelfScript : MonoBehaviour
         {
             var shelfLayerInstance= Instantiate(ShelfLayer, transform);
             shelfLayerInstance.transform.position += new Vector3(0, i, 0) * _vfManager.spacingLayer;
-            Debug.Log(_vfManager.spacingLayer);
         }
     }
 

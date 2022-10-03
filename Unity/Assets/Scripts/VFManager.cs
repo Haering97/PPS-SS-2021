@@ -13,7 +13,7 @@ public class VFManager : MonoBehaviour
     
     static public Transform vfOrigin;
     
-    public float spacingShelves = 5f;
+    public float spacingShelves = 2f;
     public float spacingLayer = 2f;
     public float spacingTrays = 2f;
     public float spacingPlants = 0.1f;
@@ -27,7 +27,7 @@ public class VFManager : MonoBehaviour
     {
         vfOrigin = transform;
         spacingShelvesDynamic = spacingShelves + trayWidth;
-        spacingTraysDynamic = spacingTrays + trayLength;
+        //spacingTraysDynamic = spacingTrays + trayLength;
         
         
         for (int i = 0; i < numberOfShelves; i++)
@@ -40,10 +40,14 @@ public class VFManager : MonoBehaviour
         
 
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
+    }
+
+    public float getSpacingTraysDynamic()
+    {
+        return spacingTrays + trayLength;
     }
 }
