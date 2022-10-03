@@ -15,13 +15,21 @@ public class VFManager : MonoBehaviour
     
     public float spacingShelves = 5f;
     public float spacingLayer = 2f;
+    public float spacingTrays = 2f;
     public float spacingPlants = 0.1f;
+
+    public float spacingShelvesDynamic;
+    public float spacingTraysDynamic;
     
     public float globalsize = 1f;
 
     void Start()
     {
         vfOrigin = transform;
+        spacingShelvesDynamic = spacingShelves + trayWidth;
+        spacingTraysDynamic = spacingTrays + trayLength;
+        
+        
         for (int i = 0; i < numberOfShelves; i++)
         {
             var shelfInstance = Instantiate(shelf, vfOrigin);
