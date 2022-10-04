@@ -7,9 +7,7 @@ public class InputManager : MonoBehaviour
 {
     private TouchControls controls;
     private Coroutine zoomCoroutine;
-
-    private float prevDist;
-    private float distance;
+    
     private void Awake()
     {
         controls = new TouchControls();
@@ -37,14 +35,13 @@ public class InputManager : MonoBehaviour
     }
     private void ZoomEnd()
     {
-        prevDist = distance;
         StopCoroutine(zoomCoroutine);
     }
 
     IEnumerator Zoomdetection()
     {
-        distance = 0f;
-        prevDist = 0f;
+        var distance = 0f;
+        var prevDist = 0f;
         while (true)
         {
             distance = Vector2.Distance(controls.Touch.PrimaryFingerPosition.ReadValue<Vector2>(),
