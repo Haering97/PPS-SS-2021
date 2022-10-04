@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "3d21f5bc",
         "name": "com.HRing.VFAR",
-        "processId": 2921,
+        "processId": 28644,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -102,6 +102,72 @@
             "deviceId": "3d21f5bc",
             "name": "com.HRing.VFAR",
             "processId": 2921,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 7034,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 21051,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 21747,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 22732,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 23552,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 24536,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 25950,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 26557,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 27107,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 27969,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 28644,
             "exited": false
         }
     ],
