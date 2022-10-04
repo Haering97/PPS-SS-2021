@@ -23,7 +23,7 @@ public class ShelfScript : MonoBehaviour
         for (int i = 0; i < _shelfHeight; i++)
         {
             var shelfLayerInstance= Instantiate(ShelfLayer, transform);
-            shelfLayerInstance.transform.position += new Vector3(0, i, 0) * _vfManager.spacingLayer;
+            shelfLayerInstance.transform.position += new Vector3(0, i, 0) * _vfManager.spacingLayer * _vfManager.globalsize;
         }
     }
 
