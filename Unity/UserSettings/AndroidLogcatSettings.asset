@@ -1,19 +1,13 @@
 {
     "m_SelectedDeviceId": "3d21f5bc",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "3d21f5bc",
+        "name": "com.HRing.VFAR",
+        "processId": 2921,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.oppo.launcher",
-            "processId": 3450,
-            "exited": false
-        },
         {
             "deviceId": "3d21f5bc",
             "name": "com.HRing.VFAR",
@@ -37,6 +31,78 @@
             "name": "com.HRing.VFAR",
             "processId": 22355,
             "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.oppo.launcher",
+            "processId": 3300,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 21318,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 22741,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 24489,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 24953,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 25920,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 27331,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 29299,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 29792,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 31800,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 1629,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 2921,
+            "exited": false
         }
     ],
     "m_Tags": {

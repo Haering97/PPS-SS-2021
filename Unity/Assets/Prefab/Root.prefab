@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1863236977891914879}
   - component: {fileID: 1863236977891914875}
-  - component: {fileID: 1863236977891914877}
   - component: {fileID: 1863236977891914880}
   m_Layer: 0
   m_Name: Root
@@ -52,25 +51,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 0
---- !u!114 &1863236977891914877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863236977891914874}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b865ab331a809ed6490b713b21c73aa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 2370293560829473282, guid: 4bef13aeab861594e84b2a812f2a6c9d, type: 3}
-  shelves: 3
-  shelfHeight: 3
-  shelfLength: 3
-  trayWidth: 5
-  trayLength: 10
-  renderSinglePlants: 0
 --- !u!114 &1863236977891914880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,8 +64,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shelf: {fileID: 3825167754875509551, guid: 088e1f0fd1373a74c8ae29c3cee084c2, type: 3}
-  numberOfShelves: 5
-  shelfHeight: 5
+  numberOfShelves: 4
+  shelfHeight: 4
   shelfLength: 4
   trayWidth: 5
   trayLength: 6
@@ -93,6 +73,4 @@ MonoBehaviour:
   spacingLayer: 2
   spacingTrays: 2
   spacingPlants: 0.1
-  spacingShelvesDynamic: 0
-  spacingTraysDynamic: 0
-  globalsize: 1
+  globalsize: 0.02
