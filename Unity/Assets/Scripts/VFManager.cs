@@ -24,7 +24,7 @@ public class VFManager : MonoBehaviour
     
     public float globalsize = 1f;
 
-    public GameObject[] shelves;
+    private GameObject[] shelves;
      
     void Start()
     {
