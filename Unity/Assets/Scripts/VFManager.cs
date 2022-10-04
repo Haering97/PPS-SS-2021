@@ -29,7 +29,7 @@ public class VFManager : MonoBehaviour
     void Start()
     {
         vfOrigin = transform;
-        _spacingShelvesDynamic = spacingShelves + trayWidth;
+        _spacingShelvesDynamic = (spacingShelves + trayWidth) * globalsize;
         //spacingTraysDynamic = spacingTrays + trayLength;
         shelves = new GameObject[numberOfShelves];
          
@@ -52,8 +52,9 @@ public class VFManager : MonoBehaviour
         
         
         Debug.Log("Farm Instantiated");
-        //Testing
         
+        //Testing
+
 
     }
     
@@ -64,7 +65,7 @@ public class VFManager : MonoBehaviour
 
     public float getSpacingTraysDynamic()
     {
-        return spacingTrays + trayLength;
+        return (spacingTrays + trayLength)*globalsize;
     }
 
     public Vector3 getTraySize()
@@ -72,7 +73,8 @@ public class VFManager : MonoBehaviour
         return new Vector3(
             trayWidth + (trayWidth * spacingPlants), 
             1f,
-            trayLength + (trayWidth * spacingPlants));
+            trayLength + (trayWidth * spacingPlants)
+            )*globalsize;
     }
 
     public Vector3 getOffset()

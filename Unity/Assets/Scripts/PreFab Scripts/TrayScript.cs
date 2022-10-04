@@ -32,12 +32,13 @@ public class TrayScript : MonoBehaviour
                 cubeInstance.transform.position += new Vector3(i, 0, j) * (_vfManager.globalsize + _vfManager.spacingPlants);
                 cubeInstance.transform.position -= _vfManager.getOffset() / 2;
                 cubeInstance.transform.localScale *= _vfManager.globalsize;
-                cubeInstance.SetActive(true);
+                //starting with singlecubes disabled
+                cubeInstance.SetActive(false);
             }
         }
         //Instantiate as a Tray
         var trayInstance = Instantiate(cube, transform);
-        trayInstance.transform.localScale = _vfManager.getTraySize() * _vfManager.globalsize * 1.02f;
+        trayInstance.transform.localScale = _vfManager.getTraySize() * 1.02f;
         trayInstance.SetActive(true);
         //TODO an die selbe stelle wie die cubes bewegen
     }
