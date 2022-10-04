@@ -50,15 +50,15 @@ public class InputManager : MonoBehaviour
             //Zoom Out
             if (distance > prevDist)
             {
-                this.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f) * (this.transform.localScale.magnitude * 0.2f);
+                this.transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f) * (this.transform.localScale.magnitude * 0.2f);
             }
             //Zoom In
             else if (distance < prevDist)
             {
-                this.transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f) * (this.transform.localScale.magnitude * 0.2f);
+                this.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f) * (this.transform.localScale.magnitude * 0.2f);
             }
-                
-            
+
+            prevDist = distance;
             yield return null;
         }
 
