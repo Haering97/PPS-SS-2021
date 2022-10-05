@@ -30,8 +30,9 @@ public class VFManager : MonoBehaviour
 
     public List<GameObject> layer1;
 
-    public bool renderSingleCubes;
-    
+    //because we always start with just trays.
+    public bool renderSingleCubes = false;
+
     void Start()
     {
         vfOrigin = transform;
@@ -66,22 +67,51 @@ public class VFManager : MonoBehaviour
                 layer.GetComponent<ShelfLayerScript>().trays.ForEach(tray =>
                     tray.GetComponent<TrayScript>().cubeObjects.ForEach(cube => cube.SetActive(false)))));
                     */
+        
+        
     }
 
     void Update()
     {
-        if (renderSingleCubes)
+        
+        
+    }
+    
+    
+
+    
+
+    public void setLayerVisibillity(int layer, bool visibility)
+    {
+
+        foreach (var shelfScript in shelvesScripts)
         {
-            showSingleCubes(true);
-        }
-        else
-        {
-            showSingleCubes(false);
+
+            foreach (var shelfLayer in shelfScript.shelfLayersScripts)
+            {
+
+                if (shelfLayer.layer == layer)
+                {
+                    foreach (var tray in shelfLayer.traysScripts)
+                    {
+                        if (renderSingleCubes)
+                        {
+                            tray.cubeObjects.ForEach(cube => cube.SetActive(visibility));
+                        }
+                        else
+                        {
+                            tray.trayObject.SetActive(visibility);
+                        }
+                        
+                    }
+                }
+            }
         }
     }
 
     public void showSingleCubes(bool visibility)
     {
+        renderSingleCubes = visibility;
         foreach (var shelfScript in shelvesScripts)
         {
             foreach (var shelflayer in shelfScript.shelfLayersScripts)
@@ -94,25 +124,6 @@ public class VFManager : MonoBehaviour
             }
         }
     }
-
-    public void setLayerVisibillity(int layer, bool visibility)
-    {
-        foreach (var shelfScript in shelvesScripts)
-        {
-            foreach (var shelfLayer in shelfScript.shelfLayersScripts)
-            {
-                if (shelfLayer.layer == layer)
-                {
-                    foreach (var tray in shelfLayer.traysScripts)
-                    {
-                        tray.cubeObjects.ForEach(cube => cube.SetActive(visibility));
-                        tray.trayObject.SetActive(visibility);
-                    }
-                }
-            }
-        }
-    }
-
 
     /* OLD WAY WITHOUT SCRIPT REFERENCE
     public void showSingleCubes(bool visibillity)
