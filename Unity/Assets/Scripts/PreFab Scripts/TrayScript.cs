@@ -10,6 +10,7 @@ public class TrayScript : MonoBehaviour
     private VFManager _vfManager;
 
     public int id;
+    public int layer;
 
     private int _trayWidth;
     private int _trayLength;
@@ -34,10 +35,15 @@ public class TrayScript : MonoBehaviour
                     new Vector3(i, 0, j) * (_vfManager.globalsize) * (1 + _vfManager.spacingPlants);
                 cubeInstance.transform.position -= _vfManager.getOffset() / 2;
                 cubeInstance.transform.localScale *= _vfManager.globalsize;
-                cubeInstance.name = "Plant " + i;
+                cubeInstance.name = "Plant " + cubeObjects.Count;
                 cubeObjects.Add(cubeInstance);
+                if (layer == 1)
+                {
+                    _vfManager.layer1.Add(cubeInstance);
+                    Debug.Log("go added");
+                }
                 //starting with singlecubes disabled
-                cubeInstance.SetActive(false);
+                //cubeInstance.SetActive(false);
             }
         }
 
@@ -45,11 +51,13 @@ public class TrayScript : MonoBehaviour
         var trayInstance = Instantiate(cube, transform);
         trayInstance.transform.localScale = _vfManager.getTraySize() * 1.02f;
         trayObject = trayInstance;
+        
         trayInstance.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
     }
 }

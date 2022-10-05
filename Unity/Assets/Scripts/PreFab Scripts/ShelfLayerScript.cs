@@ -9,6 +9,7 @@ public class ShelfLayerScript : MonoBehaviour
 
     private VFManager _vfManager;
     private int _shelfLength;
+    public int layer;
     public int id;
 
     public List<GameObject> trays;
@@ -27,6 +28,7 @@ public class ShelfLayerScript : MonoBehaviour
             trayInstance.name = "Tray " + i;
             var trayScript = trayInstance.GetComponent<TrayScript>();
             trayScript.id = i;
+            trayScript.layer = layer;
             trays.Add(trayInstance);
         }
     }

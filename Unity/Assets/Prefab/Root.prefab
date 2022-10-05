@@ -75,6 +75,8 @@ MonoBehaviour:
   spacingTrays: 2
   spacingPlants: 0.1
   globalsize: 0.02
+  shelves: []
+  layer1: []
 --- !u!114 &4417966235777188099
 MonoBehaviour:
   m_ObjectHideFlags: 0

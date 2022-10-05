@@ -26,6 +26,10 @@ public class VFManager : MonoBehaviour
 
     public List<GameObject> shelves;
 
+    //public List<List<GameObject>> layers;
+    public List<GameObject> layer1;
+    
+
     void Start()
     {
         vfOrigin = transform;
@@ -57,8 +61,11 @@ public class VFManager : MonoBehaviour
 
     void Update()
     {
+        
     }
 
+    
+    
     public float getSpacingTraysDynamic()
     {
         return (spacingTrays + trayLength) * globalsize;

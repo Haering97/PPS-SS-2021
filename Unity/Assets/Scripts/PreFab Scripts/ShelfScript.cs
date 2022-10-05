@@ -25,6 +25,8 @@ public class ShelfScript : MonoBehaviour
             shelfLayerInstance.transform.position +=
                 new Vector3(0, i, 0) * _vfManager.spacingLayer * _vfManager.globalsize;
             shelfLayerInstance.name = "Layer " + i;
+            var shelfLayerScript = shelfLayerInstance.GetComponent<ShelfLayerScript>();
+            shelfLayerScript.layer = i;
             shelfLayers.Add(shelfLayerInstance);
         }
     }
