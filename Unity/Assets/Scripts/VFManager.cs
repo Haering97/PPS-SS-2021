@@ -26,10 +26,12 @@ public class VFManager : MonoBehaviour
 
     public List<GameObject> shelves;
 
-    //public List<List<GameObject>> layers;
-    public List<GameObject> layer1;
-    
+    public List<ShelfScript> shelvesScripts;
 
+    public List<GameObject> layer1;
+
+    public bool renderSingleCubes;
+    
     void Start()
     {
         vfOrigin = transform;
@@ -50,6 +52,7 @@ public class VFManager : MonoBehaviour
             shelfInstance.name = "Shelf " + i;
             var shelfScript = shelfInstance.GetComponent<ShelfScript>();
             shelfScript.id = i;
+            shelvesScripts.Add(shelfScript);
             shelves.Add(shelfInstance);
         }
 
@@ -57,15 +60,78 @@ public class VFManager : MonoBehaviour
         Debug.Log("Farm Instantiated");
 
         //Testing
+        /*
+        shelves.ForEach(shelf =>
+            shelf.GetComponent<ShelfScript>().shelfLayers.ForEach(layer =>
+                layer.GetComponent<ShelfLayerScript>().trays.ForEach(tray =>
+                    tray.GetComponent<TrayScript>().cubeObjects.ForEach(cube => cube.SetActive(false)))));
+                    */
     }
 
     void Update()
     {
-        
+        if (renderSingleCubes)
+        {
+            showSingleCubes(true);
+        }
+        else
+        {
+            showSingleCubes(false);
+        }
     }
 
-    
-    
+    public void showSingleCubes(bool visibility)
+    {
+        foreach (var shelfScript in shelvesScripts)
+        {
+            foreach (var shelflayer in shelfScript.shelfLayersScripts)
+            {
+                foreach (var tray in shelflayer.traysScripts)
+                {
+                    tray.cubeObjects.ForEach(cube => cube.SetActive(visibility));
+                    tray.trayObject.SetActive(!visibility);
+                }
+            }
+        }
+    }
+
+    public void setLayerVisibillity(int layer, bool visibility)
+    {
+        foreach (var shelfScript in shelvesScripts)
+        {
+            foreach (var shelfLayer in shelfScript.shelfLayersScripts)
+            {
+                if (shelfLayer.layer == layer)
+                {
+                    foreach (var tray in shelfLayer.traysScripts)
+                    {
+                        tray.cubeObjects.ForEach(cube => cube.SetActive(visibility));
+                        tray.trayObject.SetActive(visibility);
+                    }
+                }
+            }
+        }
+    }
+
+
+    /* OLD WAY WITHOUT SCRIPT REFERENCE
+    public void showSingleCubes(bool visibillity)
+    {
+        foreach (var shelf in shelves)
+        {
+            foreach (var layer in shelf.GetComponent<ShelfScript>().shelfLayers)
+            {
+                foreach (var tray in layer.GetComponent<ShelfLayerScript>().trays)
+                {
+                    var trayScript = tray.GetComponent<TrayScript>();
+                    trayScript.cubeObjects.ForEach(cube => cube.SetActive(visibillity));
+                    trayScript.trayObject.SetActive(!visibillity);
+                }
+            }
+        }
+    }*/
+
+
     public float getSpacingTraysDynamic()
     {
         return (spacingTrays + trayLength) * globalsize;
