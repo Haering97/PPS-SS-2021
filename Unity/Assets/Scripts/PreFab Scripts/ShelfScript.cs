@@ -10,8 +10,9 @@ public class ShelfScript : MonoBehaviour
 
     private VFManager _vfManager;
     private int _shelfHeight;
-    
-    
+
+    public List<GameObject> shelfLayers;
+
     public int id;
     
     void Start()
@@ -24,6 +25,7 @@ public class ShelfScript : MonoBehaviour
         {
             var shelfLayerInstance= Instantiate(ShelfLayer, transform);
             shelfLayerInstance.transform.position += new Vector3(0, i, 0) * _vfManager.spacingLayer * _vfManager.globalsize;
+            shelfLayers.Add(shelfLayerInstance);
         }
     }
 

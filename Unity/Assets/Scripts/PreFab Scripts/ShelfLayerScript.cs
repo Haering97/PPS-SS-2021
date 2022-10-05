@@ -11,6 +11,8 @@ public class ShelfLayerScript : MonoBehaviour
     private int _shelfLength;
     public int id;
 
+    public List<GameObject> trays;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class ShelfLayerScript : MonoBehaviour
         {
             var trayInstance = Instantiate(tray, transform);
             trayInstance.transform.position += new Vector3(0,0,i) * _vfManager.getSpacingTraysDynamic();
+            trays.Add(trayInstance);
             var trayScript = trayInstance.GetComponent<TrayScript>();
             trayScript.id = i;
         }
