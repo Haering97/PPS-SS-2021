@@ -12,6 +12,8 @@ public class ShelfScript : MonoBehaviour
 
     public int id;
     public List<GameObject> shelfLayers;
+    public List<ShelfLayerScript> shelfLayersScripts;
+    
 
     void Start()
     {
@@ -27,6 +29,7 @@ public class ShelfScript : MonoBehaviour
             shelfLayerInstance.name = "Layer " + i;
             var shelfLayerScript = shelfLayerInstance.GetComponent<ShelfLayerScript>();
             shelfLayerScript.layer = i;
+            shelfLayersScripts.Add(shelfLayerScript);
             shelfLayers.Add(shelfLayerInstance);
         }
     }

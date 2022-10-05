@@ -13,6 +13,8 @@ public class ShelfLayerScript : MonoBehaviour
     public int id;
 
     public List<GameObject> trays;
+    public List<TrayScript> traysScripts;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,7 @@ public class ShelfLayerScript : MonoBehaviour
             var trayScript = trayInstance.GetComponent<TrayScript>();
             trayScript.id = i;
             trayScript.layer = layer;
+            traysScripts.Add(trayScript);
             trays.Add(trayInstance);
         }
     }

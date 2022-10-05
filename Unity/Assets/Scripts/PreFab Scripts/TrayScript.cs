@@ -38,11 +38,6 @@ public class TrayScript : MonoBehaviour
                 cubeInstance.transform.localScale *= _vfManager.globalsize;
                 cubeInstance.name = "Plant " + cubeObjects.Count;
                 cubeObjects.Add(cubeInstance);
-                if (layer == 1)
-                {
-                    _vfManager.layer1.Add(cubeInstance);
-                    Debug.Log("go added");
-                }
                 //starting with singlecubes disabled
                 //cubeInstance.SetActive(false);
             }
@@ -52,7 +47,6 @@ public class TrayScript : MonoBehaviour
         var trayInstance = Instantiate(cube, transform);
         trayInstance.transform.localScale = _vfManager.getTraySize() * 1.02f;
         trayObject = trayInstance;
-        
         trayInstance.SetActive(true);
     }
 
