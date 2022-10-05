@@ -48,3 +48,5 @@ MonoBehaviour:
   rootObject: {fileID: 1863236977891914874, guid: 370d4d8cacf24ed40ba5652aeae7969b,
     type: 3}
   id: 0
+  cubes: []
+  tray: []

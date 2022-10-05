@@ -14,7 +14,8 @@ public class TrayScript : MonoBehaviour
     private int _trayWidth;
     private int _trayLength;
 
-
+    public List<GameObject> cubes;
+    public GameObject tray;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class TrayScript : MonoBehaviour
         _trayLength = _vfManager.trayLength;
 
 
-        //Instantiate plants as Cubes 
+        //Instantiate plants as Cubes
         for (int i = 0; i < _trayWidth; i++)
         {
             for (int j = 0; j < _trayLength; j++)
@@ -32,15 +33,17 @@ public class TrayScript : MonoBehaviour
                 cubeInstance.transform.position += new Vector3(i, 0, j) * (_vfManager.globalsize) * (1 + _vfManager.spacingPlants);
                 cubeInstance.transform.position -= _vfManager.getOffset() / 2;
                 cubeInstance.transform.localScale *= _vfManager.globalsize;
+                cubes.Add(cubeInstance);
                 //starting with singlecubes disabled
-                cubeInstance.SetActive(true);
+                cubeInstance.SetActive(false);
             }
         }
         //Instantiate as a Tray
         var trayInstance = Instantiate(cube, transform);
         trayInstance.transform.localScale = _vfManager.getTraySize() * 1.02f;
-        trayInstance.SetActive(false);
-        //TODO an die selbe stelle wie die cubes bewegen
+        tray = trayInstance;
+        trayInstance.SetActive(true);
+        
     }
 
     // Update is called once per frame
