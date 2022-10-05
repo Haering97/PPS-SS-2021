@@ -30,25 +30,26 @@ public class TrayScript : MonoBehaviour
             for (int j = 0; j < _trayLength; j++)
             {
                 var cubeInstance = Instantiate(cube, transform); //using absolute positions here, kills the parenting!!!
-                cubeInstance.transform.position += new Vector3(i, 0, j) * (_vfManager.globalsize) * (1 + _vfManager.spacingPlants);
+                cubeInstance.transform.position +=
+                    new Vector3(i, 0, j) * (_vfManager.globalsize) * (1 + _vfManager.spacingPlants);
                 cubeInstance.transform.position -= _vfManager.getOffset() / 2;
                 cubeInstance.transform.localScale *= _vfManager.globalsize;
+                cubeInstance.name = "Plant " + i;
                 cubeObjects.Add(cubeInstance);
                 //starting with singlecubes disabled
                 cubeInstance.SetActive(false);
             }
         }
+
         //Instantiate as a Tray
         var trayInstance = Instantiate(cube, transform);
         trayInstance.transform.localScale = _vfManager.getTraySize() * 1.02f;
         trayObject = trayInstance;
         trayInstance.SetActive(true);
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
