@@ -31,7 +31,6 @@ public class ShelfLayerScript : MonoBehaviour
             trayInstance.name = "Tray " + i;
             var trayScript = trayInstance.GetComponent<TrayScript>();
             trayScript.id = i;
-            trayScript.layer = layer;
             traysScripts.Add(trayScript);
             trays.Add(trayInstance);
         }

@@ -10,7 +10,6 @@ public class TrayScript : MonoBehaviour
     private VFManager _vfManager;
 
     public int id;
-    public int layer;
 
     private int _trayWidth;
     private int _trayLength;
