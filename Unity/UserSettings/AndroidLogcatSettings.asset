@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "3d21f5bc",
         "name": "com.HRing.VFAR",
-        "processId": 28644,
+        "processId": 9886,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -168,6 +168,24 @@
             "deviceId": "3d21f5bc",
             "name": "com.HRing.VFAR",
             "processId": 28644,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 7845,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 8657,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 9886,
             "exited": false
         }
     ],
