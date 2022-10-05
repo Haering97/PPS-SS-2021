@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShelfLayerScript : MonoBehaviour
 {
     [SerializeField] private GameObject tray;
-    public GameObject rootObject;
+    private GameObject rootObject;
 
     private VFManager _vfManager;
     private int _shelfLength;
@@ -17,6 +17,7 @@ public class ShelfLayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rootObject = GameObject.Find("Root");
         _vfManager = rootObject.GetComponent<VFManager>();
         _shelfLength = _vfManager.shelfLength;
 

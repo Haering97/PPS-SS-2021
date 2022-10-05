@@ -20,6 +20,7 @@ public class TrayScript : MonoBehaviour
 
     void Start()
     {
+        rootObject = GameObject.Find("Root");
         _vfManager = rootObject.GetComponent<VFManager>();
         _trayWidth = _vfManager.trayWidth;
         _trayLength = _vfManager.trayLength;

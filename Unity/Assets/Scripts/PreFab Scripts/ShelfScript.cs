@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShelfScript : MonoBehaviour
 {
     [SerializeField] private GameObject ShelfLayer;
-    public GameObject rootObject;
+    private GameObject rootObject;
 
     private VFManager _vfManager;
     private int _shelfHeight;
@@ -15,8 +15,8 @@ public class ShelfScript : MonoBehaviour
 
     void Start()
     {
+        rootObject = GameObject.Find("Root");
         _vfManager = rootObject.GetComponent<VFManager>();
-
         _shelfHeight = _vfManager.shelfHeight;
 
         for (int i = 0; i < _shelfHeight; i++)
