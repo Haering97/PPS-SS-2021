@@ -14,8 +14,8 @@ public class TrayScript : MonoBehaviour
     private int _trayWidth;
     private int _trayLength;
 
-    public List<GameObject> cubes;
-    public GameObject tray;
+    public List<GameObject> cubeObjects;
+    public GameObject trayObject;
 
     void Start()
     {
@@ -33,7 +33,7 @@ public class TrayScript : MonoBehaviour
                 cubeInstance.transform.position += new Vector3(i, 0, j) * (_vfManager.globalsize) * (1 + _vfManager.spacingPlants);
                 cubeInstance.transform.position -= _vfManager.getOffset() / 2;
                 cubeInstance.transform.localScale *= _vfManager.globalsize;
-                cubes.Add(cubeInstance);
+                cubeObjects.Add(cubeInstance);
                 //starting with singlecubes disabled
                 cubeInstance.SetActive(false);
             }
@@ -41,7 +41,7 @@ public class TrayScript : MonoBehaviour
         //Instantiate as a Tray
         var trayInstance = Instantiate(cube, transform);
         trayInstance.transform.localScale = _vfManager.getTraySize() * 1.02f;
-        tray = trayInstance;
+        trayObject = trayInstance;
         trayInstance.SetActive(true);
         
     }
