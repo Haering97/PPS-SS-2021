@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class TrayScript : MonoBehaviour
@@ -36,6 +37,7 @@ public class TrayScript : MonoBehaviour
                 cubeInstance.transform.position -= _vfManager.getOffset() / 2;
                 cubeInstance.transform.localScale *= _vfManager.globalsize;
                 cubeInstance.name = "Plant " + cubeObjects.Count;
+                cubeInstance.SetActive(false);
                 cubeObjects.Add(cubeInstance);
                 //starting with singlecubes disabled
                 //cubeInstance.SetActive(false);
@@ -47,7 +49,6 @@ public class TrayScript : MonoBehaviour
         trayInstance.transform.localScale = _vfManager.getTraySize() * 1.02f;
         trayObject = trayInstance;
         trayInstance.name = "Tray";
-        trayInstance.SetActive(true);
     }
 
     // Update is called once per frame
