@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class VFManager : MonoBehaviour
 {
+
     [SerializeField] private GameObject shelf;
     [SerializeField] public int numberOfShelves;
     [SerializeField] public int shelfHeight;
@@ -33,6 +34,12 @@ public class VFManager : MonoBehaviour
     public bool renderSingleCubes = false;
 
     private int topLayer;
+    
+    
+    
+    
+    //doubletap
+    private float timeSinceTap;
 
     void Start()
     {
@@ -80,6 +87,30 @@ public class VFManager : MonoBehaviour
 
     void Update()
     {
+        //Testing touch object access
+        if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began) {
+            //TODO effizienter referenzieren.
+            Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>().ScreenPointToRay(Input.GetTouch(0).position);
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider != null) {
+                 
+                    GameObject touchedObject = hit.transform.gameObject;
+
+                    var hitShelf = touchedObject.transform.parent.parent.parent;
+
+                    string[] subs = hitShelf.name.Split(" ");
+                    
+                    Debug.Log(subs[subs.Length-1]);
+
+                    //TODO implement doubletap detection on one shelf
+                    
+                    timeSinceTap = Time.time;
+
+                }
+            }
+        }
     }
 
 
