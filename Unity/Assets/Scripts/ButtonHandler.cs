@@ -13,6 +13,6 @@ public class ButtonHandler : MonoBehaviour
 
     public void ZoomSmaller()
     {
-        
+        GameEvents.current.minusPressed();
     }
 }

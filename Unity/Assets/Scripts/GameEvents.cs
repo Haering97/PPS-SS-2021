@@ -15,7 +15,14 @@ public class GameEvents : MonoBehaviour
     public event Action onPlusPress;
     public void plusPressed()
     {
-        Debug.Log("gameevent arrived in Gameevents");
         onPlusPress?.Invoke();
     }
+
+    public event Action onMinusPress;
+
+    public void minusPressed()
+    {
+        onMinusPress?.Invoke();
+    }
+
 }
