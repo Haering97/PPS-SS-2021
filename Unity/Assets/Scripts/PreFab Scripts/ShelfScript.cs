@@ -18,7 +18,6 @@ public class ShelfScript : MonoBehaviour
     void Start()
     {
         rootObject = GameObject.Find("Root");
-        Debug.Log("Root found 1");
         _vfManager = rootObject.GetComponent<VFManager>();
         _shelfHeight = _vfManager.shelfHeight;
 
