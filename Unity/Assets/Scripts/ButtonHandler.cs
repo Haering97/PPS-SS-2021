@@ -14,4 +14,9 @@ public class ButtonHandler : MonoBehaviour
     {
         GameEvents.current.downPressed();
     }
+
+    public void SingleCubeRender()
+    {
+        GameEvents.current.SCPressed();
+    }
 }

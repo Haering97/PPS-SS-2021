@@ -42,6 +42,7 @@ public class VFManager : MonoBehaviour
 
         GameEvents.current.onUpPress += oneLayerUp;
         GameEvents.current.onDownPress += oneLayerDown;
+        GameEvents.current.onSCPress += toggleSC;
 
         //
         topLayer = shelfHeight;
@@ -120,6 +121,8 @@ public class VFManager : MonoBehaviour
                 }
             }
         }
+        
+        setTopLayer();
     }
 
     /* OLD WAY WITHOUT SCRIPT REFERENCE
@@ -215,7 +218,13 @@ public class VFManager : MonoBehaviour
             setLayerVisibillity(j,false);
         }
     }
-    
+
+    private void toggleSC()
+    {
+        renderSingleCubes = !renderSingleCubes;
+        showSingleCubes(renderSingleCubes);
+    }
+
 }
 
 //TODO namen des GameObject zu typ und id ändern damit man alles auch über .find finden kann.

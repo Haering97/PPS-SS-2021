@@ -11,6 +11,13 @@ public class GameEvents : MonoBehaviour
     {
         current = this;
     }
+
+    public event Action onSCPress;
+
+    public void SCPressed()
+    {
+        onSCPress?.Invoke();
+    }
     
     public event Action onUpPress;
     public void upPressed()
