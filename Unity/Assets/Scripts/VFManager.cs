@@ -28,8 +28,6 @@ public class VFManager : MonoBehaviour
 
     public List<ShelfScript> shelvesScripts;
 
-    public List<GameObject> layer1;
-
     //because we always start with just trays.
     public bool renderSingleCubes = false;
 

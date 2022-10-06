@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShelfScript : MonoBehaviour
 {
-    [SerializeField] private GameObject ShelfLayer;
+    [SerializeField] private GameObject shelfLayer;
     private GameObject rootObject;
 
     private VFManager _vfManager;
@@ -13,17 +13,18 @@ public class ShelfScript : MonoBehaviour
     public int id;
     public List<GameObject> shelfLayers;
     public List<ShelfLayerScript> shelfLayersScripts;
-    
+
 
     void Start()
     {
         rootObject = GameObject.Find("Root");
+        Debug.Log("Root found 1");
         _vfManager = rootObject.GetComponent<VFManager>();
         _shelfHeight = _vfManager.shelfHeight;
 
         for (int i = 0; i < _shelfHeight; i++)
         {
-            var shelfLayerInstance = Instantiate(ShelfLayer, transform);
+            var shelfLayerInstance = Instantiate(shelfLayer, transform);
             shelfLayerInstance.transform.position +=
                 new Vector3(0, i, 0) * _vfManager.spacingLayer * _vfManager.globalsize;
             shelfLayerInstance.name = "Layer " + i;

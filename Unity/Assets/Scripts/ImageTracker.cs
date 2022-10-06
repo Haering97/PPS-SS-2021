@@ -37,6 +37,7 @@ public class ImageTracker : MonoBehaviour
             //TODO Dynamic Prefabs
 
             instance = Instantiate(model, trackedImage.transform.position, trackedImage.transform.rotation);
+            instance.name = "Root";
 
 
             /* OLD WAY 

@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "3d21f5bc",
         "name": "com.HRing.VFAR",
-        "processId": 9886,
+        "processId": 689,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -186,6 +186,12 @@
             "deviceId": "3d21f5bc",
             "name": "com.HRing.VFAR",
             "processId": 9886,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 689,
             "exited": false
         }
     ],
