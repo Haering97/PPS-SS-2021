@@ -11,14 +11,11 @@ public class GameEvents : MonoBehaviour
     {
         current = this;
     }
-
     
     public event Action onPlusPress;
     public void plusPressed()
     {
-        if (onPlusPress != null)
-        {
-            onPlusPress();
-        }
+        Debug.Log("gameevent arrived in Gameevents");
+        onPlusPress?.Invoke();
     }
 }
