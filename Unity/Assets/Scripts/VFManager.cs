@@ -43,10 +43,11 @@ public class VFManager : MonoBehaviour
         GameEvents.current.onUpPress += oneLayerUp;
         GameEvents.current.onDownPress += oneLayerDown;
 
-        //Minus 1 weil ab 0 gezählt wird.
-        topLayer = shelfHeight - 1;
+        //
+        topLayer = shelfHeight;
 
-
+        
+        //Hier werden so viele Regale instanziiert wie angegeben.
         for (int i = 0; i < numberOfShelves; i++)
         {
             var shelfInstance = Instantiate(shelf, vfOrigin);
