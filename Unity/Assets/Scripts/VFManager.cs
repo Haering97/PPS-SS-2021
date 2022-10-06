@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class VFManager : MonoBehaviour
 {
@@ -37,6 +38,8 @@ public class VFManager : MonoBehaviour
         _spacingShelvesDynamic = (spacingShelves + trayWidth) * globalsize;
         //spacingTraysDynamic = spacingTrays + trayLength;
 
+        GameEvents.current.onPlusPress += zoomBigger;
+        
 
         for (int i = 0; i < numberOfShelves; i++)
         {
@@ -54,7 +57,9 @@ public class VFManager : MonoBehaviour
             shelvesScripts.Add(shelfScript);
             shelves.Add(shelfInstance);
         }
-
+        
+        
+        
 
         Debug.Log("Farm Instantiated");
 
@@ -171,6 +176,11 @@ public class VFManager : MonoBehaviour
                     0,
                     (trayLength * (shelfLength - 1)) + (spacingTrays * (shelfLength - 1)))
                 * globalsize);
+    }
+
+    private void zoomBigger()
+    {
+        
     }
 }
 
