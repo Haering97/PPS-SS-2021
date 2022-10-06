@@ -32,14 +32,20 @@ public class VFManager : MonoBehaviour
     //because we always start with just trays.
     public bool renderSingleCubes = false;
 
+    private int topLayer;
+
     void Start()
     {
         vfOrigin = transform;
         _spacingShelvesDynamic = (spacingShelves + trayWidth) * globalsize;
         //spacingTraysDynamic = spacingTrays + trayLength;
 
-        GameEvents.current.onPlusPress += zoomBigger;
-        
+        GameEvents.current.onUpPress += oneLayerUp;
+        GameEvents.current.onDownPress += oneLayerDown;
+
+        //Minus 1 weil ab 0 gezählt wird.
+        topLayer = shelfHeight - 1;
+
 
         for (int i = 0; i < numberOfShelves; i++)
         {
@@ -57,9 +63,7 @@ public class VFManager : MonoBehaviour
             shelvesScripts.Add(shelfScript);
             shelves.Add(shelfInstance);
         }
-        
-        
-        
+
 
         Debug.Log("Farm Instantiated");
 
@@ -70,29 +74,19 @@ public class VFManager : MonoBehaviour
                 layer.GetComponent<ShelfLayerScript>().trays.ForEach(tray =>
                     tray.GetComponent<TrayScript>().cubeObjects.ForEach(cube => cube.SetActive(false)))));
                     */
-        
-        
     }
 
     void Update()
     {
-        
-        
     }
-    
-    
 
-    
 
     public void setLayerVisibillity(int layer, bool visibility)
     {
-
         foreach (var shelfScript in shelvesScripts)
         {
-
             foreach (var shelfLayer in shelfScript.shelfLayersScripts)
             {
-
                 if (shelfLayer.layer == layer)
                 {
                     foreach (var tray in shelfLayer.traysScripts)
@@ -105,7 +99,6 @@ public class VFManager : MonoBehaviour
                         {
                             tray.trayObject.SetActive(visibility);
                         }
-                        
                     }
                 }
             }
@@ -180,8 +173,48 @@ public class VFManager : MonoBehaviour
 
     private void zoomBigger()
     {
-        
+        this.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f) * (this.transform.localScale.magnitude * 0.2f);
     }
+
+    private void zoomSmaller()
+    {
+        this.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f) * (this.transform.localScale.magnitude * 0.2f);
+    }
+
+    private void oneLayerUp()
+    {
+        topLayer++;
+        if (topLayer > shelfHeight)
+        {
+            topLayer = shelfHeight;
+        }
+        setTopLayer();
+    }
+
+    private void oneLayerDown()
+    {
+        topLayer--;
+        if (topLayer<1)
+        {
+            topLayer = 1;
+        }
+        setTopLayer();
+    }
+
+    private void setTopLayer()
+    {   
+        Debug.Log("PP-Log: TopLayer "+ topLayer);
+        for (int i = 0; i < topLayer; i++)
+        {
+            setLayerVisibillity(i, true);
+        }
+
+        for (int j = topLayer; j < shelfHeight; j++)
+        {
+            setLayerVisibillity(j,false);
+        }
+    }
+    
 }
 
 //TODO namen des GameObject zu typ und id ändern damit man alles auch über .find finden kann.

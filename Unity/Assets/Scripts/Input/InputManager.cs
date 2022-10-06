@@ -50,6 +50,7 @@ public class InputManager : MonoBehaviour
             //Zoom Out
             if (distance > prevDist)
             {
+                //Wieso this?
                 this.transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f) * (this.transform.localScale.magnitude * 0.2f);
             }
             //Zoom In

@@ -12,17 +12,17 @@ public class GameEvents : MonoBehaviour
         current = this;
     }
     
-    public event Action onPlusPress;
-    public void plusPressed()
+    public event Action onUpPress;
+    public void upPressed()
     {
-        onPlusPress?.Invoke();
+        onUpPress?.Invoke();
     }
 
-    public event Action onMinusPress;
+    public event Action onDownPress;
 
-    public void minusPressed()
+    public void downPressed()
     {
-        onMinusPress?.Invoke();
+        onDownPress?.Invoke();
     }
 
 }
