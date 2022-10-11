@@ -111,7 +111,7 @@ public class VFManager : MonoBehaviour
                     //TODO implement doubletap detection on one shelf
 
                     Debug.Log("PP-Log: Shelf "+hitShelfNumber+" wurde getapped");
-                    if (Time.time - lastTap <= 1f)
+                    if (Time.time - lastTap <= 0.4f)
                     {
                         //Zweiter Tap unter einer Sekune erkannt.
                         if (hitShelfNumber == lastShelf)
