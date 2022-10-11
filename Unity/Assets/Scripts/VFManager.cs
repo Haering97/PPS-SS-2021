@@ -106,16 +106,29 @@ public class VFManager : MonoBehaviour
                     string[] subs = hitShelf.name.Split(" ");
                     
                     //Die Nummer des angeklickten Regales zwischenspeichern.
-                    lastShelf = Int32.Parse(subs[subs.Length - 1]);
+                    var hitShelfNumber = Int32.Parse(subs[subs.Length - 1]);
 
                     //TODO implement doubletap detection on one shelf
 
-                    if (Time.time - lastTap >= 1f)
+                    Debug.Log("PP-Log: Shelf "+hitShelfNumber+" wurde getapped");
+                    if (Time.time - lastTap <= 1f)
                     {
-                        
+                        //Zweiter Tap unter einer Sekune erkannt.
+                        if (hitShelfNumber == lastShelf)
+                        {
+                            //das selbe regal zweimal hintereinander getapped
+                            Debug.Log("PP-Log: Double Tap registered on same shelf");
+                        }
+                        lastTap = Time.time;
                     }
-                    lastTap  = Time.time;
-                    
+                    else
+                    {
+                        //wenn der zweite tap zu spät kam.
+                        Debug.Log("PP-Log: zu spät");
+                        lastTap  = Time.time;
+                    }
+
+                    lastShelf = hitShelfNumber;
 
                 }
             }
