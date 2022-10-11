@@ -90,7 +90,6 @@ public class VFManager : MonoBehaviour
 
     void Update()
     {
-        //Testing touch object access
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began) {
             //TODO effizienter referenzieren.
             Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>().ScreenPointToRay(Input.GetTouch(0).position);
@@ -108,23 +107,21 @@ public class VFManager : MonoBehaviour
                     //Die Nummer des angeklickten Regales zwischenspeichern.
                     var hitShelfNumber = Int32.Parse(subs[subs.Length - 1]);
 
-                    //TODO implement doubletap detection on one shelf
-
-                    Debug.Log("PP-Log: Shelf "+hitShelfNumber+" wurde getapped");
                     if (Time.time - lastTap <= 0.4f)
                     {
                         //Zweiter Tap unter einer Sekune erkannt.
                         if (hitShelfNumber == lastShelf)
                         {
                             //das selbe regal zweimal hintereinander getapped
-                            Debug.Log("PP-Log: Double Tap registered on same shelf");
+                            //TODO das Regal an dem Root punkt schieben und größer scalen mit Animation;
+                            highlightShelf(hitShelfNumber);
+
                         }
                         lastTap = Time.time;
                     }
                     else
                     {
                         //wenn der zweite tap zu spät kam.
-                        Debug.Log("PP-Log: zu spät");
                         lastTap  = Time.time;
                     }
 
@@ -276,6 +273,17 @@ public class VFManager : MonoBehaviour
     {
         renderSingleCubes = !renderSingleCubes;
         showSingleCubes(renderSingleCubes);
+    }
+
+    private void highlightShelf(int shelfNumber)
+    {
+        foreach (var shelf in shelves)
+        {
+            if (shelf.GetComponent<ShelfScript>().id != shelfNumber)
+            {
+                shelf.SetActive(false);
+            }
+        }
     }
 
 }
