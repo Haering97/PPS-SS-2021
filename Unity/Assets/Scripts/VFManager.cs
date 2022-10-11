@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -39,7 +40,9 @@ public class VFManager : MonoBehaviour
     
     
     //doubletap
-    private float timeSinceTap;
+    private float lastTap;
+
+    private int lastShelf;
 
     void Start()
     {
@@ -102,11 +105,17 @@ public class VFManager : MonoBehaviour
 
                     string[] subs = hitShelf.name.Split(" ");
                     
-                    Debug.Log(subs[subs.Length-1]);
+                    //Die Nummer des angeklickten Regales zwischenspeichern.
+                    lastShelf = Int32.Parse(subs[subs.Length - 1]);
 
                     //TODO implement doubletap detection on one shelf
+
+                    if (Time.time - lastTap >= 1f)
+                    {
+                        
+                    }
+                    lastTap  = Time.time;
                     
-                    timeSinceTap = Time.time;
 
                 }
             }
