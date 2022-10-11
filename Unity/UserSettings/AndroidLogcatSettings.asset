@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "3d21f5bc",
         "name": "com.HRing.VFAR",
-        "processId": 30994,
+        "processId": 10761,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -331,6 +331,48 @@
             "name": "com.HRing.VFAR",
             "processId": 30994,
             "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 24621,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 32319,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 2011,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 3192,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 5532,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 8406,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 10761,
+            "exited": false
         }
     ],
     "m_Tags": {
@@ -384,7 +426,7 @@
         "Behavior": 0
     },
     "m_FilterOptions": {
-        "m_Filter": "",
+        "m_Filter": "doub",
         "m_UseRegularExpressions": false,
         "m_MatchCase": false
     },
