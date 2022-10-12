@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class VFManager : MonoBehaviour
 {
-
     [SerializeField] private GameObject shelf;
     [SerializeField] public int numberOfShelves;
     [SerializeField] public int shelfHeight;
@@ -35,15 +35,13 @@ public class VFManager : MonoBehaviour
     public bool renderSingleCubes = false;
 
     private int topLayer;
-    
-    
-    
-    
+
     //doubletap
     private float lastTap;
     private float lastMiss;
 
     private int lastShelf;
+
 
     void Start()
     {
@@ -58,7 +56,7 @@ public class VFManager : MonoBehaviour
         //
         topLayer = shelfHeight;
 
-        
+
         //Hier werden so viele Regale instanziiert wie angegeben.
         for (int i = 0; i < numberOfShelves; i++)
         {
@@ -91,20 +89,26 @@ public class VFManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began) {
+        if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
             //TODO effizienter referenzieren.
-            Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>().ScreenPointToRay(Input.GetTouch(0).position);
+            Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>()
+                .ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit hit;
-            if(Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider != null) {
-                 
+
+                
+                
+                if (hit.collider != null)
+                {
+
                     GameObject touchedObject = hit.transform.gameObject;
 
                     var hitShelf = touchedObject.transform.parent.parent.parent;
 
                     string[] subs = hitShelf.name.Split(" ");
-                    
+
                     //Die Nummer des angeklickten Regales zwischenspeichern.
                     var hitShelfNumber = Int32.Parse(subs[subs.Length - 1]);
 
@@ -118,7 +122,8 @@ public class VFManager : MonoBehaviour
                             highlightShelf(hitShelfNumber);
                         }
                     }
-                    lastTap  = Time.time;
+
+                    lastTap = Time.time;
                     lastShelf = hitShelfNumber;
                 }
             }
@@ -130,6 +135,7 @@ public class VFManager : MonoBehaviour
                     //Wenn zweimal neben das shelf getippt wird, sollen wieder alle regale eingeblendet werden.
                     shelves.ForEach(shelf => shelf.SetActive(true));
                 }
+
                 lastMiss = Time.time;
             }
         }
@@ -174,7 +180,7 @@ public class VFManager : MonoBehaviour
                 }
             }
         }
-        
+
         setTopLayer();
     }
 
@@ -245,22 +251,23 @@ public class VFManager : MonoBehaviour
         {
             topLayer = shelfHeight;
         }
+
         setTopLayer();
     }
 
     private void oneLayerDown()
     {
         topLayer--;
-        if (topLayer<1)
+        if (topLayer < 1)
         {
             topLayer = 1;
         }
+
         setTopLayer();
     }
 
     private void setTopLayer()
-    {   
-        Debug.Log("PP-Log: TopLayer "+ topLayer);
+    {
         for (int i = 0; i < topLayer; i++)
         {
             setLayerVisibillity(i, true);
@@ -268,7 +275,7 @@ public class VFManager : MonoBehaviour
 
         for (int j = topLayer; j < shelfHeight; j++)
         {
-            setLayerVisibillity(j,false);
+            setLayerVisibillity(j, false);
         }
     }
 
@@ -288,7 +295,6 @@ public class VFManager : MonoBehaviour
             }
         }
     }
-
 }
 
 //TODO namen des GameObject zu typ und id ändern damit man alles auch über .find finden kann.
