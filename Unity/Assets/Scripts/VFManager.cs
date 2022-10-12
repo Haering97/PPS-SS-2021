@@ -41,6 +41,7 @@ public class VFManager : MonoBehaviour
     
     //doubletap
     private float lastTap;
+    private float lastMiss;
 
     private int lastShelf;
 
@@ -120,6 +121,16 @@ public class VFManager : MonoBehaviour
                     lastTap  = Time.time;
                     lastShelf = hitShelfNumber;
                 }
+            }
+            else
+            {
+                //wenn neben die regale getippt wird.
+                if (Time.time - lastMiss <= 0.4f)
+                {
+                    //Wenn zweimal neben das shelf getippt wird, sollen wieder alle regale eingeblendet werden.
+                    shelves.ForEach(shelf => shelf.SetActive(true));
+                }
+                lastMiss = Time.time;
             }
         }
     }
