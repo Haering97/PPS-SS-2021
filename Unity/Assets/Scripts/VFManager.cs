@@ -115,18 +115,10 @@ public class VFManager : MonoBehaviour
                             //das selbe regal zweimal hintereinander getapped
                             //TODO das Regal an dem Root punkt schieben und größer scalen mit Animation;
                             highlightShelf(hitShelfNumber);
-
                         }
-                        lastTap = Time.time;
                     }
-                    else
-                    {
-                        //wenn der zweite tap zu spät kam.
-                        lastTap  = Time.time;
-                    }
-
+                    lastTap  = Time.time;
                     lastShelf = hitShelfNumber;
-
                 }
             }
         }
