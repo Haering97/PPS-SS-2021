@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "3d21f5bc",
         "name": "com.HRing.VFAR",
-        "processId": 10761,
+        "processId": 17513,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -373,6 +373,66 @@
             "name": "com.HRing.VFAR",
             "processId": 10761,
             "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 8861,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 10153,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 11439,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 15303,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 11700,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 13111,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 13979,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 15235,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 15787,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 17513,
+            "exited": false
         }
     ],
     "m_Tags": {
@@ -426,7 +486,7 @@
         "Behavior": 0
     },
     "m_FilterOptions": {
-        "m_Filter": "doub",
+        "m_Filter": "",
         "m_UseRegularExpressions": false,
         "m_MatchCase": false
     },
