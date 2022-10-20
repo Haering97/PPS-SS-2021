@@ -31,7 +31,9 @@ public class VFManager : MonoBehaviour
 
     public List<ShelfScript> shelvesScripts;
 
-    //because we always start with just trays.
+    [SerializeField] public DummyData dummyData;
+
+    //Denn wir wollen mit dem performanteren Modus starten.
     public bool renderSingleCubes = false;
 
     private int topLayer;
@@ -79,8 +81,7 @@ public class VFManager : MonoBehaviour
             shelvesScripts.Add(shelfScript);
             shelves.Add(shelfInstance);
         }
-
-
+        
         Debug.Log("Farm Instantiated");
 
         //Testing
@@ -94,6 +95,13 @@ public class VFManager : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            dummyData.fillShelvesRandomColors();
+        }
+        
+        
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             //TODO effizienter referenzieren.
