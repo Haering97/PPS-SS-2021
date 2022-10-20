@@ -42,6 +42,8 @@ public class VFManager : MonoBehaviour
 
     private int lastShelf;
 
+    //checkButtonHit
+    private CheckUi checkUi;
 
     void Start()
     {
@@ -53,8 +55,11 @@ public class VFManager : MonoBehaviour
         GameEvents.current.onDownPress += oneLayerDown;
         GameEvents.current.onSCPress += toggleSC;
 
-        //
         topLayer = shelfHeight;
+
+        //checkButtonHit
+
+        checkUi = GameObject.Find("Canvas").GetComponent<CheckUi>();
 
 
         //Hier werden so viele Regale instanziiert wie angegeben.
@@ -97,34 +102,36 @@ public class VFManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-
-                
-                
-                if (hit.collider != null)
+                //Hier checken ob ein Button getroffen wird oder nicht.
+                if (checkUi.castGR(Input.GetTouch(0).position).Count == 0)
                 {
-
-                    GameObject touchedObject = hit.transform.gameObject;
-
-                    var hitShelf = touchedObject.transform.parent.parent.parent;
-
-                    string[] subs = hitShelf.name.Split(" ");
-
-                    //Die Nummer des angeklickten Regales zwischenspeichern.
-                    var hitShelfNumber = Int32.Parse(subs[subs.Length - 1]);
-
-                    if (Time.time - lastTap <= 0.4f)
+                    //Hier checken ob ein GameObject getroffen wird.
+                    if (hit.collider != null)
                     {
-                        //Zweiter Tap unter einer Sekune erkannt.
-                        if (hitShelfNumber == lastShelf)
-                        {
-                            //das selbe regal zweimal hintereinander getapped
-                            //TODO das Regal an dem Root punkt schieben und größer scalen mit Animation;
-                            highlightShelf(hitShelfNumber);
-                        }
-                    }
+                        GameObject touchedObject = hit.transform.gameObject;
+                        
+                        //mithile des Parentings von Transform, kann ich über den würfel auf das regal zugreifen.
+                        var hitShelf = touchedObject.transform.parent.parent.parent;
 
-                    lastTap = Time.time;
-                    lastShelf = hitShelfNumber;
+                        string[] subs = hitShelf.name.Split(" ");
+
+                        //Die Nummer des angeklickten Regales zwischenspeichern.
+                        var hitShelfNumber = Int32.Parse(subs[subs.Length - 1]);
+
+                        if (Time.time - lastTap <= 0.4f)
+                        {
+                            //Zweiter Tap unter einer Sekune erkannt.
+                            if (hitShelfNumber == lastShelf)
+                            {
+                                //das selbe regal zweimal hintereinander getapped
+                                //TODO das Regal an dem Root punkt schieben und größer scalen mit Animation;
+                                highlightShelf(hitShelfNumber);
+                            }
+                        }
+
+                        lastTap = Time.time;
+                        lastShelf = hitShelfNumber;
+                    }
                 }
             }
             else
@@ -139,6 +146,12 @@ public class VFManager : MonoBehaviour
                 lastMiss = Time.time;
             }
         }
+        
+        
+        
+        
+        
+        
     }
 
 
