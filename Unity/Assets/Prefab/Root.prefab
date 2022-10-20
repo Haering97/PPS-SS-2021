@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1863236977891914875}
   - component: {fileID: 1863236977891914880}
   - component: {fileID: 4417966235777188099}
+  - component: {fileID: 4623984692872789672}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -77,6 +78,7 @@ MonoBehaviour:
   globalsize: 0.02
   shelves: []
   shelvesScripts: []
+  dummyData: {fileID: 4623984692872789672}
   renderSingleCubes: 0
 --- !u!114 &4417966235777188099
 MonoBehaviour:
@@ -88,5 +90,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c563e718eededb54a97fa629077d7546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4623984692872789672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863236977891914874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c41f86ffde5fa4d9d4ae765929ec7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

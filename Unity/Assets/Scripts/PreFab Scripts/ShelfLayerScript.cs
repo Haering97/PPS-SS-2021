@@ -20,8 +20,6 @@ public class ShelfLayerScript : MonoBehaviour
     void Start()
     {
         rootObject = GameObject.Find("Root");
-        rootObject = GameObject.Find("Root");   
-        Debug.Log("Root found 2");
         _vfManager = rootObject.GetComponent<VFManager>();
         _shelfLength = _vfManager.shelfLength;
 
