@@ -9,9 +9,12 @@ public class DummyData : MonoBehaviour
 {
     private List<ShelfScript> shelveScripts;
 
+    /* Vorerst nicht implementiert
     private List<GameObject> allTrays;
     private List<GameObject> allCubes;
-
+    */
+    private bool wasExecuted = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +25,11 @@ public class DummyData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
 
-    public void saveAllTrays()
+    /* vorerst nicht implementiert
+    public void saveAllGOs()
     {
         //Alle GameObjekte in Listen speichern, für einfacheren Zugriff, momentan jedoch kein wirklich gezielter Zugriff bis auf Index möglich.
         foreach (var shelfScript in shelveScripts)
@@ -43,14 +48,29 @@ public class DummyData : MonoBehaviour
             }
         }
     }
+    */
     
-    public void fillShelvesRandomColors()
+    public void fillRandomColors()
     {
-        foreach (var trayObject in allTrays)
+        
+        foreach (var shelfScript in shelveScripts)
         {
-            var trayRenderer = trayObject.GetComponent<Renderer>();
-            trayRenderer.material.SetColor("_Color",
-                UnityEngine.Color.Lerp(Color.green, Color.red, Random.Range(0f, 1f)));
+            foreach (var layerScript in shelfScript.shelfLayersScripts)
+            {
+                foreach (var trayScript in layerScript.traysScripts)
+                {
+                    trayScript.trayObject.GetComponent<Renderer>().material.SetColor("_Color",
+                        UnityEngine.Color.Lerp(Color.green, Color.red, Random.Range(0f, 1f)));
+
+                    foreach (var cube in trayScript.cubeObjects)
+                    {
+                        cube.GetComponent<Renderer>().material.SetColor("_Color",
+                            UnityEngine.Color.Lerp(Color.green, Color.red, Random.Range(0f, 1f)));
+
+                    }
+                }
+            }
         }
+        
     }
 }
