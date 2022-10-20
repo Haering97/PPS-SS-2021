@@ -98,9 +98,13 @@ public class VFManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            dummyData.fillShelvesRandomColors();
+            dummyData.fillRandomColors();
         }
-        
+
+        if (Input.touchCount == 2 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            dummyData.fillRandomColors();
+        }
         
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
