@@ -18,8 +18,9 @@ public class GameEvents : MonoBehaviour
     {
         onSCPress?.Invoke();
     }
-    
+
     public event Action onUpPress;
+
     public void upPressed()
     {
         onUpPress?.Invoke();
@@ -32,4 +33,10 @@ public class GameEvents : MonoBehaviour
         onDownPress?.Invoke();
     }
 
+    public event Action onDataRefresh;
+
+    public void refresh()
+    {
+        onDataRefresh?.Invoke();
+    }
 }

@@ -19,4 +19,8 @@ public class ButtonHandler : MonoBehaviour
     {
         GameEvents.current.SCPressed();
     }
+    public void RefreshData()
+    {
+        GameEvents.current.refresh();
+    }
 }

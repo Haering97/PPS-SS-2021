@@ -56,6 +56,8 @@ public class VFManager : MonoBehaviour
         GameEvents.current.onUpPress += oneLayerUp;
         GameEvents.current.onDownPress += oneLayerDown;
         GameEvents.current.onSCPress += toggleSC;
+        //Murks
+        //GameEvents.current.onDataRefresh += highlightShelf;
 
         topLayer = shelfHeight;
 
