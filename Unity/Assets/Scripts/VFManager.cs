@@ -95,12 +95,13 @@ public class VFManager : MonoBehaviour
 
     void Update()
     {
-
+        
         if (Input.GetMouseButtonDown(1))
         {
             dummyData.fillRandomColors();
         }
-
+        
+        //Wenn mit zwei Fingern gleichzeitig getippt wird, nur zum testen.
         if (Input.touchCount == 2 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             dummyData.fillRandomColors();
@@ -138,6 +139,7 @@ public class VFManager : MonoBehaviour
                                 //das selbe regal zweimal hintereinander getapped
                                 //TODO das Regal an dem Root punkt schieben und größer scalen mit Animation;
                                 highlightShelf(hitShelfNumber);
+                                showSingleCubes(true);
                             }
                         }
 
@@ -153,6 +155,7 @@ public class VFManager : MonoBehaviour
                 {
                     //Wenn zweimal neben das shelf getippt wird, sollen wieder alle regale eingeblendet werden.
                     shelves.ForEach(shelf => shelf.SetActive(true));
+                    showSingleCubes(false);
                 }
 
                 lastMiss = Time.time;
