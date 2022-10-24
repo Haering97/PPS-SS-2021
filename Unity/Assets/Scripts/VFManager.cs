@@ -81,7 +81,7 @@ public class VFManager : MonoBehaviour
             shelvesScripts.Add(shelfScript);
             shelves.Add(shelfInstance);
         }
-        
+
         Debug.Log("Farm Instantiated");
 
         //Testing
@@ -95,34 +95,34 @@ public class VFManager : MonoBehaviour
 
     void Update()
     {
-        
         if (Input.GetMouseButtonDown(1))
         {
             dummyData.fillRandomColors();
         }
-        
+
         //Wenn mit zwei Fingern gleichzeitig getippt wird, nur zum testen.
         if (Input.touchCount == 2 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             dummyData.fillRandomColors();
         }
-        
+
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             //TODO effizienter referenzieren.
             Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>()
                 .ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (checkUi.castGR(Input.GetTouch(0).position).Count == 0)
             {
-                //Hier checken ob ein Button getroffen wird oder nicht.
-                if (checkUi.castGR(Input.GetTouch(0).position).Count == 0)
+                if (Physics.Raycast(ray, out hit))
                 {
+                    //Hier checken ob ein Button getroffen wird oder nicht.
+
                     //Hier checken ob ein GameObject getroffen wird.
                     if (hit.collider != null)
                     {
                         GameObject touchedObject = hit.transform.gameObject;
-                        
+
                         //mithile des Parentings von Transform, kann ich über den würfel auf das regal zugreifen.
                         var hitShelf = touchedObject.transform.parent.parent.parent;
 
@@ -147,26 +147,20 @@ public class VFManager : MonoBehaviour
                         lastShelf = hitShelfNumber;
                     }
                 }
-            }
-            else
-            {
-                //wenn neben die regale getippt wird.
-                if (Time.time - lastMiss <= 0.4f)
+                else
                 {
-                    //Wenn zweimal neben das shelf getippt wird, sollen wieder alle regale eingeblendet werden.
-                    shelves.ForEach(shelf => shelf.SetActive(true));
-                    showSingleCubes(false);
-                }
+                    //wenn neben die regale getippt wird.
+                    if (Time.time - lastMiss <= 0.4f)
+                    {
+                        //Wenn zweimal neben das shelf getippt wird, sollen wieder alle regale eingeblendet werden.
+                        shelves.ForEach(shelf => shelf.SetActive(true));
+                        showSingleCubes(false);
+                    }
 
-                lastMiss = Time.time;
+                    lastMiss = Time.time;
+                }
             }
         }
-        
-        
-        
-        
-        
-        
     }
 
 
