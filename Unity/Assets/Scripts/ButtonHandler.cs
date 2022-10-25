@@ -23,4 +23,10 @@ public class ButtonHandler : MonoBehaviour
     {
         GameEvents.current.refresh();
     }
+
+    public void showGrowth()
+    {
+        GameEvents.current.showGrowth();
+    }
+    
 }

@@ -51,6 +51,8 @@ public class VFManager : MonoBehaviour
     private int lastShelf;
     private int lastTray;
 
+    //DataModes
+    public bool showGrowth = false;
 
     void Start()
     {
@@ -61,7 +63,8 @@ public class VFManager : MonoBehaviour
         GameEvents.current.onUpPress += oneLayerUp;
         GameEvents.current.onDownPress += oneLayerDown;
         GameEvents.current.onSCPress += toggleSC;
-        GameEvents.current.onDataRefresh += dummyData.fillRandomColors;
+        GameEvents.current.onDataRefresh += dummyData.fillRandom;
+        GameEvents.current.onSGPress += () => showGrowth = !showGrowth;
 
         topLayer = shelfHeight;
 

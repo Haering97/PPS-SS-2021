@@ -39,4 +39,12 @@ public class GameEvents : MonoBehaviour
     {
         onDataRefresh?.Invoke();
     }
+
+    public event Action onSGPress;
+
+    public void showGrowth()
+    {
+        onSGPress?.Invoke();
+    }
+    
 }
