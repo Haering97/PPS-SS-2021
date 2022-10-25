@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "3d21f5bc",
         "name": "com.HRing.VFAR",
-        "processId": 28864,
+        "processId": 12826,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,445 +11,49 @@
         {
             "deviceId": "3d21f5bc",
             "name": "com.HRing.VFAR",
-            "processId": 28901,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 25313,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 28485,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 22355,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.oppo.launcher",
-            "processId": 3300,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 21318,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 22741,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 24489,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 24953,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 25920,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 27331,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 29299,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 29792,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 31800,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 1629,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 2921,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 7034,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 21051,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 21747,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 22732,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 23552,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 24536,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 25950,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 26557,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 27107,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 27969,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 28644,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 7845,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 8657,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 9886,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 689,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 4750,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 5809,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 7540,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 8092,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 9415,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 20873,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 21872,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 23127,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 9263,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 12211,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 14266,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 15617,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 15955,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 16905,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 17837,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 18680,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 20281,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 20983,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 21767,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 23319,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 26895,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 29118,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 30994,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 24621,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 32319,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 2011,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 3192,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 5532,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 8406,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 10761,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 8861,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 10153,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 11439,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 15303,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 11700,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 13111,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 13979,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 15235,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 15787,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 17513,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 10005,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 12438,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
             "processId": 28864,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 12174,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 12947,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 15915,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 18573,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 19981,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 14528,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 12826,
             "exited": false
         }
     ],

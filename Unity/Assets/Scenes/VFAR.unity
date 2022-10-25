@@ -1692,7 +1692,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1746613833}
         m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
-        m_MethodName: SingleCubeRender
+        m_MethodName: RefreshData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

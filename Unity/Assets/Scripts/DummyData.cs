@@ -12,10 +12,10 @@ public class DummyData : MonoBehaviour
     /* Vorerst nicht implementiert
     private List<GameObject> allTrays;
     private List<GameObject> allCubes;
-    */
-    private bool wasExecuted = false;
     
-    // Start is called before the first frame update
+    private bool wasExecuted = false;
+    */
+    
     void Start()
     {
         shelveScripts = GameObject.Find("Root").GetComponent<VFManager>().shelvesScripts;
