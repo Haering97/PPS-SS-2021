@@ -45,8 +45,9 @@ public class VFManager : MonoBehaviour
     private float lastTap;
     private float lastMiss;
 
-    //shelfmode 
+    //Modes
     private bool shelfMode = false;
+    private bool trayMode = false;
     private int lastShelf;
     private int lastTray;
 
@@ -93,13 +94,19 @@ public class VFManager : MonoBehaviour
             dummyData.fillRandomColors();
         }*/
 
-        if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
+        //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.GetMouseButtonDown(0))
         {
             //TODO effizienter referenzieren.
+            /*Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>()
+                .ScreenPointToRay(Input.GetTouch(0).position);*/
+
             Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>()
-                .ScreenPointToRay(Input.GetTouch(0).position);
+                .ScreenPointToRay(Input.mousePosition);
+
             RaycastHit hit;
-            if (checkUi.castGR(Input.GetTouch(0).position).Count == 0)
+            //if (checkUi.castGR(Input.GetTouch(0).position).Count == 0)
+            if (checkUi.castGR(Input.mousePosition).Count == 0)
             {
                 if (Physics.Raycast(ray, out hit))
                 {
@@ -121,6 +128,8 @@ public class VFManager : MonoBehaviour
                             //Die Nummer des angeklickten Regales zwischenspeichern.
                             var hitTrayNumber = Int32.Parse(subs[subs.Length - 1]);
 
+                            Debug.Log(hitTrayNumber);
+
                             if (Time.time - lastTap <= 0.4f)
                             {
                                 //Zweiter Tap unter einer Sekune erkannt.
@@ -128,12 +137,13 @@ public class VFManager : MonoBehaviour
                                 {
                                     //das selbe tray egal welcher layer zweimal hintereinander getapped
                                     //TODO das Regal an dem Root punkt schieben und größer scalen mit Animation;
+                                    startTrayMode(hitTrayNumber);
                                     //showSingleCubes(true);
                                 }
                             }
 
                             lastTap = Time.time;
-                            lastShelf = hitTrayNumber;
+                            lastTray = hitTrayNumber;
                         }
                         else
                         {
@@ -169,9 +179,15 @@ public class VFManager : MonoBehaviour
                     //wenn neben die regale getippt wird.
                     if (Time.time - lastMiss <= 0.4f)
                     {
-                        //Wenn zweimal neben das shelf getippt wird, sollen wieder alle regale eingeblendet werden.
-                        shelves.ForEach(shelf => shelf.SetActive(true));
-                        showSingleCubes(false);
+                        //Wenn zweimal neben das shelf getippt wird, sollen wieder alle regale bzw alle Trays eingeblendet werden.
+                        if (shelfMode)
+                        {
+                            exitShelfMode();
+                        }
+                        else if (trayMode)
+                        {
+                            exitTrayMode();
+                        }
                     }
 
                     lastMiss = Time.time;
@@ -331,13 +347,22 @@ public class VFManager : MonoBehaviour
         {
             if (shelfScript.id != shelfNumber)
             {
-                shelf.SetActive(false);
+                shelfScript.gameObject.SetActive(false);
             }
         }
     }
 
+    private void exitShelfMode()
+    {
+        shelves.ForEach(shelf => shelf.SetActive(true));
+        showSingleCubes(false);
+        shelfMode = false;
+    }
+
     private void startTrayMode(int trayNumber)
     {
+        trayMode = true;
+        shelfMode = false;
         foreach (var shelfsript in shelvesScripts)
         {
             foreach (var layerScript in shelfsript.shelfLayersScripts)
@@ -346,11 +371,28 @@ public class VFManager : MonoBehaviour
                 {
                     if (trayscript.id != trayNumber)
                     {
-                        shelf.SetActive(false);
+                        trayscript.gameObject.SetActive(false);
                     }
                 }
             }
         }
+    }
+
+    private void exitTrayMode()
+    {
+        foreach (var shelfsript in shelvesScripts)
+        {
+            foreach (var layerScript in shelfsript.shelfLayersScripts)
+            {
+                foreach (var trayscript in layerScript.traysScripts)
+                {
+                    trayscript.gameObject.SetActive(true);
+                }
+            }
+        }
+
+        trayMode = false;
+        shelfMode = true;
     }
 }
 
