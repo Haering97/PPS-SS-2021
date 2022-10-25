@@ -98,20 +98,20 @@ public class VFManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //TODO effizienter referenzieren.
-            /*Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>()
-                .ScreenPointToRay(Input.GetTouch(0).position);*/
-
             Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>()
-                .ScreenPointToRay(Input.mousePosition);
+                .ScreenPointToRay(Input.GetTouch(0).position);
+
+            /*Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>()
+                .ScreenPointToRay(Input.mousePosition);*/
 
             RaycastHit hit;
-            //if (checkUi.castGR(Input.GetTouch(0).position).Count == 0)
-            if (checkUi.castGR(Input.mousePosition).Count == 0)
+            if (checkUi.castGR(Input.GetTouch(0).position).Count == 0)
+            //if (checkUi.castGR(Input.mousePosition).Count == 0)
             {
+                //Hier checken ob ein Button getroffen wird oder nicht.
+                
                 if (Physics.Raycast(ray, out hit))
                 {
-                    //Hier checken ob ein Button getroffen wird oder nicht.
-
                     //Hier checken ob ein GameObject getroffen wird.
                     if (hit.collider != null)
                     {
@@ -255,8 +255,6 @@ public class VFManager : MonoBehaviour
             }
         }
     }*/
-
-
     public float getSpacingTraysDynamic()
     {
         return (spacingTrays + trayLength) * globalsize;
@@ -394,6 +392,7 @@ public class VFManager : MonoBehaviour
         trayMode = false;
         shelfMode = true;
     }
+    
 }
 
 //TODO namen des GameObject zu typ und id ändern damit man alles auch über .find finden kann.
