@@ -19,6 +19,8 @@ public class TrayScript : MonoBehaviour
     public List<GameObject> cubeObjects;
     public GameObject trayObject;
 
+    public float averageGrowth;
+
     void Start()
     {
         rootObject = GameObject.Find("Root");
