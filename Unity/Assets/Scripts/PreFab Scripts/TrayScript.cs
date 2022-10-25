@@ -6,6 +6,7 @@ using UnityEngine;
 public class TrayScript : MonoBehaviour
 {
     [SerializeField] private GameObject cube;
+    [SerializeField] private GameObject tray;
     public GameObject rootObject;
 
     private VFManager _vfManager;
@@ -45,7 +46,7 @@ public class TrayScript : MonoBehaviour
         }
 
         //Instantiate as a Tray
-        var trayInstance = Instantiate(cube, transform);
+        var trayInstance = Instantiate(tray, transform);
         trayInstance.transform.localScale = _vfManager.getTraySize() * 1.01f;
         trayObject = trayInstance;
         trayInstance.name = "Tray";
