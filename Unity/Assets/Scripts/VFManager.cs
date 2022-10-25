@@ -56,6 +56,7 @@ public class VFManager : MonoBehaviour
         GameEvents.current.onUpPress += oneLayerUp;
         GameEvents.current.onDownPress += oneLayerDown;
         GameEvents.current.onSCPress += toggleSC;
+        GameEvents.current.onDataRefresh += dummyData.fillRandomColors;
         //Murks
         //GameEvents.current.onDataRefresh += highlightShelf;
 
@@ -71,11 +72,6 @@ public class VFManager : MonoBehaviour
         {
             var shelfInstance = Instantiate(shelf, vfOrigin);
             shelfInstance.transform.position += new Vector3(i, 0, 0) * _spacingShelvesDynamic;
-            /*
-            Debug.Log("RootOffset");
-            Debug.Log("X:  "+getRootOffset().x);
-            Debug.Log("Z:  "+getRootOffset().z);
-            */
             shelfInstance.transform.position -= getRootOffset() / 2;
             shelfInstance.name = "Shelf " + i;
             var shelfScript = shelfInstance.GetComponent<ShelfScript>();
@@ -85,25 +81,13 @@ public class VFManager : MonoBehaviour
         }
 
         Debug.Log("Farm Instantiated");
-
-        //Testing
-        /*
-        shelves.ForEach(shelf =>
-            shelf.GetComponent<ShelfScript>().shelfLayers.ForEach(layer =>
-                layer.GetComponent<ShelfLayerScript>().trays.ForEach(tray =>
-                    tray.GetComponent<TrayScript>().cubeObjects.ForEach(cube => cube.SetActive(false)))));
-                    */
+        
     }
 
     void Update()
     {
+        //Nur zum testen am Windows Recher
         if (Input.GetMouseButtonDown(1))
-        {
-            dummyData.fillRandomColors();
-        }
-
-        //Wenn mit zwei Fingern gleichzeitig getippt wird, nur zum testen.
-        if (Input.touchCount == 2 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             dummyData.fillRandomColors();
         }
