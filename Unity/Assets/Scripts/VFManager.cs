@@ -45,7 +45,7 @@ public class VFManager : MonoBehaviour
     private float lastTap;
     private float lastMiss;
 
-    //Modes
+    //ViewModes
     private bool shelfMode = false;
     private bool trayMode = false;
     private int lastShelf;
@@ -97,8 +97,8 @@ public class VFManager : MonoBehaviour
             dummyData.fillRandomColors();
         }*/
 
-        //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
+        //if (Input.GetMouseButtonDown(0))
         {
             //TODO effizienter referenzieren.
             Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>()
@@ -119,7 +119,7 @@ public class VFManager : MonoBehaviour
                     if (hit.collider != null)
                     {
                         //Wenn nur ein Regal angezeigt wird
-                        if (shelfMode)
+                        if (shelfMode && !trayMode)
                         {
                             GameObject touchedObject = hit.transform.gameObject;
 
@@ -148,7 +148,7 @@ public class VFManager : MonoBehaviour
                             lastTap = Time.time;
                             lastTray = hitTrayNumber;
                         }
-                        else
+                        else if(!shelfMode && !trayMode)
                         {
                             GameObject touchedObject = hit.transform.gameObject;
 
