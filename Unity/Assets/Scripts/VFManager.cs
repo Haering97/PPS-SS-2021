@@ -38,14 +38,18 @@ public class VFManager : MonoBehaviour
 
     private int topLayer;
 
+    //checkButtonHit
+    private CheckUi checkUi;
+
     //doubletap
     private float lastTap;
     private float lastMiss;
 
+    //shelfmode 
+    private bool shelfMode = false;
     private int lastShelf;
+    private int lastTray;
 
-    //checkButtonHit
-    private CheckUi checkUi;
 
     void Start()
     {
@@ -57,8 +61,6 @@ public class VFManager : MonoBehaviour
         GameEvents.current.onDownPress += oneLayerDown;
         GameEvents.current.onSCPress += toggleSC;
         GameEvents.current.onDataRefresh += dummyData.fillRandomColors;
-        //Murks
-        //GameEvents.current.onDataRefresh += highlightShelf;
 
         topLayer = shelfHeight;
 
@@ -81,16 +83,15 @@ public class VFManager : MonoBehaviour
         }
 
         Debug.Log("Farm Instantiated");
-        
     }
 
     void Update()
     {
-        //Nur zum testen am Windows Recher
-        if (Input.GetMouseButtonDown(1))
+        //klappt auch bei Android doubletap.
+        /*if (Input.GetMouseButtonDown(1))
         {
             dummyData.fillRandomColors();
-        }
+        }*/
 
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -107,30 +108,60 @@ public class VFManager : MonoBehaviour
                     //Hier checken ob ein GameObject getroffen wird.
                     if (hit.collider != null)
                     {
-                        GameObject touchedObject = hit.transform.gameObject;
-
-                        //mithile des Parentings von Transform, kann ich über den würfel auf das regal zugreifen.
-                        var hitShelf = touchedObject.transform.parent.parent.parent;
-
-                        string[] subs = hitShelf.name.Split(" ");
-
-                        //Die Nummer des angeklickten Regales zwischenspeichern.
-                        var hitShelfNumber = Int32.Parse(subs[subs.Length - 1]);
-
-                        if (Time.time - lastTap <= 0.4f)
+                        //Wenn nur ein Regal angezeigt wird
+                        if (shelfMode)
                         {
-                            //Zweiter Tap unter einer Sekune erkannt.
-                            if (hitShelfNumber == lastShelf)
-                            {
-                                //das selbe regal zweimal hintereinander getapped
-                                //TODO das Regal an dem Root punkt schieben und größer scalen mit Animation;
-                                highlightShelf(hitShelfNumber);
-                                showSingleCubes(true);
-                            }
-                        }
+                            GameObject touchedObject = hit.transform.gameObject;
 
-                        lastTap = Time.time;
-                        lastShelf = hitShelfNumber;
+                            //mithile des Parentings von Transform, kann ich über den Würfel auf das Das TrayObject zugreifen.
+                            var hitTray = touchedObject.transform.parent;
+
+                            string[] subs = hitTray.name.Split(" ");
+
+                            //Die Nummer des angeklickten Regales zwischenspeichern.
+                            var hitTrayNumber = Int32.Parse(subs[subs.Length - 1]);
+
+                            if (Time.time - lastTap <= 0.4f)
+                            {
+                                //Zweiter Tap unter einer Sekune erkannt.
+                                if (hitTrayNumber == lastTray)
+                                {
+                                    //das selbe tray egal welcher layer zweimal hintereinander getapped
+                                    //TODO das Regal an dem Root punkt schieben und größer scalen mit Animation;
+                                    //showSingleCubes(true);
+                                }
+                            }
+
+                            lastTap = Time.time;
+                            lastShelf = hitTrayNumber;
+                        }
+                        else
+                        {
+                            GameObject touchedObject = hit.transform.gameObject;
+
+                            //mithile des Parentings von Transform, kann ich über den würfel auf das regal zugreifen.
+                            var hitShelf = touchedObject.transform.parent.parent.parent;
+
+                            string[] subs = hitShelf.name.Split(" ");
+
+                            //Die Nummer des angeklickten Regales zwischenspeichern.
+                            var hitShelfNumber = Int32.Parse(subs[subs.Length - 1]);
+
+                            if (Time.time - lastTap <= 0.4f)
+                            {
+                                //Zweiter Tap unter einer Sekune erkannt.
+                                if (hitShelfNumber == lastShelf)
+                                {
+                                    //das selbe regal zweimal hintereinander getapped
+                                    //TODO das Regal an dem Root punkt schieben und größer scalen mit Animation;
+                                    startShelfMode(hitShelfNumber);
+                                    showSingleCubes(true);
+                                }
+                            }
+
+                            lastTap = Time.time;
+                            lastShelf = hitShelfNumber;
+                        }
                     }
                 }
                 else
@@ -293,13 +324,31 @@ public class VFManager : MonoBehaviour
         showSingleCubes(renderSingleCubes);
     }
 
-    private void highlightShelf(int shelfNumber)
+    private void startShelfMode(int shelfNumber)
     {
-        foreach (var shelf in shelves)
+        shelfMode = true;
+        foreach (var shelfScript in shelvesScripts)
         {
-            if (shelf.GetComponent<ShelfScript>().id != shelfNumber)
+            if (shelfScript.id != shelfNumber)
             {
                 shelf.SetActive(false);
+            }
+        }
+    }
+
+    private void startTrayMode(int trayNumber)
+    {
+        foreach (var shelfsript in shelvesScripts)
+        {
+            foreach (var layerScript in shelfsript.shelfLayersScripts)
+            {
+                foreach (var trayscript in layerScript.traysScripts)
+                {
+                    if (trayscript.id != trayNumber)
+                    {
+                        shelf.SetActive(false);
+                    }
+                }
             }
         }
     }
