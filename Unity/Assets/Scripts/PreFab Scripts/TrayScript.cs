@@ -46,7 +46,7 @@ public class TrayScript : MonoBehaviour
 
         //Instantiate as a Tray
         var trayInstance = Instantiate(cube, transform);
-        trayInstance.transform.localScale = _vfManager.getTraySize() * 1.02f;
+        trayInstance.transform.localScale = _vfManager.getTraySize() * 1.01f;
         trayObject = trayInstance;
         trayInstance.name = "Tray";
     }
