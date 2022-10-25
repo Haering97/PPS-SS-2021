@@ -50,7 +50,7 @@ public class DummyData : MonoBehaviour
     }
     */
     
-    public void fillRandomColors()
+    public void fillRandom()
     {
         
         foreach (var shelfScript in shelveScripts)
@@ -66,6 +66,8 @@ public class DummyData : MonoBehaviour
                     {
                         cube.GetComponent<Renderer>().material.SetColor("_Color",
                             UnityEngine.Color.Lerp(Color.green, Color.red, Random.Range(0f, 1f)));
+
+                        cube.GetComponent<CubeScript>().growth = Random.Range(0.6f, 1f);
 
                     }
                 }
