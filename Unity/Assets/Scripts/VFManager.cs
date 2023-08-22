@@ -140,7 +140,7 @@ public class VFManager : MonoBehaviour
                                 {
                                     //das selbe tray egal welcher layer zweimal hintereinander getapped
                                     //TODO das Regal an dem Root punkt schieben und größer scalen mit Animation;
-                                    startTrayMode(hitTrayNumber);
+                                    enterTrayMode(hitTrayNumber);
                                     //showSingleCubes(true);
                                 }
                             }
@@ -360,7 +360,7 @@ public class VFManager : MonoBehaviour
         shelfMode = false;
     }
 
-    private void startTrayMode(int trayNumber)
+    private void enterTrayMode(int trayNumber)
     {
         trayMode = true;
         shelfMode = false;
