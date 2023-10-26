@@ -59,17 +59,20 @@ public class VFManager : MonoBehaviour
         vfOrigin = transform;
         _spacingShelvesDynamic = (spacingShelves + trayWidth) * globalsize;
         //spacingTraysDynamic = spacingTrays + trayLength;
-
+        
+        // Handle User Inputs 
         GameEvents.current.onUpPress += oneLayerUp;
         GameEvents.current.onDownPress += oneLayerDown;
         GameEvents.current.onSCPress += toggleSC;
         GameEvents.current.onDataRefresh += dummyData.fillRandom;
         GameEvents.current.onSGPress += () => showGrowth = !showGrowth;
 
+        
+        //Show all Layers as Default
         topLayer = shelfHeight;
 
+        
         //checkButtonHit
-
         checkUi = GameObject.Find("Canvas").GetComponent<CheckUi>();
 
 
@@ -135,7 +138,7 @@ public class VFManager : MonoBehaviour
 
                             if (Time.time - lastTap <= 0.4f)
                             {
-                                //Zweiter Tap unter einer Sekune erkannt.
+                                //Zweiter Tap unter einer Sekunde erkannt.
                                 if (hitTrayNumber == lastTray)
                                 {
                                     //das selbe tray egal welcher layer zweimal hintereinander getapped
