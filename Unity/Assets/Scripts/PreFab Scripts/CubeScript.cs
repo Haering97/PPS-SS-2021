@@ -14,7 +14,7 @@ public class CubeScript : MonoBehaviour
 
     private VFManager vfManager;
 
-    private float pressTime = 1f;
+    private float pressTime;
     private bool isPressing = false;
     private Touch touch;
 
