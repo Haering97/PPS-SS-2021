@@ -25,8 +25,7 @@ public class CubeScript : MonoBehaviour
     
     void Update()
     {
-        
-        
+        //Die Größe des Würfels je nach Modus anzeigen.
         if (vfManager.showGrowth)
         {
             cube.transform.localScale = calculatedGrowth;
@@ -35,6 +34,10 @@ public class CubeScript : MonoBehaviour
         {
             cube.transform.localScale = new Vector3(vfManager.globalsize,vfManager.globalsize,vfManager.globalsize);
         }
+        
+        //Long Press auf Würfel öffnet Menü
+        
+        
         
     }
 }

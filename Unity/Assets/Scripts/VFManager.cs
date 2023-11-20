@@ -99,7 +99,7 @@ public class VFManager : MonoBehaviour
         {
             dummyData.fillRandomColors();
         }*/
-
+        
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
         //if (Input.GetMouseButtonDown(0))
         {
@@ -151,6 +151,7 @@ public class VFManager : MonoBehaviour
                             lastTap = Time.time;
                             lastTray = hitTrayNumber;
                         }
+                        
                         else if(!shelfMode && !trayMode)
                         {
                             GameObject touchedObject = hit.transform.gameObject;
