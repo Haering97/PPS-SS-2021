@@ -9,11 +9,15 @@ public class CubeScript : MonoBehaviour
     public float growth;
 
     private Vector3 calculatedGrowth;
-    
+
     private GameObject cube;
-    
+
     private VFManager vfManager;
-    
+
+    private float pressTime = 1f;
+    private bool isPressing = false;
+    private Touch touch;
+
     void Start()
     {
         cube = this.gameObject;
@@ -22,7 +26,7 @@ public class CubeScript : MonoBehaviour
         calculatedGrowth = cube.transform.localScale * growth;
     }
 
-    
+
     void Update()
     {
         //Die Größe des Würfels je nach Modus anzeigen.
@@ -32,12 +36,37 @@ public class CubeScript : MonoBehaviour
         }
         else
         {
-            cube.transform.localScale = new Vector3(vfManager.globalsize,vfManager.globalsize,vfManager.globalsize);
+            cube.transform.localScale = new Vector3(vfManager.globalsize, vfManager.globalsize, vfManager.globalsize);
         }
-        
+
+
         //Long Press auf Würfel öffnet Menü
-        
-        
-        
+        if (Input.touchCount > 0)
+        {
+            touch = Input.GetTouch(0);
+
+            
+            //Berührtes Objekt und Zeit messen so lange gedrückt wird.
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>()
+                        .ScreenPointToRay(Input.GetTouch(0).position);
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+                    {
+                        isPressing = true;
+                        pressTime = Time.time;
+                    }
+
+                    break;
+                case TouchPhase.Ended:
+                case TouchPhase.Canceled:
+                    isPressing = false;
+                    break;
+            }
+            
+            
+        }
     }
 }
