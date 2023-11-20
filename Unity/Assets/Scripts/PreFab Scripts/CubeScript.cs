@@ -70,7 +70,8 @@ public class CubeScript : MonoBehaviour
             if (isPressing && Time.time - pressTime > 1.0f && touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled)
             {
                 Debug.Log("PP-Log: Long Press");
-                isPressing = false; // Prevent multiple instantiations
+                Debug.Log("PP-Log: " + gameObject.name);
+                isPressing = false;
             }
             
             
