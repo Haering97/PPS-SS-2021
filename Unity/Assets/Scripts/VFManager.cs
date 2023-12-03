@@ -54,6 +54,10 @@ public class VFManager : MonoBehaviour
     //DataModes
     public bool showGrowth = false;
 
+    //UI
+    private GameObject plantUI;
+    private bool showUI;
+    
     void Start()
     {
         vfOrigin = transform;
@@ -74,7 +78,10 @@ public class VFManager : MonoBehaviour
         
         //checkButtonHit
         checkUi = GameObject.Find("Canvas").GetComponent<CheckUi>();
-
+            
+        //UI
+        plantUI = GameObject.Find("PlantUI");
+        showUI = false;
 
         //Hier werden so viele Regale instanziiert wie angegeben.
         for (int i = 0; i < numberOfShelves; i++)
@@ -399,6 +406,12 @@ public class VFManager : MonoBehaviour
 
         trayMode = false;
         shelfMode = true;
+    }
+
+    private void toggleUI()
+    {
+        plantUI.SetActive(showUI);
+        showUI = !showUI;
     }
     
 }

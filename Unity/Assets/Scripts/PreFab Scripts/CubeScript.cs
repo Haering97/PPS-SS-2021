@@ -19,15 +19,13 @@ public class CubeScript : MonoBehaviour
     private float pressTime;
     private bool isPressing = false;
     private Touch touch;
-    private GameObject uiimage;
-    private bool showUI;
+    
     void Start()
     {
         cube = this.gameObject;
         vfManager = GameObject.Find("Root").GetComponent<VFManager>();
         growth = Random.Range(0.5f, 1.1f);
         calculatedGrowth = cube.transform.localScale * growth;
-        uiimage = GameObject.Find("PlantUI");
     }
 
 
@@ -76,11 +74,8 @@ public class CubeScript : MonoBehaviour
                 Debug.Log("PP-Log: Long Press");
                 Debug.Log("PP-Log: " + gameObject.name);
                 //Debug.Log("PP-Log: showUI TEST" + showUI);
-                uiimage.SetActive(true);
                 isPressing = false;
             }
-            
-            
         }
     }
 }
