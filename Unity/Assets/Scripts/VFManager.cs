@@ -57,6 +57,8 @@ public class VFManager : MonoBehaviour
     //UI
     private GameObject plantUI;
     private bool showUI;
+    private float timer = 0f;
+    private float interval = 3f;
     
     void Start()
     {
@@ -209,6 +211,20 @@ public class VFManager : MonoBehaviour
                 }
             }
         }
+        
+        // Inkrementiere den Timer mit der Zeit seit dem letzten Frame
+        timer += Time.deltaTime;
+
+        // Überprüfe, ob der Timer das gewünschte Intervall überschritten hat
+        if (timer >= interval)
+        {
+            // Führe deine gewünschte Funktion hier aus
+            toggleUI();
+
+            // Setze den Timer zurück
+            timer = 0f;
+        }
+        
     }
 
 
