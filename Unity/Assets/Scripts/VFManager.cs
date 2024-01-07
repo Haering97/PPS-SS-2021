@@ -56,6 +56,7 @@ public class VFManager : MonoBehaviour
 
     //UI
     private GameObject plantUI;
+    private GameObject closeButton;
     private bool showUI;
 
     void Start()
@@ -68,8 +69,10 @@ public class VFManager : MonoBehaviour
         GameEvents.current.onUpPress += oneLayerUp;
         GameEvents.current.onDownPress += oneLayerDown;
         GameEvents.current.onSCPress += toggleSC;
+        GameEvents.current.onClosePress += closePlantUI;
         GameEvents.current.onDataRefresh += dummyData.fillRandom;
         GameEvents.current.onSGPress += () => showGrowth = !showGrowth;
+        
 
 
         //Show all Layers as Default
@@ -81,8 +84,10 @@ public class VFManager : MonoBehaviour
 
         //UI
         plantUI = GameObject.Find("PlantUI");
+        closeButton = GameObject.Find("Button Close UI");
         showUI = false;
         plantUI.SetActive(false);
+        closeButton.SetActive(false);
 
         //Hier werden so viele Regale instanziiert wie angegeben.
         for (int i = 0; i < numberOfShelves; i++)
@@ -97,7 +102,7 @@ public class VFManager : MonoBehaviour
             shelves.Add(shelfInstance);
         }
 
-        Debug.Log("Farm Instantiated");
+        Debug.Log("PP-Log: Farm Instantiated");
     }
 
     void Update()
@@ -410,6 +415,12 @@ public class VFManager : MonoBehaviour
     public void displayPlantUI(bool state)
     {
         plantUI.SetActive(state);
+        closeButton.SetActive(state);
+    }
+
+    private void closePlantUI()
+    {
+        displayPlantUI(false);
     }
 }
 

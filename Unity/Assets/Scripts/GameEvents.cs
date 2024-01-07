@@ -47,4 +47,11 @@ public class GameEvents : MonoBehaviour
         onSGPress?.Invoke();
     }
     
+    public event Action onClosePress;
+
+    public void closeUI()
+    {
+        onClosePress?.Invoke();
+    }
+    
 }

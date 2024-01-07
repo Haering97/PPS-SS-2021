@@ -28,5 +28,10 @@ public class ButtonHandler : MonoBehaviour
     {
         GameEvents.current.showGrowth();
     }
+
+    public void closeUI()
+    {
+        GameEvents.current.closeUI();
+    }
     
 }
