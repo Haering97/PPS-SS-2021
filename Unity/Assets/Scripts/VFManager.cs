@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class VFManager : MonoBehaviour
 {
@@ -57,6 +58,7 @@ public class VFManager : MonoBehaviour
     //UI
     private GameObject plantUI;
     private GameObject closeButton;
+    private GameObject activeCube;
     private bool showUI;
 
     void Start()
@@ -72,7 +74,6 @@ public class VFManager : MonoBehaviour
         GameEvents.current.onClosePress += closePlantUI;
         GameEvents.current.onDataRefresh += dummyData.fillRandom;
         GameEvents.current.onSGPress += () => showGrowth = !showGrowth;
-        
 
 
         //Show all Layers as Default
@@ -107,7 +108,6 @@ public class VFManager : MonoBehaviour
 
     void Update()
     {
-
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
             //if (Input.GetMouseButtonDown(0))
         {
@@ -129,9 +129,8 @@ public class VFManager : MonoBehaviour
                     //Hier checken ob ein GameObject getroffen wird.
                     if (hit.collider != null)
                     {
-                        
                         Debug.Log("PP-Log: hitted:" + hit.transform.gameObject.name);
-                        
+
                         //Wenn nur ein Regal angezeigt wird
                         if (shelfMode && !trayMode)
                         {
@@ -414,6 +413,16 @@ public class VFManager : MonoBehaviour
 
     public void displayPlantUI(bool state)
     {
+        if (state)
+        {
+            activeCube.GetComponent<Renderer>().material.SetColor("_Color", UnityEngine.Color.cyan);
+        }
+        else
+        {
+            activeCube.GetComponent<Renderer>().material.SetColor("_Color",
+                UnityEngine.Color.Lerp(Color.green, Color.red, Random.Range(0f, 1f)));
+        }
+
         plantUI.SetActive(state);
         closeButton.SetActive(state);
     }
@@ -421,6 +430,11 @@ public class VFManager : MonoBehaviour
     private void closePlantUI()
     {
         displayPlantUI(false);
+    }
+
+    public void setActiveCube(GameObject cube)
+    {
+        activeCube = cube;
     }
 }
 
