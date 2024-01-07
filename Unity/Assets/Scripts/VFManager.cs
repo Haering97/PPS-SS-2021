@@ -82,6 +82,7 @@ public class VFManager : MonoBehaviour
         //UI
         plantUI = GameObject.Find("PlantUI");
         showUI = false;
+        plantUI.SetActive(false);
 
         //Hier werden so viele Regale instanziiert wie angegeben.
         for (int i = 0; i < numberOfShelves; i++)
@@ -101,11 +102,6 @@ public class VFManager : MonoBehaviour
 
     void Update()
     {
-        //klappt auch bei Android doubletap.
-        /*if (Input.GetMouseButtonDown(1))
-        {
-            dummyData.fillRandomColors();
-        }*/
 
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
             //if (Input.GetMouseButtonDown(0))
@@ -408,10 +404,9 @@ public class VFManager : MonoBehaviour
         shelfMode = true;
     }
 
-    public void togglePlantUI()
+    public void displayPlantUI(bool state)
     {
-        plantUI.SetActive(showUI);
-        showUI = !showUI;
+        plantUI.SetActive(state);
     }
 }
 
