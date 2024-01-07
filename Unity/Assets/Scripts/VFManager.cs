@@ -56,9 +56,11 @@ public class VFManager : MonoBehaviour
     public bool showGrowth = false;
 
     //UI
-    private GameObject plantUI;
-    private GameObject closeButton;
     private GameObject activeCube;
+    private GameObject plantUI;
+    private GameObject plantUIControls;
+    private GameObject closeButton;
+    private GameObject controlsButton;
     private bool showUI;
 
     void Start()
@@ -72,6 +74,7 @@ public class VFManager : MonoBehaviour
         GameEvents.current.onDownPress += oneLayerDown;
         GameEvents.current.onSCPress += toggleSC;
         GameEvents.current.onClosePress += closePlantUI;
+        GameEvents.current.onControlsPress += showControls;
         GameEvents.current.onDataRefresh += dummyData.fillRandom;
         GameEvents.current.onSGPress += () => showGrowth = !showGrowth;
 
@@ -85,10 +88,15 @@ public class VFManager : MonoBehaviour
 
         //UI
         plantUI = GameObject.Find("PlantUI");
+        plantUIControls = GameObject.Find("PlantUIControls");
         closeButton = GameObject.Find("Button Close UI");
+        controlsButton = GameObject.Find("Button Show Controls");
+        
         showUI = false;
         plantUI.SetActive(false);
+        plantUIControls.SetActive(false);
         closeButton.SetActive(false);
+        controlsButton.SetActive(false);
 
         //Hier werden so viele Regale instanziiert wie angegeben.
         for (int i = 0; i < numberOfShelves; i++)
@@ -411,6 +419,10 @@ public class VFManager : MonoBehaviour
         shelfMode = true;
     }
 
+    public void setActiveCube(GameObject cube)
+    {
+        activeCube = cube;
+    }
     public void displayPlantUI(bool state)
     {
         if (state)
@@ -425,16 +437,19 @@ public class VFManager : MonoBehaviour
 
         plantUI.SetActive(state);
         closeButton.SetActive(state);
+        controlsButton.SetActive(state);
     }
 
+    private void showControls()
+    {
+        plantUIControls.SetActive(true);
+    }
+    
     private void closePlantUI()
     {
         displayPlantUI(false);
-    }
-
-    public void setActiveCube(GameObject cube)
-    {
-        activeCube = cube;
+        plantUIControls.SetActive(false);
+        controlsButton.SetActive(false);
     }
 }
 

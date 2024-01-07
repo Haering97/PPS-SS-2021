@@ -54,4 +54,11 @@ public class GameEvents : MonoBehaviour
         onClosePress?.Invoke();
     }
     
+    public event Action onControlsPress;
+
+    public void showControls()
+    {
+        onControlsPress?.Invoke();
+    }
+    
 }

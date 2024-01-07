@@ -33,5 +33,10 @@ public class ButtonHandler : MonoBehaviour
     {
         GameEvents.current.closeUI();
     }
+
+    public void showControls()
+    {
+        GameEvents.current.showControls();
+    }
     
 }
