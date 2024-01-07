@@ -124,6 +124,9 @@ public class VFManager : MonoBehaviour
                     //Hier checken ob ein GameObject getroffen wird.
                     if (hit.collider != null)
                     {
+                        
+                        Debug.Log("PP-Log: hitted:" + hit.transform.gameObject.name);
+                        
                         //Wenn nur ein Regal angezeigt wird
                         if (shelfMode && !trayMode)
                         {

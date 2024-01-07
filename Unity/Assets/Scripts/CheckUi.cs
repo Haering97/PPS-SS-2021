@@ -32,7 +32,6 @@ public class CheckUi : MonoBehaviour
 
     public System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult> castGR(Vector2 pos)
     {
-        //Code to be place in a MonoBehaviour with a GraphicRaycaster component
         GraphicRaycaster gr = this.GetComponent<GraphicRaycaster>();
         //Create the PointerEventData with null for the EventSystem
         PointerEventData ped = new PointerEventData(null);
