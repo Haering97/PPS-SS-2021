@@ -73,7 +73,7 @@ public class CubeScript : MonoBehaviour
             {
                 Debug.Log("PP-Log: Long Press");
                 Debug.Log("PP-Log: " + gameObject.name);
-                //Debug.Log("PP-Log: showUI TEST" + showUI);
+                vfManager.togglePlantUI();
                 isPressing = false;
             }
         }

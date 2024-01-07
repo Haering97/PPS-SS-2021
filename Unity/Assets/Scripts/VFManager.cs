@@ -57,15 +57,13 @@ public class VFManager : MonoBehaviour
     //UI
     private GameObject plantUI;
     private bool showUI;
-    private float timer = 0f;
-    private float interval = 3f;
-    
+
     void Start()
     {
         vfOrigin = transform;
         _spacingShelvesDynamic = (spacingShelves + trayWidth) * globalsize;
         //spacingTraysDynamic = spacingTrays + trayLength;
-        
+
         // Handle User Inputs 
         GameEvents.current.onUpPress += oneLayerUp;
         GameEvents.current.onDownPress += oneLayerDown;
@@ -73,14 +71,14 @@ public class VFManager : MonoBehaviour
         GameEvents.current.onDataRefresh += dummyData.fillRandom;
         GameEvents.current.onSGPress += () => showGrowth = !showGrowth;
 
-        
+
         //Show all Layers as Default
         topLayer = shelfHeight;
 
-        
+
         //checkButtonHit
         checkUi = GameObject.Find("Canvas").GetComponent<CheckUi>();
-            
+
         //UI
         plantUI = GameObject.Find("PlantUI");
         showUI = false;
@@ -108,9 +106,9 @@ public class VFManager : MonoBehaviour
         {
             dummyData.fillRandomColors();
         }*/
-        
+
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
-        //if (Input.GetMouseButtonDown(0))
+            //if (Input.GetMouseButtonDown(0))
         {
             //TODO effizienter referenzieren.
             Ray ray = GameObject.FindWithTag("MainCamera").GetComponent<Camera>()
@@ -121,10 +119,10 @@ public class VFManager : MonoBehaviour
 
             RaycastHit hit;
             if (checkUi.castGR(Input.GetTouch(0).position).Count == 0)
-            //if (checkUi.castGR(Input.mousePosition).Count == 0)
+                //if (checkUi.castGR(Input.mousePosition).Count == 0)
             {
                 //Hier checken ob ein Button getroffen wird oder nicht.
-                
+
                 if (Physics.Raycast(ray, out hit))
                 {
                     //Hier checken ob ein GameObject getroffen wird.
@@ -160,8 +158,8 @@ public class VFManager : MonoBehaviour
                             lastTap = Time.time;
                             lastTray = hitTrayNumber;
                         }
-                        
-                        else if(!shelfMode && !trayMode)
+
+                        else if (!shelfMode && !trayMode)
                         {
                             GameObject touchedObject = hit.transform.gameObject;
 
@@ -211,20 +209,6 @@ public class VFManager : MonoBehaviour
                 }
             }
         }
-        
-        // Inkrementiere den Timer mit der Zeit seit dem letzten Frame
-        timer += Time.deltaTime;
-
-        // Überprüfe, ob der Timer das gewünschte Intervall überschritten hat
-        if (timer >= interval)
-        {
-            // Führe deine gewünschte Funktion hier aus
-            toggleUI();
-
-            // Setze den Timer zurück
-            timer = 0f;
-        }
-        
     }
 
 
@@ -424,12 +408,11 @@ public class VFManager : MonoBehaviour
         shelfMode = true;
     }
 
-    private void toggleUI()
+    public void togglePlantUI()
     {
         plantUI.SetActive(showUI);
         showUI = !showUI;
     }
-    
 }
 
 //TODO namen des GameObject zu typ und id ändern damit man alles auch über .find finden kann.
