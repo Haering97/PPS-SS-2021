@@ -3,35 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "3d21f5bc",
         "name": "com.HRing.VFAR",
-        "processId": 24465,
+        "processId": 23643,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 30812,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 2516,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 4413,
-            "exited": true
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 6464,
-            "exited": true
-        },
         {
             "deviceId": "3d21f5bc",
             "name": "com.oppo.launcher",
@@ -41,43 +17,43 @@
         {
             "deviceId": "3d21f5bc",
             "name": "com.HRing.VFAR",
-            "processId": 7961,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 9783,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 11098,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 11661,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
-            "processId": 12511,
-            "exited": false
-        },
-        {
-            "deviceId": "3d21f5bc",
-            "name": "com.HRing.VFAR",
             "processId": 14164,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "3d21f5bc",
             "name": "com.HRing.VFAR",
             "processId": 24465,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 25171,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 32441,
+            "exited": true
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "org.telegram.messenger",
+            "processId": 17861,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 22970,
+            "exited": false
+        },
+        {
+            "deviceId": "3d21f5bc",
+            "name": "com.HRing.VFAR",
+            "processId": 23643,
             "exited": false
         }
     ],

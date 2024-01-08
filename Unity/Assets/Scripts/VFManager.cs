@@ -57,6 +57,7 @@ public class VFManager : MonoBehaviour
 
     //UI
     private GameObject activeCube;
+    private Color oldColor;
     private GameObject plantUI;
     private GameObject plantUIControls;
     private GameObject closeButton;
@@ -427,12 +428,13 @@ public class VFManager : MonoBehaviour
     {
         if (state)
         {
+            oldColor = activeCube.GetComponent<Renderer>().material.GetColor("_Color");
             activeCube.GetComponent<Renderer>().material.SetColor("_Color", UnityEngine.Color.cyan);
         }
         else
         {
-            activeCube.GetComponent<Renderer>().material.SetColor("_Color",
-                UnityEngine.Color.Lerp(Color.green, Color.red, Random.Range(0f, 1f)));
+            activeCube.GetComponent<Renderer>().material.SetColor("_Color",oldColor);
+            
         }
 
         plantUI.SetActive(state);
